@@ -4,18 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kavling Kebun Maoslor</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '908178125102704');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=908178125102704&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Mobile Specific Meta -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-        
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #050505;
@@ -24,32 +37,21 @@
             margin: 0;
             overflow-x: hidden;
         }
-
         .glass {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
         .gradient-blue {
             background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
         }
-
         .text-gradient {
             background: linear-gradient(180deg, #ffffff 0%, #888888 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        section { 
-            padding: 60px 20px; 
-        }
-
-        @media (min-width: 768px) {
-            section { 
-                padding: 100px 20px; 
-            }
-        }
+        section { padding: 60px 20px; }
+        @media (min-width: 768px) { section { padding: 100px 20px; } }
 
         /* --- STYLES DENAH 3D --- */
         #denah-canvas-container {
@@ -61,19 +63,11 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             background: #050505;
         }
-
         @media (min-width: 768px) {
-            #denah-canvas-container {
-                height: 500px;
-                border-radius: 30px;
-            }
+            #denah-canvas-container { height: 500px; border-radius: 30px; }
         }
-
         @media (min-width: 1024px) {
-            #denah-canvas-container {
-                height: 700px;
-                border-radius: 40px;
-            }
+            #denah-canvas-container { height: 700px; border-radius: 40px; }
         }
 
         .ui-panel-denah {
@@ -88,14 +82,8 @@
             border: 1px solid rgba(255,255,255,0.1);
             pointer-events: none;
         }
-
         @media (min-width: 768px) {
-            .ui-panel-denah {
-                top: 15px;
-                left: 20px;
-                padding: 15px 25px;
-                border-radius: 20px;
-            }
+            .ui-panel-denah { top: 15px; left: 20px; padding: 15px 25px; border-radius: 20px; }
         }
 
         #tooltip-denah {
@@ -114,16 +102,10 @@
             min-width: 200px;
             max-width: 280px;
         }
-
         @media (min-width: 768px) {
-            #tooltip-denah {
-                padding: 15px;
-                font-size: 13px;
-                min-width: 220px;
-                border-radius: 16px;
-            }
+            #tooltip-denah { padding: 15px; font-size: 13px; min-width: 220px; border-radius: 16px; }
         }
-        
+
         .dot { 
             display: inline-block; 
             width: 8px; 
@@ -131,13 +113,8 @@
             border-radius: 50%; 
             margin-right: 4px; 
         }
-
         @media (min-width: 768px) {
-            .dot {
-                width: 10px;
-                height: 10px;
-                margin-right: 5px;
-            }
+            .dot { width: 10px; height: 10px; margin-right: 5px; }
         }
 
         .bg-tersedia { background-color: #22c55e; }
@@ -151,7 +128,6 @@
         .mobile-text-lg { font-size: 1.125rem; }
         .mobile-text-xl { font-size: 1.25rem; }
         .mobile-text-2xl { font-size: 1.5rem; }
-
         @media (min-width: 768px) {
             .mobile-text-xs { font-size: 0.875rem; }
             .mobile-text-sm { font-size: 1rem; }
@@ -160,7 +136,6 @@
             .mobile-text-xl { font-size: 1.5rem; }
             .mobile-text-2xl { font-size: 1.875rem; }
         }
-
         @media (min-width: 1024px) {
             .mobile-text-2xl { font-size: 2.25rem; }
         }
@@ -169,36 +144,6 @@
         .touch-friendly {
             min-height: 44px;
             min-width: 44px;
-        }
-
-        /* Smooth scrolling for mobile */
-        html {
-            -webkit-overflow-scrolling: touch;
-        }
-
-        /* Prevent zoom on double tap */
-        * {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        /* Better image handling */
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Table mobile optimizations */
-        @media (max-width: 640px) {
-            .mobile-table-responsive {
-                display: block;
-                width: 100%;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-            
-            .mobile-table-responsive table {
-                min-width: 600px;
-            }
         }
 
         /* Status colors */
@@ -222,13 +167,13 @@
             </button>
             
             <!-- Desktop Menu -->
-            <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-gray-400">
-                <a href="#home" class="hover:text-white transition">Home</a>
-                <a href="#denah" class="hover:text-white transition">Denah</a>
-                <a href="#harga" class="hover:text-white transition">Harga</a>
-                <a href="#video" class="hover:text-white transition">Video</a>
-                <a href="#kontak" class="hover:text-white transition">Info & Pemasaran</a>
-            </div>
+		<div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-gray-400">
+    			<a href="#home"   onclick="fbq('track', 'ViewContent', {content_name: 'Menu Home'});">Home</a>
+    			<a href="#denah"  onclick="fbq('track', 'ViewContent', {content_name: 'Menu Denah'});">Denah</a>
+    			<a href="#harga"  onclick="fbq('track', 'ViewContent', {content_name: 'Menu Harga'});">Harga</a>
+    			<a href="#video"  onclick="fbq('track', 'ViewContent', {content_name: 'Menu Video'});">Video</a>
+    			<a href="#kontak" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Kontak'});">Info & Pemasaran</a>
+		</div>
             
             <button onclick="window.location.href='#harga'" class="hidden md:block bg-white text-black text-xs px-4 py-2 md:px-5 rounded-full font-bold touch-friendly">
                 DAPATKAN UNIT
@@ -241,14 +186,30 @@
                 <button id="mobileMenuClose" class="absolute top-6 right-6 text-white">
                     <i data-lucide="x" class="w-8 h-8"></i>
                 </button>
-                <a href="#home" class="mobile-menu-link text-white hover:text-indigo-400 transition">Home</a>
-                <a href="#denah" class="mobile-menu-link text-white hover:text-indigo-400 transition">Denah</a>
-                <a href="#harga" class="mobile-menu-link text-white hover:text-indigo-400 transition">Harga</a>
-                <a href="#video" class="mobile-menu-link text-white hover:text-indigo-400 transition">Video</a>
-                <a href="#kontak" class="mobile-menu-link text-white hover:text-indigo-400 transition">Info & Pemasaran</a>
-                <button onclick="window.location.href='#harga'" class="bg-white text-black px-6 py-3 rounded-full font-bold touch-friendly">
-                    DAPATKAN UNIT
-                </button>
+		<a href="#home" 
+   			onclick="fbq('track', 'ViewContent', {content_name: 'Menu Home'});"
+   			class="mobile-menu-link text-white hover:text-indigo-400 transition">Home</a>
+
+		<a href="#denah" 
+   			onclick="fbq('track', 'ViewContent', {content_name: 'Menu Denah'});"
+   			class="mobile-menu-link text-white hover:text-indigo-400 transition">Denah</a>
+
+		<a href="#harga" 
+   			onclick="fbq('track', 'ViewContent', {content_name: 'Menu Harga'});"
+   			class="mobile-menu-link text-white hover:text-indigo-400 transition">Harga</a>
+
+		<a href="#video" 
+   			onclick="fbq('track', 'ViewContent', {content_name: 'Menu Video'});"
+   			class="mobile-menu-link text-white hover:text-indigo-400 transition">Video</a>
+
+		<a href="#kontak" 
+   			onclick="fbq('track', 'ViewContent', {content_name: 'Menu Kontak'});"
+   			class="mobile-menu-link text-white hover:text-indigo-400 transition">Info & Pemasaran</a>
+
+		<button onclick="window.location.href='#harga'; fbq('track', 'InitiateCheckout', {content_name: 'Tombol Dapatkan Unit'});"
+        	class="bg-white text-black px-6 py-3 rounded-full font-bold touch-friendly">
+    			DAPATKAN UNIT
+		</button>
             </div>
         </div>
     </nav>
@@ -277,7 +238,7 @@
         </div>
 
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 px-4 md:px-4">
-	    <!-- Card 3 -->
+            <!-- Card 3 -->
             <div data-aos="fade-up" data-aos-delay="400" class="glass p-6 md:p-8 rounded-2xl md:rounded-[40px] flex flex-col justify-between border-white/5 hover:border-emerald-500/30 transition group">
                 <div>
                     <div class="bg-emerald-500/20 w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 transition-transform group-hover:scale-110">
@@ -293,30 +254,30 @@
                     <span>Lihat Denah</span>
                     <i data-lucide="arrow-right" class="w-3 h-3 md:w-4 md:h-4 transition-transform group-hover/btn:translate-x-1"></i>
                 </a>
-	        
-            </div>   
-	    <!-- Card 2 -->
+            </div>
+
+            <!-- Card 2 -->
             <div data-aos="fade-left" data-aos-delay="500" class="glass p-6 md:p-8 rounded-2xl md:rounded-[40px] flex flex-col items-center justify-center text-center border-white/5 bg-indigo-500/5">
                 <p class="mobile-text-xs md:text-sm font-bold text-indigo-400 uppercase tracking-widest mb-2 md:mb-4">Siap Memulai?</p>
                 <h3 class="mobile-text-lg md:text-xl font-bold mb-4 md:mb-8">Sudahkan anda hitung berapa Profit Anda?</h3>
-		<p class="mobile-text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-8">
-                        Kavling kebun Hydroponik anda tanami sayuran, Asumsi waktu panen per 35-40 hari, Hasil panen harga jual rata-rata Rp 2.000 per lubang untuk sayuran (Selada Romaine/Kale/Butterhead).
-                    </p>
-                <!-- Link yang terlihat seperti tombol -->
-<a href="https://beasiswaku2.github.io/beasiswaku2.github.io-kavling_Kebun_maoslor.github.io/#simulasi" 
-   target="_blank" 
-   style="display: inline-block; 
-          background-color: #4CAF50; 
-          color: white; 
-          padding: 12px 24px; 
-          text-decoration: none; 
-          border-radius: 4px; 
-          font-size: 16px;">
-    Buka Simulasi Profit Anda <br>(ROI >100% dalam 1 hahun)
-</a>
-            </div>         
+                <p class="mobile-text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-8">
+                    Kavling kebun Hydroponik anda tanami sayuran, Asumsi waktu panen per 35-40 hari, Hasil panen harga jual rata-rata Rp 2.000 per lubang untuk sayuran (Selada Romaine/Kale/Butterhead).
+                </p>
+                <a href="https://beasiswaku2.github.io/beasiswaku2.github.io-kavling_Kebun_maoslor.github.io/#simulasi" 
+   			target="_blank" 
+   			onclick="fbq('track', 'Lead', {content_name: 'Simulasi Profit'}); fbq('track', 'ViewContent', {content_name: 'Tombol Simulasi Profit'});"
+   			style="display: inline-block; 
+          		background-color: #4CAF50; 
+          		color: white; 
+          		padding: 12px 24px; 
+          		text-decoration: none; 
+          		border-radius: 4px; 
+          		font-size: 16px;">
+    			Buka Simulasi Profit Anda <br>(ROI >100% dalam 1 tahun)
+		</a>
+            </div>
 
-	    <!-- Card 1 -->
+            <!-- Card 1 -->
             <div data-aos="fade-right" data-aos-delay="300" class="glass p-6 md:p-8 rounded-2xl md:rounded-[40px] flex flex-col justify-between border-white/5 hover:border-indigo-500/30 transition">
                 <div>
                     <div class="bg-indigo-500/20 w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6">
@@ -326,16 +287,16 @@
                     <p class="mobile-text-sm md:text-base text-gray-400 leading-relaxed">
                         Ingin penghasilan tambahan? Jadilah mitra marketing kami dan dapatkan komisi menarik untuk setiap unit yang terjual.
                     </p>
-		    <p class="text-green-400 font-bold text-sm mb-4 uppercase tracking-wider">Daftar Jadi Mitra:</p>
-                        <a href="https://wa.me/6287788526410?text=Halo%20Admin,%20saya%20ingin%20tanya%20syarat%20menjadi%20marketing%20lepas/freelance%20Kavling%20Kebun%20Maoslor" 
-                           target="_blank"
-                           class="flex items-center justify-center gap-3 bg-white text-emerald-950 px-6 py-4 rounded-2xl text-xl font-bold hover:bg-emerald-50 transition shadow-xl active:scale-95">
-                            <i class="fas fa-user-plus text-xl"></i> Gabung Sekarang
-                        </a>
-                        <p class="mt-4 text-xs opacity-50 italic text-emerald-50">Terbuka untuk umum, tanpa ikatan waktu kerja</p>
+                    <p class="text-green-400 font-bold text-sm mb-4 uppercase tracking-wider">Daftar Jadi Mitra:</p>
+                    <a href="https://wa.me/6287788526410?text=Halo%20Admin,%20saya%20ingin%20tanya%20syarat%20menjadi%20marketing%20lepas/freelance%20Kavling%20Kebun%20Maoslor" 
+                       target="_blank"
+                       onclick="fbq('track', 'Contact', {content_name: 'Marketing Freelance'});"
+                       class="flex items-center justify-center gap-3 bg-white text-emerald-950 px-6 py-4 rounded-2xl text-xl font-bold hover:bg-emerald-50 transition shadow-xl active:scale-95">
+                        <i class="fas fa-user-plus text-xl"></i> Gabung Sekarang
+                    </a>
+                    <p class="mt-4 text-xs opacity-50 italic text-emerald-50">Terbuka untuk umum, tanpa ikatan waktu kerja</p>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -368,11 +329,12 @@
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center mb-4 md:mb-8 gap-3 md:gap-4">
-                <button onclick="downloadPDF()" class="bg-blue-600 hover:bg-green-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg md:rounded-xl font-bold mobile-text-sm md:text-base transition flex items-center gap-2 shadow-lg shadow-green--500/20 touch-friendly">
-                    <i data-lucide="file-text" class="w-3 h-3 md:w-4 md:h-4"></i> 
-                    <span class="hidden sm:inline">Download Daftar Harga (PDF)</span>
-                    <span class="sm:hidden">Download PDF</span>
-                </button>
+                <button onclick="downloadPDF(); fbq('track', 'AddToCart', {content_name: 'Download PDF Daftar Harga'});" 
+        	class="bg-blue-600 hover:bg-green-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg md:rounded-xl font-bold mobile-text-sm md:text-base transition flex items-center gap-2 shadow-lg shadow-green--500/20 touch-friendly">
+    		<i data-lucide="file-text" class="w-3 h-3 md:w-4 md:h-4"></i> 
+    		<span class="hidden sm:inline">Download Daftar Harga (PDF)</span>
+    		<span class="sm:hidden">Download PDF</span>
+		</button>
                 <div class="relative w-full md:w-64">
                     <i data-lucide="search" class="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 text-gray-500 w-3 h-3 md:w-4 md:h-4"></i>
                     <input type="text" id="searchUnit" placeholder="Cari nomor unit..." onkeyup="filterTable()" 
@@ -403,90 +365,76 @@
     </section>
 
     <!-- Mobile-optimized Video Section -->
-    <section id="video" class="bg-[#080808]">
-        <div class="max-w-7xl mx-auto px-4 md:px-6">
-            <div class="text-center mb-8 md:mb-16">
-                <h2 data-aos="fade-up" class="mobile-text-2xl md:text-4xl font-bold mb-2 md:mb-4">Video dan Peta Lokasi</h2>
-                <p data-aos="fade-up" data-aos-delay="100" class="mobile-text-sm md:text-base text-gray-500 px-4">
-                    Lihat cuplikan video lokasi dan Peta Lokasi Kavling Kebun Maoslor.
-                </p>
+<section id="video" class="bg-[#080808]">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+        <div class="text-center mb-8 md:mb-16">
+            <h2 data-aos="fade-up" class="mobile-text-2xl md:text-4xl font-bold mb-2 md:mb-4">Video dan Peta Lokasi</h2>
+            <p data-aos="fade-up" data-aos-delay="100" class="mobile-text-sm md:text-base text-gray-500 px-4">
+                Lihat cuplikan video lokasi dan Peta Lokasi Kavling Kebun Maoslor.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+            <!-- Video 1 -->
+            <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col gap-2 md:gap-4">
+                <div onclick="window.open('https://youtu.be/KAiCPSpSv00','_blank'); fbq('track', 'ViewContent', {content_name: 'Video Bidang 1'});"
+                     class="aspect-video glass rounded-2xl md:rounded-[30px] overflow-hidden border border-white/10 shadow-2xl relative group cursor-pointer">
+                    <img src="https://img.youtube.com/vi/KAiCPSpSv00/maxresdefault.jpg"
+                         class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                         alt="Thumbnail Video Bidang 1">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black">
+                            <i data-lucide="play" fill="currentColor" class="ml-0.5 md:ml-1 w-5 h-5 md:w-6 md:h-6"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-1 md:px-2">
+                    <h4 class="mobile-text-lg md:text-xl font-bold text-white">Video Shot Bidang 1</h4>
+                    <p class="mobile-text-xs md:text-sm text-gray-400">View Bidang 1 kavling terdiri dari 24 unit</p>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-                
-                <!-- Video 1 -->
-                <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col gap-2 md:gap-4">
-                    <div onclick="window.open('https://youtu.be/KAiCPSpSv00','_blank')" 
-                         class="aspect-video glass rounded-2xl md:rounded-[30px] overflow-hidden border border-white/10 shadow-2xl relative group cursor-pointer">
-                        
-                        <img src="https://img.youtube.com/vi/KAiCPSpSv00/maxresdefault.jpg" 
-                             class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" 
-                             alt="Thumbnail Video Bidang 1">
-
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black">
-                                <i data-lucide="play" fill="currentColor" class="ml-0.5 md:ml-1 w-5 h-5 md:w-6 md:h-6"></i>
-                            </div>
+            <!-- Peta Lokasi -->
+            <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col gap-2 md:gap-4">
+                <div onclick="window.open('peta lokasi.jpg','_blank'); fbq('track', 'ViewContent', {content_name: 'Peta Lokasi'});"
+                     class="aspect-video glass rounded-2xl md:rounded-[30px] overflow-hidden border border-white/10 shadow-2xl relative group cursor-pointer">
+                    <img src="peta lokasi.jpg"
+                         class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                         alt="Peta Lokasi Fasilitas Sekitar">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black">
+                            <i data-lucide="maximize" class="w-5 h-5 md:w-8 md:h-8"></i>
                         </div>
                     </div>
-                    
-                    <div class="px-1 md:px-2">
-                        <h4 class="mobile-text-lg md:text-xl font-bold text-white">Video Shot Bidang 1</h4>
-                        <p class="mobile-text-xs md:text-sm text-gray-400">View Bidang 1 kavling terdiri dari 24 unit</p>
+                    <div class="absolute top-2 md:top-4 right-2 md:right-4 bg-indigo-500 text-[8px] md:text-[10px] px-2 md:px-3 py-0.5 md:py-1 rounded-full font-bold shadow-lg">PETA LOKASI</div>
+                </div>
+                <div class="px-1 md:px-2">
+                    <h4 class="mobile-text-lg md:text-xl font-bold text-white">Fasilitas Sekitar Lokasi</h4>
+                    <p class="mobile-text-xs md:text-sm text-gray-400">Sekolah, pasar & akses transportasi</p>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col gap-2 md:gap-4 sm:col-span-2 lg:col-span-1">
+                <div onclick="window.open('https://youtu.be/su2vp0U5IAU','_blank'); fbq('track', 'ViewContent', {content_name: 'Video Bidang 2'});"
+                     class="aspect-video glass rounded-2xl md:rounded-[30px] overflow-hidden border border-white/10 shadow-2xl relative group cursor-pointer">
+                    <img src="https://img.youtube.com/vi/su2vp0U5IAU/maxresdefault.jpg"
+                         class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                         alt="Thumbnail Video Bidang 2">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black">
+                            <i data-lucide="play" fill="currentColor" class="ml-0.5 md:ml-1 w-5 h-5 md:w-6 md:h-6"></i>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Peta Lokasi -->
-                <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col gap-2 md:gap-4">
-                    <div onclick="window.open('peta lokasi.jpg','_blank')" 
-                         class="aspect-video glass rounded-2xl md:rounded-[30px] overflow-hidden border border-white/10 shadow-2xl relative group cursor-pointer">
-                        
-                        <img src="peta lokasi.jpg" 
-                             class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" 
-                             alt="Peta Lokasi Fasilitas Sekitar">
-
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black">
-                                <i data-lucide="maximize" class="w-5 h-5 md:w-8 md:h-8"></i>
-                            </div>
-                        </div>
-                        
-                        <div class="absolute top-2 md:top-4 right-2 md:right-4 bg-indigo-500 text-[8px] md:text-[10px] px-2 md:px-3 py-0.5 md:py-1 rounded-full font-bold shadow-lg">
-                            PETA LOKASI
-                        </div>
-                    </div>
-                    
-                    <div class="px-1 md:px-2">
-                        <h4 class="mobile-text-lg md:text-xl font-bold text-white">Fasilitas Sekitar Lokasi</h4>
-                        <p class="mobile-text-xs md:text-sm text-gray-400">Sekolah, pasar & akses transportasi</p>
-                    </div>
+                <div class="px-1 md:px-2">
+                    <h4 class="mobile-text-lg md:text-xl font-bold text-white">Video Shot Bidang 2</h4>
+                    <p class="mobile-text-xs md:text-sm text-gray-400">View udara Bidang 2 kavling terdiri dari 16 unit</p>
                 </div>
-
-                <!-- Video 2 -->
-                <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col gap-2 md:gap-4 sm:col-span-2 lg:col-span-1">
-                    <div onclick="window.open('https://youtu.be/su2vp0U5IAU','_blank')" 
-                         class="aspect-video glass rounded-2xl md:rounded-[30px] overflow-hidden border border-white/10 shadow-2xl relative group cursor-pointer">
-                        
-                        <img src="https://img.youtube.com/vi/su2vp0U5IAU/maxresdefault.jpg" 
-                             class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" 
-                             alt="Thumbnail Video Bidang 2">
-
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black">
-                                <i data-lucide="play" fill="currentColor" class="ml-0.5 md:ml-1 w-5 h-5 md:w-6 md:h-6"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="px-1 md:px-2">
-                        <h4 class="mobile-text-lg md:text-xl font-bold text-white">Video Shot Bidang 2</h4>
-                        <p class="mobile-text-xs md:text-sm text-gray-400">View udara Bidang 2 kavling terdiri dari 16 unit</p>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Mobile-optimized Kontak Section -->
     <section id="kontak" class="py-12 md:py-20 bg-indigo-600/5">
@@ -499,7 +447,6 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
-                
                 <!-- Marketing Resmi Card -->
                 <div data-aos="fade-right" class="glass p-6 md:p-10 rounded-2xl md:rounded-[40px] border-white/5 flex flex-col justify-between relative overflow-hidden">
                     <div>
@@ -525,6 +472,7 @@
 
                     <a href="https://wa.me/6287788526410?text=Halo%2C%20saya%20tertarik%20dengan%20kavling%20MaosLor" 
                        target="_blank" 
+                       onclick="fbq('track', 'Contact', {content_name: 'Chat Marketing'});"
                        class="flex items-center justify-center gap-2 md:gap-3 bg-[#22c55e] hover:bg-[#1aad4f] text-white px-4 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl font-bold mobile-text-sm md:text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-green-500/20 touch-friendly">
                         <i data-lucide="message-circle" class="w-4 h-4 md:w-5 md:h-5"></i>
                         <span>Chat Marketing via WhatsApp</span>
@@ -562,6 +510,7 @@
                     <div class="flex flex-col sm:flex-row gap-3 md:gap-4">
                         <a href="https://wa.me/6287788526410?text=Saya%20ingin%20bergabung%20menjadi%20mitra%20pemasaran%20Kavling%20MaosLor.%20Mohon%20informasi%20lengkap%20program%20marketing%20lepas%20dan%20ketentuan%20komisinya." 
                            target="_blank"
+                           onclick="fbq('track', 'Contact', {content_name: 'Ketentuan Program'});"
                            class="flex-1 flex items-center justify-center gap-1 md:gap-2 bg-slate-600 hover:bg-slate-700 text-white px-3 py-3 md:px-4 rounded-lg md:rounded-xl font-bold mobile-text-xs md:text-sm transition-all hover:scale-105 shadow-lg touch-friendly">
                             <i data-lucide="file-text" class="w-3 h-3 md:w-4 md:h-4"></i>
                             <span class="hidden sm:inline">Ketentuan Program</span>
@@ -569,6 +518,7 @@
                         </a>
                         <a href="https://wa.me/6287788526410?text=Saya%20ingin%20mendaftar%20sebagai%20mitra%20pemasaran%20Kavling%20MaosLor.%20Kirimkan%20formulir%20pendaftaran%20dan%20syarat-syaratnya." 
                            target="_blank"
+                           onclick="fbq('track', 'Contact', {content_name: 'Daftar Marketing'});"
                            class="flex-1 flex items-center justify-center gap-1 md:gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-3 md:px-4 rounded-lg md:rounded-xl font-bold mobile-text-xs md:text-sm transition-all hover:scale-105 shadow-lg shadow-indigo-500/20 touch-friendly">
                             <i data-lucide="user-plus" class="w-3 h-3 md:w-4 md:h-4"></i>
                             <span class="hidden sm:inline">Daftar Sekarang</span>
@@ -576,7 +526,6 @@
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -603,43 +552,43 @@
         const tooltip = document.getElementById('tooltip-denah');
 
         const dataTanah = [
-        { id: "30", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
-        { id: "27", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
-        { id: "24", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
-        { id: "21", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
-        { id: "18", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
-        { id: "15", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
-        { id: "13", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 45.000.000" },
-        { id: "11", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 44.000.000" },
-        { id: "9",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 43.000.000" },
-        { id: "7",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 42.000.000" },
-        { id: "5",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 41.000.000" },
-        { id: "3",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 40.000.000" },
-        { id: "1",  luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 36.000.000" },
-        { id: "1a", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 35.000.000" },
-        { id: "31", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
-        { id: "28", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
-        { id: "25", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
-        { id: "22", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
-        { id: "19", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
-        { id: "16", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
-        { id: "14", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 45.000.000" },
-        { id: "12", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 44.000.000" },
-        { id: "10", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 43.000.000" },
-        { id: "8",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 42.000.000" },
-        { id: "6",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 41.000.000" },
-        { id: "4",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 40.000.000" },
-        { id: "2",  luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 36.000.000" },
-        { id: "2a", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 35.000.000" },
-        { id: "32", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
-        { id: "29", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
-        { id: "26", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
-        { id: "23", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
-        { id: "20", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
-        { id: "17", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
-        { id: "35", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 43.000.000" },
-        { id: "34", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 44.000.000" },
-        { id: "33", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 45.000.000" }
+            { id: "30", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
+            { id: "27", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
+            { id: "24", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
+            { id: "21", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
+            { id: "18", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
+            { id: "15", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
+            { id: "13", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 45.000.000" },
+            { id: "11", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 44.000.000" },
+            { id: "9",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 43.000.000" },
+            { id: "7",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 42.000.000" },
+            { id: "5",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 41.000.000" },
+            { id: "3",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 40.000.000" },
+            { id: "1",  luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 36.000.000" },
+            { id: "1a", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 35.000.000" },
+            { id: "31", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
+            { id: "28", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
+            { id: "25", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
+            { id: "22", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
+            { id: "19", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
+            { id: "16", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
+            { id: "14", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 45.000.000" },
+            { id: "12", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 44.000.000" },
+            { id: "10", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 43.000.000" },
+            { id: "8",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 42.000.000" },
+            { id: "6",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 41.000.000" },
+            { id: "4",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 40.000.000" },
+            { id: "2",  luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 36.000.000" },
+            { id: "2a", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 35.000.000" },
+            { id: "32", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
+            { id: "29", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
+            { id: "26", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
+            { id: "23", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
+            { id: "20", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
+            { id: "17", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
+            { id: "35", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 43.000.000" },
+            { id: "34", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 44.000.000" },
+            { id: "33", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 45.000.000" }
         ];
 
         const statusColors = { "Tersedia": "#22c55e", "Booking": "#eab308", "Terjual": "#ef4444" };
@@ -667,11 +616,12 @@
         let hoveredObject = null;
         const plots = [];
 
-        // --- KLIK INTERAKSI WA ---
+        // --- KLIK INTERAKSI WA --- 
         container.addEventListener('click', () => {
             if (hoveredObject) {
                 const d = hoveredObject.userData;
                 if (d.status === "Tersedia") {
+                    fbq('track', 'Contact', {content_name: 'Unit 3D ' + d.id}); // FB PIXEL TRACKING
                     const noWA = "6287788526410";
                     const pesan = `Halo Admin Maoslor, saya tertarik dengan UNIT ${d.id} yang berstatus TERSEDIA. Bisa minta info lebih lanjut?`;
                     const urlWA = `https://wa.me/${noWA}?text=${encodeURIComponent(pesan)}`;
@@ -739,7 +689,7 @@
             group.add(e);
             const w = new THREE.Mesh(coneGeo, matWhite); 
             w.position.x = -1.2; 
-            w.rotation.z = Math.PI/2; 
+                        w.rotation.z = Math.PI/2; 
             group.add(w);
             group.add(makeCompassLabel("U", new THREE.Vector3(0, 0, -3.5)));
             group.add(makeCompassLabel("S", new THREE.Vector3(0, 0, 3.5)));
@@ -807,7 +757,6 @@
                 tooltip.style.left = (touch.clientX + 20) + 'px';
                 tooltip.style.top = (touch.clientY + 20) + 'px';
                 
-                // Auto-hide tooltip after 3 seconds on mobile
                 clearTimeout(touchTimeout);
                 touchTimeout = setTimeout(() => {
                     tooltip.style.display = 'none';
@@ -870,42 +819,42 @@
         // Data Lengkap Unit Tanah - DIPERBAIKI
         const dataTanahTable = [
             { id: "30", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
-        { id: "27", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
-        { id: "24", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
-        { id: "21", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
-        { id: "18", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
-        { id: "15", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
-        { id: "13", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 45.000.000" },
-        { id: "11", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 44.000.000" },
-        { id: "9",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 43.000.000" },
-        { id: "7",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 42.000.000" },
-        { id: "5",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 41.000.000" },
-        { id: "3",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 40.000.000" },
-        { id: "1",  luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 36.000.000" },
-        { id: "1a", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 35.000.000" },
-        { id: "31", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
-        { id: "28", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
-        { id: "25", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
-        { id: "22", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
-        { id: "19", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
-        { id: "16", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
-        { id: "14", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 45.000.000" },
-        { id: "12", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 44.000.000" },
-        { id: "10", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 43.000.000" },
-        { id: "8",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 42.000.000" },
-        { id: "6",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 41.000.000" },
-        { id: "4",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 40.000.000" },
-        { id: "2",  luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 36.000.000" },
-        { id: "2a", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 35.000.000" },
-        { id: "32", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
-        { id: "29", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
-        { id: "26", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
-        { id: "23", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
-        { id: "20", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
-        { id: "17", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
-        { id: "35", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 43.000.000" },
-        { id: "34", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 44.000.000" },
-        { id: "33", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 45.000.000" }
+            { id: "27", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
+            { id: "24", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
+            { id: "21", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
+            { id: "18", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
+            { id: "15", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
+            { id: "13", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 45.000.000" },
+            { id: "11", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 44.000.000" },
+            { id: "9",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 43.000.000" },
+            { id: "7",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 42.000.000" },
+            { id: "5",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 41.000.000" },
+            { id: "3",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 40.000.000" },
+            { id: "1",  luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 36.000.000" },
+            { id: "1a", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 35.000.000" },
+            { id: "31", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
+            { id: "28", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
+            { id: "25", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
+            { id: "22", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
+            { id: "19", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
+            { id: "16", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
+            { id: "14", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 45.000.000" },
+            { id: "12", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 44.000.000" },
+            { id: "10", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 43.000.000" },
+            { id: "8",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 42.000.000" },
+            { id: "6",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 41.000.000" },
+            { id: "4",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 40.000.000" },
+            { id: "2",  luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 36.000.000" },
+            { id: "2a", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 35.000.000" },
+            { id: "32", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
+            { id: "29", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
+            { id: "26", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
+            { id: "23", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
+            { id: "20", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
+            { id: "17", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
+            { id: "35", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 43.000.000" },
+            { id: "34", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 44.000.000" },
+            { id: "33", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 45.000.000" }
         ];
 
         // Fungsi Render Tabel ke HTML - DIPERBAIKI
@@ -919,7 +868,8 @@
                 
                 body.innerHTML = dataTanahTable.map(d => {
                     const statusColor = d.status === "Tersedia" ? "status-tersedia" : (d.status === "Booking" ? "status-booking" : "status-terjual");
-                    const waLink = `https://wa.me/6287788526410?text=${encodeURIComponent('Halo Admin Maoslor, saya ingin bertanya tentang Unit ' + d.id + ' yang berstatus ' + d.status)}`;
+                    const waLink = `https://wa.me/6287788526410?text=${encodeURIComponent('Halo Admin Maoslor, saya tertarik dengan UNIT ' + d.id + ' yang berstatus ' + d.status)}`;
+                    const trackingEvent = `fbq('track', 'Contact', {content_name: 'Unit ${d.id}'});`;
                     
                     return `
                         <tr class="hover:bg-white/5 transition">
@@ -929,7 +879,10 @@
                             <td class="p-3 md:p-5 font-bold ${statusColor}">${d.status}</td>
                             <td class="p-3 md:p-5 font-semibold text-white">${d.harga}</td>
                             <td class="p-3 md:p-5 text-center">
-                                <a href="${waLink}" target="_blank" class="bg-indigo-500/10 hover:bg-indigo-500 text-indigo-400 hover:text-white px-3 py-1 md:px-4 md:py-2 rounded-md md:rounded-lg text-xs md:text-sm font-bold transition flex items-center justify-center gap-1 md:gap-2">
+                                <a href="${waLink}" 
+                                   target="_blank" 
+                                   onclick="${trackingEvent}"
+                                   class="bg-indigo-500/10 hover:bg-indigo-500 text-indigo-400 hover:text-white px-3 py-1 md:px-4 md:py-2 rounded-md md:rounded-lg text-xs md:text-sm font-bold transition flex items-center justify-center gap-1 md:gap-2">
                                     <i data-lucide="message-circle" class="w-3 h-3 md:w-4 md:h-4"></i> 
                                     <span class="hidden sm:inline">Cek Unit</span>
                                     <span class="sm:hidden">Chat</span>
