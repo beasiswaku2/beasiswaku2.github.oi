@@ -3,8 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kavling Kebun Maoslor</title>
-
+    <title>Kavling Kebun Maoslor - Investasi Kebun Hidroponik Cilacap | Harga Mulai 35jt</title>
+    
+    <!-- Meta Description & Keywords -->
+    <meta name="description" content="Kavling Kebun Maoslor - Investasi kavling kebun hidroponik di Maos, Cilacap dengan harga mulai Rp 35 juta. Akses jalan mudah, dekat fasilitas umum, ROI >100% dalam 1 tahun. Luas 150m², cocok untuk tanaman hidroponik selada, kale, butterhead. Survey lokasi gratis!">
+    <meta name="keywords" content="kavling kebun maoslor, tanah kavling cilacap, investasi kebun hidroponik, kavling murah maos, jual tanah kebun cilacap, properti pertanian jawa tengah, kavling maos, tanah dijual maoslor, investasi pertanian cilacap, kebun hidroponik jawa tengah">
+    <meta name="author" content="Kavling Kebun Maoslor">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- ✅ GANTI 1: Canonical URL -->
+    <link rel="canonical" href="https://beasiswaku2.github.io/beasiswaku2.github.io/#denah" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Kavling Kebun Maoslor">
+    <meta property="og:title" content="Kavling Kebun Maoslor - Investasi Kebun Hidroponik Cilacap">
+    <meta property="og:description" content="Kavling kebun hidroponik strategis di Maos, Cilacap. Harga terjangkau mulai Rp 35 jt, dekat jalan desa & fasilitas umum. ROI >100% dalam setahun!">
+    <meta property="og:image" content="https://img.youtube.com/vi/KAiCPSpSv00/maxresdefault.jpg">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="720">
+    <meta property="og:image:alt" content="Denah Kavling Kebun Maoslor Cilacap">
+    
+    <!-- ✅ GANTI 2: Open Graph URL -->
+    <meta property="og:url" content="https://beasiswaku2.github.io/beasiswaku2.github.io/#denah">
+    
+    <meta property="og:locale" content="id_ID">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kavling Kebun Maoslor - Investasi Kebun Hidroponik Cilacap">
+    <meta name="twitter:description" content="Kavling kebun hidroponik di Maos, Cilacap. Harga mulai Rp 35 juta. Akses strategis dekat jalan desa.">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/KAiCPSpSv00/maxresdefault.jpg">
+    <meta name="twitter:image:alt" content="Kavling Kebun Maoslor Maos Cilacap">
+    
+    <!-- Geo Tagging untuk Local SEO -->
+    <meta name="geo.region" content="ID-JT">
+    <meta name="geo.placename" content="Maos, Cilacap, Jawa Tengah">
+    <meta name="geo.position" content="-7.592451;109.142820">
+    <meta name="ICBM" content="-7.592451, 109.142820">
+    
+    <!-- Preconnect untuk Performance -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://connect.facebook.net">
+    
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -20,6 +63,7 @@
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=908178125102704&ev=PageView&noscript=1"
+    alt="Facebook Pixel"
     /></noscript>
     <!-- End Meta Pixel Code -->
     
@@ -30,7 +74,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Plus+Jakarta+Sans', sans-serif;
             background-color: #050505;
             color: white;
             scroll-behavior: smooth;
@@ -150,30 +194,266 @@
         .status-tersedia { color: #22c55e; }
         .status-booking { color: #eab308; }
         .status-terjual { color: #ef4444; }
+        
+        /* Breadcrumb styles */
+        .breadcrumb-item:not(:last-child)::after {
+            content: "/";
+            margin: 0 8px;
+            color: rgba(255,255,255,0.3);
+        }
+        
+        /* FAQ Details styling */
+        details > summary {
+            list-style: none;
+            cursor: pointer;
+            position: relative;
+            padding-right: 30px;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details > summary::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        details[open] > summary::after {
+            content: "−";
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+            min-width: 200px;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .dropdown-trigger:hover .dropdown-menu,
+        .dropdown-trigger:focus-within .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: block;
+            padding: 12px 16px;
+            color: #9ca3af;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.2s;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .dropdown-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+        }
+        
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: #0a0a0a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        @media (max-width: 640px) {
+            .modal-content {
+                border-radius: 16px;
+                max-height: 95vh;
+            }
+        }
     </style>
+    
+    <!-- ✅ GANTI 3: Schema RealEstateAgent & LocalBusiness URL -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["RealEstateAgent", "LocalBusiness"],
+      "name": "Kavling Kebun Maoslor",
+      "description": "Jual kavling kebun hidroponik di Maos Cilacap dengan harga terjangkau mulai Rp 35 juta. Tersedia 37 unit kavling siap bangun dengan sistem hidroponik modern.",
+      "image": "https://img.youtube.com/vi/KAiCPSpSv00/maxresdefault.jpg",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Maoslor, Maos",
+        "addressLocality": "Maos",
+        "addressRegion": "Jawa Tengah",
+        "postalCode": "53272",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-7.592451",
+        "longitude": "109.142820"
+      },
+      "telephone": "+62-877-8852-6410",
+      "whatsapp": "+62-877-8852-6410",
+      "url": "https://beasiswaku2.github.io/beasiswaku2.github.io/#denah",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Cilacap, Jawa Tengah"
+      },
+      "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "RealEstateListing",
+          "name": "Kavling Kebun Hidroponik Maoslor",
+          "description": "Kavling 150m² untuk kebun hidroponik",
+          "priceRange": "Rp 35.000.000 - Rp 62.000.000",
+          "priceCurrency": "IDR"
+        }
+      }
+    }
+    </script>
+    
+    <!-- Structured Data: FAQ Page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Berapa harga kavling Kebun Maoslor per unit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Harga kavling Kebun Maoslor mulai dari Rp 35.000.000 untuk unit standar hingga Rp 62.000.000 untuk unit strategis dekat jalan desa. Semua unit memiliki luas 150m² dengan dimensi 15m x 10m."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah lokasi Kavling Kebun Maoslor strategis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya, Kavling Kebun Maoslor terletak di Maos, Cilacap, Jawa Tengah dengan akses jalan desa yang mudah dijangkau. Lokasi dekat dengan fasilitas umum seperti sekolah, pasar, dan akses transportasi umum. Koordinat lokasi: -7.592451, 109.142820."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah bisa membayar kavling dengan cara dicicil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya, Kavling Kebun Maoslor menyediakan opsi pembayaran cicilan dengan skema yang fleksibel. Anda bisa menghubungi marketing kami di nomor 0877-8852-6410 untuk informasi lengkap mengenai skema cicilan dan DP minimal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tanaman apa yang cocok ditanam di kavling ini?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kavling ini optimal untuk sistem hidroponik modern. Tanaman yang recommended adalah Selada Romaine, Kale, dan Butterhead dengan asumsi waktu panen 35-40 hari dan estimasi harga jual Rp 2.000 per lubang. ROI bisa mencapai >100% dalam satu tahun."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara menjadi mitra marketing freelance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Program marketing lepas (freelance) Kavling Kebun Maoslor terbuka untuk umum tanpa ikatan waktu kerja. Mitra mendapatkan komisi menarik per unit terjual, akses ke website dengan denah 3D interaktif, dan alat bantu pemasaran lengkap. Daftar melalui WhatsApp 0877-8852-6410."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- ✅ GANTI 4 & 5: Schema WebSite URL dan SearchAction Target -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Kavling Kebun Maoslor",
+      "url": "https://beasiswaku2.github.io/beasiswaku2.github.io/#denah",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://beasiswaku2.github.io/beasiswaku2.github.io/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 </head>
 <body>
 
     <!-- Mobile-optimized Navigation -->
     <nav class="fixed w-full z-[100] px-4 py-4 md:px-6 md:py-6">
         <div class="max-w-6xl mx-auto flex justify-between items-center glass px-4 py-3 md:px-8 md:py-4 rounded-2xl md:rounded-3xl">
-            <div class="text-lg md:text-xl font-extrabold tracking-tighter">
+            <div class="text-lg md:text-xl font-extrabold tracking-tighter" itemprop="name">
                 KAVLING KEBUN <span class="text-indigo-500">MAOSLOR</span>
             </div>
             
             <!-- Mobile Menu Button -->
-            <button id="mobileMenuButton" class="md:hidden touch-friendly text-white">
+            <button id="mobileMenuButton" class="md:hidden touch-friendly text-white" aria-label="Buka Menu Mobile">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
             
             <!-- Desktop Menu -->
-		<div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-gray-400">
-    			<a href="#home"   onclick="fbq('track', 'ViewContent', {content_name: 'Menu Home'});">Home</a>
-    			<a href="#denah"  onclick="fbq('track', 'ViewContent', {content_name: 'Menu Denah'});">Denah</a>
-    			<a href="#harga"  onclick="fbq('track', 'ViewContent', {content_name: 'Menu Harga'});">Harga</a>
-    			<a href="#video"  onclick="fbq('track', 'ViewContent', {content_name: 'Menu Video'});">Video</a>
-    			<a href="#kontak" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Kontak'});">Info & Pemasaran</a>
-		</div>
+            <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-gray-400 items-center">
+                <a href="#home" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Home'});">Home</a>
+                <a href="#denah" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Denah'});">Denah</a>
+                <a href="#harga" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Harga'});">Harga</a>
+                <a href="#video" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Video'});">Video</a>
+                <a href="#faq" onclick="fbq('track', 'ViewContent', {content_name: 'Menu FAQ'});">FAQ</a>
+                <a href="#kontak" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Kontak'});">Info & Pemasaran</a>
+            </div>
             
             <button onclick="window.location.href='#harga'" class="hidden md:block bg-white text-black text-xs px-4 py-2 md:px-5 rounded-full font-bold touch-friendly">
                 DAPATKAN UNIT
@@ -183,35 +463,36 @@
         <!-- Mobile Menu Panel -->
         <div id="mobileMenuPanel" class="md:hidden fixed inset-0 bg-black/95 backdrop-blur-lg z-[99] hidden">
             <div class="flex flex-col items-center justify-center h-full gap-8 text-lg">
-                <button id="mobileMenuClose" class="absolute top-6 right-6 text-white">
+                <button id="mobileMenuClose" class="absolute top-6 right-6 text-white" aria-label="Tutup Menu">
                     <i data-lucide="x" class="w-8 h-8"></i>
                 </button>
-		<a href="#home" 
-   			onclick="fbq('track', 'ViewContent', {content_name: 'Menu Home'});"
-   			class="mobile-menu-link text-white hover:text-indigo-400 transition">Home</a>
+                <a href="#home" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Home'});" class="mobile-menu-link text-white hover:text-indigo-400 transition">Home</a>
+                <a href="#denah" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Denah'});" class="mobile-menu-link text-white hover:text-indigo-400 transition">Denah</a>
+                <a href="#harga" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Harga'});" class="mobile-menu-link text-white hover:text-indigo-400 transition">Harga</a>
+                                
+                <a href="#video" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Video'});" class="mobile-menu-link text-white hover:text-indigo-400 transition">Video</a>
+                <a href="#faq" onclick="fbq('track', 'ViewContent', {content_name: 'Menu FAQ'});" class="mobile-menu-link text-white hover:text-indigo-400 transition">FAQ</a>
+                <a href="#kontak" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Kontak'});" class="mobile-menu-link text-white hover:text-indigo-400 transition">Info & Pemasaran</a>
 
-		<a href="#denah" 
-   			onclick="fbq('track', 'ViewContent', {content_name: 'Menu Denah'});"
-   			class="mobile-menu-link text-white hover:text-indigo-400 transition">Denah</a>
-
-		<a href="#harga" 
-   			onclick="fbq('track', 'ViewContent', {content_name: 'Menu Harga'});"
-   			class="mobile-menu-link text-white hover:text-indigo-400 transition">Harga</a>
-
-		<a href="#video" 
-   			onclick="fbq('track', 'ViewContent', {content_name: 'Menu Video'});"
-   			class="mobile-menu-link text-white hover:text-indigo-400 transition">Video</a>
-
-		<a href="#kontak" 
-   			onclick="fbq('track', 'ViewContent', {content_name: 'Menu Kontak'});"
-   			class="mobile-menu-link text-white hover:text-indigo-400 transition">Info & Pemasaran</a>
-
-		<button onclick="window.location.href='#harga'; fbq('track', 'InitiateCheckout', {content_name: 'Tombol Dapatkan Unit'});"
-        	class="bg-white text-black px-6 py-3 rounded-full font-bold touch-friendly">
-    			DAPATKAN UNIT
-		</button>
+                <button onclick="window.location.href='#harga'; fbq('track', 'InitiateCheckout', {content_name: 'Tombol Dapatkan Unit'});" class="bg-white text-black px-6 py-3 rounded-full font-bold touch-friendly">
+                    DAPATKAN UNIT
+                </button>
             </div>
         </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation for SEO -->
+    <nav aria-label="breadcrumb" class="pt-24 pb-2 px-4 text-xs text-gray-500 hidden md:block">
+        <ol class="flex max-w-6xl mx-auto" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a href="#" itemprop="item"><span itemprop="name">Home</span></a>
+                <meta itemprop="position" content="1" />
+            </li>
+            <li class="breadcrumb-item text-white" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span itemprop="name">Kavling Kebun Maoslor Cilacap</span>
+                <meta itemprop="position" content="2" />
+            </li>
+        </ol>
     </nav>
 
     <div id="tooltip-denah">
@@ -227,13 +508,14 @@
     </div>
 
     <!-- Mobile-optimized Hero Section -->
-    <section id="home" class="min-h-screen flex flex-col items-center justify-center py-16 md:py-20">
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center py-16 md:py-20" itemscope itemtype="https://schema.org/RealEstateListing">
+        <meta itemprop="name" content="Kavling Kebun Maoslor" />
         <div class="text-center mb-8 md:mb-8 px-4">
-            <h1 data-aos="fade-up" class="mobile-text-2xl md:text-4xl lg:text-6xl font-extrabold mb-2 md:mb-4 text-gradient">
+            <h1 data-aos="fade-up" class="mobile-text-2xl md:text-4xl lg:text-6xl font-extrabold mb-2 md:mb-4 text-gradient" itemprop="description">
                 Kavling Kebun Maoslor
             </h1>
             <p data-aos="fade-up" data-aos-delay="200" class="mobile-text-sm md:text-base text-gray-400 max-w-lg md:max-w-xl mx-auto px-2">
-                Kavling kebun Hydroponik harga masih terjangkau.
+                Kavling kebun Hydroponik harga masih terjangkau di Maoslor, Cilacap.
             </p>
         </div>
 
@@ -244,14 +526,14 @@
                     <div class="bg-emerald-500/20 w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 transition-transform group-hover:scale-110">
                         <i data-lucide="sprout" class="text-emerald-400 w-5 h-5 md:w-6 md:h-6"></i>
                     </div>
-                    <h3 class="mobile-text-xl md:text-2xl font-bold mb-2 md:mb-4">Investasi Kavling Kebun Hydroponik</h3>
+                    <h2 class="mobile-text-xl md:text-2xl font-bold mb-2 md:mb-4">Investasi Kavling Kebun Hydroponik</h2>
                     <p class="mobile-text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-8">
                         Kavling kebun Hydroponik di Maoslor dengan akses jalan mudah, akses fasilitas umum yang mudah dan dekat.<br>Dapat ditanami tanaman dengan cara Hydroponik yang menguntungkan
                     </p>
                 </div>
 
                 <a href="#denah" class="flex items-center gap-2 text-emerald-400 mobile-text-sm md:text-base font-bold hover:text-emerald-300 transition-all group/btn w-fit">
-                    <span>Lihat Denah</span>
+                    <span>Lihat Denah 3D</span>
                     <i data-lucide="arrow-right" class="w-3 h-3 md:w-4 md:h-4 transition-transform group-hover/btn:translate-x-1"></i>
                 </a>
             </div>
@@ -264,17 +546,18 @@
                     Kavling kebun Hydroponik anda tanami sayuran, Asumsi waktu panen per 35-40 hari, Hasil panen harga jual rata-rata Rp 2.000 per lubang untuk sayuran (Selada Romaine/Kale/Butterhead).
                 </p>
                 <a href="https://beasiswaku2.github.io/beasiswaku2.github.io-kavling_Kebun_maoslor.github.io/#simulasi" 
-   			target="_blank" 
-   			onclick="fbq('track', 'Lead', {content_name: 'Simulasi Profit'}); fbq('track', 'ViewContent', {content_name: 'Tombol Simulasi Profit'});"
-   			style="display: inline-block; 
-          		background-color: #4CAF50; 
-          		color: white; 
-          		padding: 12px 24px; 
-          		text-decoration: none; 
-          		border-radius: 4px; 
-          		font-size: 16px;">
-    			Buka Simulasi Profit Anda <br>(ROI >100% dalam 1 tahun)
-		</a>
+                   target="_blank" 
+                   onclick="fbq('track', 'Lead', {content_name: 'Simulasi Profit'}); fbq('track', 'ViewContent', {content_name: 'Tombol Simulasi Profit'});"
+                   style="display: inline-block; 
+                   background-color: #4CAF50; 
+                   color: white; 
+                   padding: 12px 24px; 
+                   text-decoration: none; 
+                   border-radius: 4px; 
+                   font-size: 16px;"
+                   class="hover:bg-green-600 transition touch-friendly">
+                    Buka Simulasi Profit Anda <br>(ROI >100% dalam 1 tahun)
+                </a>
             </div>
 
             <!-- Card 1 -->
@@ -287,12 +570,12 @@
                     <p class="mobile-text-sm md:text-base text-gray-400 leading-relaxed">
                         Ingin penghasilan tambahan? Jadilah mitra marketing kami dan dapatkan komisi menarik untuk setiap unit yang terjual.
                     </p>
-                    <p class="text-green-400 font-bold text-sm mb-4 uppercase tracking-wider">Daftar Jadi Mitra:</p>
+                    <p class="text-green-400 font-bold text-sm mb-4 uppercase tracking-wider mt-4">Daftar Jadi Mitra:</p>
                     <a href="https://wa.me/6287788526410?text=Halo%20Admin,%20saya%20ingin%20tanya%20syarat%20menjadi%20marketing%20lepas/freelance%20Kavling%20Kebun%20Maoslor" 
                        target="_blank"
                        onclick="fbq('track', 'Contact', {content_name: 'Marketing Freelance'});"
-                       class="flex items-center justify-center gap-3 bg-white text-emerald-950 px-6 py-4 rounded-2xl text-xl font-bold hover:bg-emerald-50 transition shadow-xl active:scale-95">
-                        <i class="fas fa-user-plus text-xl"></i> Gabung Sekarang
+                       class="flex items-center justify-center gap-3 bg-white text-emerald-950 px-6 py-4 rounded-2xl text-xl font-bold hover:bg-emerald-50 transition shadow-xl active:scale-95 touch-friendly">
+                        <i data-lucide="user-plus" class="w-6 h-6"></i> Gabung Sekarang
                     </a>
                     <p class="mt-4 text-xs opacity-50 italic text-emerald-50">Terbuka untuk umum, tanpa ikatan waktu kerja</p>
                 </div>
@@ -303,7 +586,8 @@
     <!-- Mobile-optimized Denah Section -->
     <section id="denah" class="bg-[#080808]">
         <div class="max-w-6xl mx-auto px-4">
-            <div data-aos="zoom-in" id="denah-canvas-container">
+            
+            <div data-aos="zoom-in" id="denah-canvas-container" role="img" aria-label="Denah 3D Interaktif Kavling Kebun Maoslor dengan 37 unit">
                 <div class="ui-panel-denah">
                     <div class="flex gap-2 md:gap-4 mt-1 md:mt-2 mobile-text-xs md:text-[10px] uppercase tracking-widest font-bold">
                         <span class="flex items-center"><span class="dot bg-tersedia"></span> Tersedia</span>
@@ -322,19 +606,19 @@
     <section id="harga" class="py-12 md:py-20">
         <div class="max-w-6xl mx-auto px-4 md:px-6">
             <div class="text-center mb-8 md:mb-12">
-                <h2 data-aos="fade-up" class="mobile-text-2xl md:text-4xl font-bold mb-2 md:mb-4 text-gradient">Daftar Harga Per Unit</h2>
+                <h2 data-aos="fade-up" class="mobile-text-2xl md:text-4xl font-bold mb-2 md:mb-4 text-gradient">Daftar Harga Per Unit Kavling Kebun Maoslor</h2>
                 <p data-aos="fade-up" data-aos-delay="100" class="mobile-text-sm md:text-base text-gray-400 px-4">
-                    Pilih unit impian Anda. Klik tombol "Cek Unit" untuk konsultasi langsung via WhatsApp.
+                    Pilih unit impian Anda. Klik tombol "Simulasi" untuk melihat skema pembayaran cicilan.
                 </p>
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center mb-4 md:mb-8 gap-3 md:gap-4">
                 <button onclick="downloadPDF(); fbq('track', 'AddToCart', {content_name: 'Download PDF Daftar Harga'});" 
-        	class="bg-blue-600 hover:bg-green-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg md:rounded-xl font-bold mobile-text-sm md:text-base transition flex items-center gap-2 shadow-lg shadow-green--500/20 touch-friendly">
-    		<i data-lucide="file-text" class="w-3 h-3 md:w-4 md:h-4"></i> 
-    		<span class="hidden sm:inline">Download Daftar Harga (PDF)</span>
-    		<span class="sm:hidden">Download PDF</span>
-		</button>
+                    class="bg-blue-600 hover:bg-green-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg md:rounded-xl font-bold mobile-text-sm md:text-base transition flex items-center gap-2 shadow-lg shadow-green--500/20 touch-friendly">
+                    <i data-lucide="file-text" class="w-3 h-3 md:w-4 md:h-4"></i> 
+                    <span class="hidden sm:inline">Download Daftar Harga (PDF)</span>
+                    <span class="sm:hidden">Download PDF</span>
+                </button>
                 <div class="relative w-full md:w-64">
                     <i data-lucide="search" class="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 text-gray-500 w-3 h-3 md:w-4 md:h-4"></i>
                     <input type="text" id="searchUnit" placeholder="Cari nomor unit..." onkeyup="filterTable()" 
@@ -364,103 +648,252 @@
         </div>
     </section>
 
-    <!-- Mobile-optimized Video Section -->
-<section id="video" class="bg-[#080808]">
-    <div class="max-w-7xl mx-auto px-4 md:px-6">
-        <div class="text-center mb-8 md:mb-16">
-            <h2 data-aos="fade-up" class="mobile-text-2xl md:text-4xl font-bold mb-2 md:mb-4">Video dan Peta Lokasi</h2>
-            <p data-aos="fade-up" data-aos-delay="100" class="mobile-text-sm md:text-base text-gray-500 px-4">
-                Lihat cuplikan video lokasi dan Peta Lokasi Kavling Kebun Maoslor.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-            <!-- Video 1 -->
-            <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col gap-2 md:gap-4">
-                <div onclick="window.open('https://youtu.be/KAiCPSpSv00','_blank'); fbq('track', 'ViewContent', {content_name: 'Video Bidang 1'});"
-                     class="aspect-video glass rounded-2xl md:rounded-[30px] overflow-hidden border border-white/10 shadow-2xl relative group cursor-pointer">
-                    <img src="https://img.youtube.com/vi/KAiCPSpSv00/maxresdefault.jpg"
-                         class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
-                         alt="Thumbnail Video Bidang 1">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black">
-                            <i data-lucide="play" fill="currentColor" class="ml-0.5 md:ml-1 w-5 h-5 md:w-6 md:h-6"></i>
-                        </div>
-                    </div>
+    <!-- Modal Simulasi Kredit - Format Baru Perbandingan 1 Tahun vs 2 Tahun -->
+    <div id="simulationModal" class="modal-overlay">
+        <div class="modal-content">
+            <!-- Header -->
+            <div class="sticky top-0 bg-[#0a0a0a] border-b border-white/10 p-4 md:p-6 flex justify-between items-center z-10">
+                <div>
+                    <h3 class="text-lg md:text-2xl font-bold text-white">Simulasi Pembayaran</h3>
+                    <p class="text-xs md:text-sm text-gray-400 mt-1" id="modalUnitInfo">Unit -</p>
                 </div>
-                <div class="px-1 md:px-2">
-                    <h4 class="mobile-text-lg md:text-xl font-bold text-white">Video Shot Bidang 1</h4>
-                    <p class="mobile-text-xs md:text-sm text-gray-400">View Bidang 1 kavling terdiri dari 24 unit</p>
+                <button onclick="closeSimulationModal()" class="touch-friendly p-2 hover:bg-white/10 rounded-full transition">
+                    <i data-lucide="x" class="w-5 h-5 md:w-6 md:h-6 text-gray-400"></i>
+                </button>
+            </div>
+            
+            <!-- Content -->
+            <div class="p-4 md:p-6 space-y-4">
+                <!-- Info Booking Fee -->
+                <div class="bg-blue-500/10 border border-blue-500/20 rounded-lg p-3 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="ticket" class="w-4 h-4 text-blue-400"></i>
+                        <span class="text-xs md:text-sm text-gray-300">Booking Fee (Dibayar diawal)</span>
+                    </div>
+                    <span class="text-sm md:text-base font-bold text-blue-400" id="simBookingFee">Rp 1.500.000</span>
+                </div>
+
+                <!-- Tabel Perbandingan -->
+                <div class="overflow-hidden rounded-xl border border-white/10">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-indigo-600/20 text-indigo-400 text-xs md:text-sm font-bold">
+                                <th class="p-2 md:p-3 border-b border-white/10 border-r w-[35%]">Komponen</th>
+                                <th class="p-2 md:p-3 border-b border-white/10 border-r text-center w-[32.5%]">1 Tahun</th>
+                                <th class="p-2 md:p-3 border-b border-white/10 text-center w-[32.5%]">2 Tahun</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-[11px] md:text-sm divide-y divide-white/5">
+                            <tr class="hover:bg-white/5">
+                                <td class="p-2 md:p-3 border-r border-white/5 font-medium text-gray-300">Harga</td>
+                                <td class="p-2 md:p-3 border-r border-white/5 text-center text-white font-semibold" id="col1Harga">-</td>
+                                <td class="p-2 md:p-3 text-center text-white font-semibold" id="col2Harga">-</td>
+                            </tr>
+                            <tr class="hover:bg-white/5">
+                                <td class="p-2 md:p-3 border-r border-white/5 font-medium text-gray-300">DP 30%</td>
+                                <td class="p-2 md:p-3 border-r border-white/5 text-center text-white" id="col1DP">-</td>
+                                <td class="p-2 md:p-3 text-center text-white" id="col2DP">-</td>
+                            </tr>
+                            <tr class="hover:bg-white/5">
+                                <td class="p-2 md:p-3 border-r border-white/5 font-medium text-gray-300">Pinjaman</td>
+                                <td class="p-2 md:p-3 border-r border-white/5 text-center text-white" id="col1Pinjaman">-</td>
+                                <td class="p-2 md:p-3 text-center text-white" id="col2Pinjaman">-</td>
+                            </tr>
+                            <tr class="hover:bg-white/5">
+                                <td class="p-2 md:p-3 border-r border-white/5 font-medium text-gray-300">Bunga Total</td>
+                                <td class="p-2 md:p-3 border-r border-white/5 text-center">
+                                    <div class="text-white" id="col1Bunga">-</div>
+                                    <div class="text-[9px] md:text-xs text-yellow-400">(12%)</div>
+                                </td>
+                                <td class="p-2 md:p-3 text-center">
+                                    <div class="text-white" id="col2Bunga">-</div>
+                                    <div class="text-[9px] md:text-xs text-yellow-400">(24%)</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-emerald-500/10 font-bold">
+                                <td class="p-2 md:p-3 border-r border-white/5 font-bold text-emerald-400">Cicilan/Bulan</td>
+                                <td class="p-2 md:p-3 border-r border-white/5 text-center text-emerald-400 text-sm md:text-base font-bold" id="col1Cicilan">-</td>
+                                <td class="p-2 md:p-3 text-center text-emerald-400 text-sm md:text-base font-bold" id="col2Cicilan">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Catatan -->
+                <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-3 text-xs text-yellow-200/80 flex items-start gap-2">
+                    <i data-lucide="info" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
+                    <div class="space-y-1">
+                        <p>Perhitungan menggunakan sistem bunga flat 12% per tahun.</p>
+                        <p class="text-yellow-400/60 text-[10px] md:text-xs">*Booking fee dibayar sekali diawal sebagai tanda jadi pemesanan</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Peta Lokasi -->
-            <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col gap-2 md:gap-4">
-                <div onclick="window.open('peta lokasi.jpg','_blank'); fbq('track', 'ViewContent', {content_name: 'Peta Lokasi'});"
-                     class="aspect-video glass rounded-2xl md:rounded-[30px] overflow-hidden border border-white/10 shadow-2xl relative group cursor-pointer">
-                    <img src="peta lokasi.jpg"
-                         class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
-                         alt="Peta Lokasi Fasilitas Sekitar">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black">
-                            <i data-lucide="maximize" class="w-5 h-5 md:w-8 md:h-8"></i>
-                        </div>
-                    </div>
-                    <div class="absolute top-2 md:top-4 right-2 md:right-4 bg-indigo-500 text-[8px] md:text-[10px] px-2 md:px-3 py-0.5 md:py-1 rounded-full font-bold shadow-lg">PETA LOKASI</div>
-                </div>
-                <div class="px-1 md:px-2">
-                    <h4 class="mobile-text-lg md:text-xl font-bold text-white">Fasilitas Sekitar Lokasi</h4>
-                    <p class="mobile-text-xs md:text-sm text-gray-400">Sekolah, pasar & akses transportasi</p>
-                </div>
-            </div>
-
-            <!-- Video 2 -->
-            <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col gap-2 md:gap-4 sm:col-span-2 lg:col-span-1">
-                <div onclick="window.open('https://youtu.be/su2vp0U5IAU','_blank'); fbq('track', 'ViewContent', {content_name: 'Video Bidang 2'});"
-                     class="aspect-video glass rounded-2xl md:rounded-[30px] overflow-hidden border border-white/10 shadow-2xl relative group cursor-pointer">
-                    <img src="https://img.youtube.com/vi/su2vp0U5IAU/maxresdefault.jpg"
-                         class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
-                         alt="Thumbnail Video Bidang 2">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black">
-                            <i data-lucide="play" fill="currentColor" class="ml-0.5 md:ml-1 w-5 h-5 md:w-6 md:h-6"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-1 md:px-2">
-                    <h4 class="mobile-text-lg md:text-xl font-bold text-white">Video Shot Bidang 2</h4>
-                    <p class="mobile-text-xs md:text-sm text-gray-400">View udara Bidang 2 kavling terdiri dari 16 unit</p>
-                </div>
+            <!-- Footer Buttons -->
+            <div class="sticky bottom-0 bg-[#0a0a0a] border-t border-white/10 p-4 md:p-6 grid grid-cols-3 gap-2 md:gap-3">
+                <button onclick="downloadSimulationPDF()" class="touch-friendly bg-indigo-600 hover:bg-indigo-700 text-white px-2 md:px-4 py-3 rounded-lg md:rounded-xl font-bold text-xs md:text-sm transition flex items-center justify-center gap-1 md:gap-2">
+                    <i data-lucide="download" class="w-3 h-3 md:w-4 md:h-4"></i>
+                    <span>Download PDF</span>
+                </button>
+                <button onclick="contactMarketingSimulation()" class="touch-friendly bg-emerald-600 hover:bg-emerald-700 text-white px-2 md:px-4 py-3 rounded-lg md:rounded-xl font-bold text-xs md:text-sm transition flex items-center justify-center gap-1 md:gap-2">
+                    <i data-lucide="message-circle" class="w-3 h-3 md:w-4 md:h-4"></i>
+                    <span>Tanya Marketing</span>
+                </button>
+                <button onclick="closeSimulationModal()" class="touch-friendly bg-white/5 hover:bg-white/10 text-white px-2 md:px-4 py-3 rounded-lg md:rounded-xl font-bold text-xs md:text-sm transition border border-white/10">
+                    Tutup
+                </button>
             </div>
         </div>
     </div>
-</section>
+
+    <!-- Mobile-optimized Video Section -->
+    <section id="video" class="bg-[#080808]">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="text-center mb-8 md:mb-16">
+                <h2 data-aos="fade-up" class="mobile-text-2xl md:text-4xl font-awesome mb-2 md:mb-4">Video dan Peta Lokasi</h2>
+                <p data-aos="fade-up" data-aos-delay="100" class="mobile-text-sm md:text-base text-gray-500 px-4">
+                    Lihat cuplikan video lokasi dan Peta Lokasi Kavling Kebun Maoslor.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                <!-- Video 1 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col gap-2 md:gap-4">
+                    <div onclick="window.open('https://youtu.be/KAiCPSpSv00','_blank'); fbq('track', 'ViewContent', {content_name: 'Video Bidang 1'});"
+                         class="aspect-video glass rounded-2xl md:rounded-[30px] overflow-hidden border border-white/10 shadow-2xl relative group cursor-pointer">
+                        <img src="https://img.youtube.com/vi/KAiCPSpSv00/maxresdefault.jpg"
+                             class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                             alt="Video drone kavling kebun maoslor bidang 1 dengan 24 unit di Maos Cilacap"
+                             loading="lazy">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black" aria-label="Play Video">
+                                <i data-lucide="play" fill="currentColor" class="ml-0.5 md:ml-1 w-5 h-5 md:w-6 md:h-6"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-1 md:px-2">
+                        <h3 class="mobile-text-lg md:text-xl font-bold text-white">Video Shot Bidang 1</h3>
+                        <p class="mobile-text-xs md:text-sm text-gray-400">View Bidang 1 kavling terdiri dari 24 unit</p>
+                    </div>
+                </div>
+
+                <!-- Peta Lokasi -->
+                <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col gap-2 md:gap-4">
+                    <div onclick="window.open('peta lokasi.jpg','_blank'); fbq('track', 'ViewContent', {content_name: 'Peta Lokasi'});"
+                         class="aspect-video glass rounded-2xl md:rounded-[30px] overflow-hidden border border-white/10 shadow-2xl relative group cursor-pointer">
+                        <img src="peta lokasi.jpg"
+                             class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                             alt="Peta lokasi kavling kebun maoslor dengan fasilitas sekitar sekolah pasar dan akses jalan desa di Maos Cilacap Jawa Tengah"
+                             loading="lazy">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black" aria-label="Lihat Peta Full">
+                                <i data-lucide="maximize" class="w-5 h-5 md:w-8 md:h-8"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 md:top-4 right-2 md:right-4 bg-indigo-500 text-[8px] md:text-[10px] px-2 md:px-3 py-0.5 md:py-1 rounded-full font-bold shadow-lg">PETA LOKASI</div>
+                    </div>
+                    <div class="px-1 md:px-2">
+                        <h3 class="mobile-text-lg md:text-xl font-bold text-white">Fasilitas Sekitar Lokasi</h3>
+                        <p class="mobile-text-xs md:text-sm text-gray-400">Sekolah, pasar & akses transportasi</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col gap-2 md:gap-4 sm:col-span-2 lg:col-span-1">
+                    <div onclick="window.open('https://youtu.be/su2vp0U5IAU','_blank'); fbq('track', 'ViewContent', {content_name: 'Video Bidang 2'});"
+                         class="aspect-video glass rounded-2xl md:rounded-[30px] overflow-hidden border border-white/10 shadow-2xl relative group cursor-pointer">
+                        <img src="https://img.youtube.com/vi/su2vp0U5IAU/maxresdefault.jpg"
+                             class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                             alt="Video drone kavling kebun maoslor bidang 2 dengan 16 unit di Maos Cilacap"
+                             loading="lazy">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black" aria-label="Play Video">
+                                <i data-lucide="play" fill="currentColor" class="ml-0.5 md:ml-1 w-5 h-5 md:w-6 md:h-6"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-1 md:px-2">
+                        <h3 class="mobile-text-lg md:text-xl font-bold text-white">Video Shot Bidang 2</h3>
+                        <p class="mobile-text-xs md:text-sm text-gray-400">View udara Bidang 2 kavling terdiri dari 16 unit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section for SEO Rich Snippets -->
+    <section id="faq" class="py-12 md:py-20 bg-[#0a0a0a]">
+        <div class="max-w-4xl mx-auto px-4 md:px-6">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 data-aos="fade-up" class="mobile-text-2xl md:text-4xl font-bold mb-4 text-gradient">Pertanyaan Umum (FAQ)</h2>
+                <p data-aos="fade-up" data-aos-delay="100" class="text-gray-400">Jawaban untuk pertanyaan seputar Kavling Kebun Maoslor</p>
+            </div>
+            
+            <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
+                <details class="glass p-4 md:p-6 rounded-xl md:rounded-2xl border border-white/5 group">
+                    <summary class="font-bold text-indigo-400 mobile-text-base md:text-lg pr-8">Berapa harga kavling Kebun Maoslor per unit?</summary>
+                    <div class="mt-4 text-gray-300 text-sm md:text-base leading-relaxed">
+                        Harga kavling Kebun Maoslor mulai dari <strong>Rp 35.000.000</strong> untuk unit standar hingga <strong>Rp 62.000.000</strong> untuk unit strategis dekat jalan desa. Semua unit memiliki luas 150m² dengan dimensi 15m x 10m. Harga tergantung pada lokasi unit dalam cluster.
+                    </div>
+                </details>
+                
+                <details class="glass p-4 md:p-6 rounded-xl md:rounded-2xl border border-white/5 group">
+                    <summary class="font-bold text-indigo-400 mobile-text-base md:text-lg pr-8">Apakah lokasi Kavling Kebun Maoslor strategis?</summary>
+                    <div class="mt-4 text-gray-300 text-sm md:text-base leading-relaxed">
+                        Ya, Kavling Kebun Maoslor terletak di <strong>Maos, Cilacap, Jawa Tengah</strong> dengan akses jalan desa yang mudah dijangkau. Lokasi dekat dengan fasilitas umum seperti sekolah, pasar, dan akses transportasi umum. Koordinat lokasi: <strong>-7.592451, 109.142820</strong>. Akses jalan lebar 1,5 meter mengarah timur-barat.
+                    </div>
+                </details>
+                
+                <details class="glass p-4 md:p-6 rounded-xl md:rounded-2xl border border-white/5 group">
+                    <summary class="font-bold text-indigo-400 mobile-text-base md:text-lg pr-8">Apakah bisa membayar kavling dengan cara dicicil?</summary>
+                    <div class="mt-4 text-gray-300 text-sm md:text-base leading-relaxed">
+                        Ya, Kavling Kebun Maoslor menyediakan opsi pembayaran <strong>cicilan dengan skema yang fleksibel</strong>. Anda bisa menghubungi marketing kami di nomor <a href="https://wa.me/6287788526410" class="text-indigo-400 hover:underline">0877-8852-6410</a> untuk informasi lengkap mengenai skema cicilan, DP minimal, dan tenor yang tersedia.
+                    </div>
+                </details>
+                
+                <details class="glass p-4 md:p-6 rounded-xl md:rounded-2xl border border-white/5 group">
+                    <summary class="font-bold text-indigo-400 mobile-text-base md:text-lg pr-8">Tanaman apa yang cocok ditanam di kavling ini?</summary>
+                    <div class="mt-4 text-gray-300 text-sm md:text-base leading-relaxed">
+                        Kavling ini optimal untuk <strong>sistem hidroponik modern</strong>. Tanaman yang recommended adalah Selada Romaine, Kale, dan Butterhead dengan asumsi waktu panen 35-40 hari dan estimasi harga jual Rp 2.000 per lubang. Dengan perhitungan yang tepat, <strong>ROI bisa mencapai lebih dari 100% dalam satu tahun</strong>.
+                    </div>
+                </details>
+                
+                <details class="glass p-4 md:p-6 rounded-xl md:rounded-2xl border border-white/5 group">
+                    <summary class="font-bold text-indigo-400 mobile-text-base md:text-lg pr-8">Bagaimana cara menjadi mitra marketing freelance?</summary>
+                    <div class="mt-4 text-gray-300 text-sm md:text-base leading-relaxed">
+                        Program marketing lepas (freelance) Kavling Kebun Maoslor terbuka untuk umum tanpa ikatan waktu kerja. Mitra mendapatkan <strong>komisi menarik per unit terjual</strong>, akses ke website dengan denah 3D interactivif, dan alat bantu pemasaran lengkap. Daftar melalui WhatsApp <a href="https://wa.me/6287788526410?text=Halo%20Admin,%20saya%20ingin%20tanya%20syarat%20menjadi%20marketing%20lepas" class="text-indigo-400 hover:underline">0877-8852-6410</a>.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
 
     <!-- Mobile-optimized Kontak Section -->
     <section id="kontak" class="py-12 md:py-20 bg-indigo-600/5">
         <div class="max-w-6xl mx-auto px-4 md:px-6">
             <div class="text-center mb-8 md:mb-16">
-                <h2 data-aos="fade-up" class="mobile-text-2xl md:text-4xl lg:text-5xl font-extrabold mb-2 md:mb-4 text-gradient">Info & Pemasaran</h2>
+                <h2 data-aos="fade-up" class="mobile-text-2xl md:text-4xl lg:text-5xl font-extrabold mb-2 md:mb-4 text-gradient">Info & Pemasaran Kavling Kebun Maoslor</h2>
                 <p data-aos="fade-up" data-aos-delay="100" class="mobile-text-sm md:text-base text-gray-400 px-4">
-                    Hubungi kami untuk survey lokasi atau bergabung menjadi mitra.
+                    Hubungi kami untuk survey lokasi atau bergabung menjadi mitra marketing.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
                 <!-- Marketing Resmi Card -->
-                <div data-aos="fade-right" class="glass p-6 md:p-10 rounded-2xl md:rounded-[40px] border-white/5 flex flex-col justify-between relative overflow-hidden">
+                <div data-aos="fade-right" class="glass p-6 md:p-10 rounded-2xl md:rounded-[40px] border-white/5 flex flex-col justify-between relative overflow-hidden" itemscope itemtype="https://schema.org/Person">
                     <div>
                         <h3 class="text-indigo-400 font-bold uppercase tracking-widest mobile-text-xs md:text-sm mb-4 md:mb-6">Marketing Resmi</h3>
                         <div class="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                             <div class="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-indigo-500/50 shadow-[0_0_15px_rgba(99,102,241,0.3)]">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1WT2PV3NgD-irTMwl_TmMsek7_Gm-Gn3T" 
-                                     alt="Ribut Nurdiansyah" 
-                                     class="w-full h-full object-cover">
+                                     alt="Foto Ribut Nurdiansyah Marketing Kavling Kebun Maoslor Cilacap" 
+                                     class="w-full h-full object-cover"
+                                     itemprop="image">
                             </div>
                      
                             <div>
-                                <p class="mobile-text-xl md:text-2xl font-extrabold text-white">Ribut Nurdiansyah</p>
-                                <p class="text-gray-400 flex items-center gap-1 md:gap-2 mobile-text-xs md:text-sm">
+                                <p class="mobile-text-xl md:text-2xl font-extrabold text-white" itemprop="name">Ribut Nurdiansyah</p>
+                                <p class="text-gray-400 flex items-center gap-1 md:gap-2 mobile-text-xs md:text-sm" itemprop="telephone">
                                     <i data-lucide="phone" class="w-3 h-3 md:w-4 md:h-4 text-indigo-500"></i> +62 877-8852-6410
                                 </p>
                             </div>
@@ -482,8 +915,9 @@
                 <!-- Program Marketing Lepas Card -->
                 <div data-aos="fade-left" class="glass p-6 md:p-10 rounded-2xl md:rounded-[40px] border-white/5 relative flex flex-col justify-between">
                     <img src="https://cdn.pixabay.com/photo/2016/03/19/03/09/satisfaction-label-1266125_1280.png" 
-                         alt="Logo Guarantee" 
-                         class="w-20 h-auto md:w-32 absolute -top-6 md:-top-10 -right-2 md:-right-4 z-10 drop-shadow-2xl rotate-12">
+                         alt="Logo Garansi Keuntungan Mitra Marketing" 
+                         class="w-20 h-auto md:w-32 absolute -top-6 md:-top-10 -right-2 md:-right-4 z-10 drop-shadow-2xl rotate-12"
+                         loading="lazy">
                     
                     <div>
                         <h3 class="text-indigo-400 font-bold uppercase tracking-widest mobile-text-xs md:text-sm mb-4 md:mb-6">Program Marketing Lepas</h3>
@@ -531,8 +965,12 @@
     </section>
 
     <!-- Mobile-optimized Footer -->
-    <footer class="py-6 md:py-10 text-center text-gray-600 mobile-text-xs md:text-xs border-t border-white/5 px-4">
-        © 2026 Kavling Kebun Maos Lor, Maos, Cilacap, JATENG.
+    <footer class="py-6 md:py-10 text-center text-gray-600 mobile-text-xs md:text-xs border-t border-white/5 px-4" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="Kavling Kebun Maoslor">
+        <meta itemprop="address" content="Maos, Cilacap, Jawa Tengah">
+        <meta itemprop="telephone" content="+62-877-8852-6410">
+        <p>&copy; 2026 Kavling Kebun Maos Lor, Maos, Cilacap, JATENG.</p>
+        <p class="mt-2">Koordinat: -7.592451, 109.142820 | Harga mulai Rp 35.000.000</p>
     </footer>
 
     <script type="importmap">
@@ -571,7 +1009,7 @@
             { id: "25", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
             { id: "22", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
             { id: "19", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
-            { id: "16", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
+                        { id: "16", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
             { id: "14", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 45.000.000" },
             { id: "12", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 44.000.000" },
             { id: "10", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 43.000.000" },
@@ -689,7 +1127,7 @@
             group.add(e);
             const w = new THREE.Mesh(coneGeo, matWhite); 
             w.position.x = -1.2; 
-                        w.rotation.z = Math.PI/2; 
+            w.rotation.z = Math.PI/2; 
             group.add(w);
             group.add(makeCompassLabel("U", new THREE.Vector3(0, 0, -3.5)));
             group.add(makeCompassLabel("S", new THREE.Vector3(0, 0, 3.5)));
@@ -816,7 +1254,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
     
     <script>
-        // Data Lengkap Unit Tanah - DIPERBAIKI
+        // ==========================================
+        // KONFIGURASI SIMULASI
+        // ==========================================
+        const SIMULATION_CONFIG = {
+            dpPercent: 30,           // DP 30%
+            interestRate: 12,        // Bunga 12% per tahun
+        };
+
+        // Data Lengkap Unit Tanah
         const dataTanahTable = [
             { id: "30", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
             { id: "27", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
@@ -857,19 +1303,241 @@
             { id: "33", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 45.000.000" }
         ];
 
-        // Fungsi Render Tabel ke HTML - DIPERBAIKI
+        let currentSimulationData = null;
+        let currentUnitData = null;
+
+        // Format currency
+        function formatCurrency(num) {
+            return 'Rp ' + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
+        // Parse price string to number
+        function parsePrice(priceStr) {
+            return parseInt(priceStr.replace(/[^0-9]/g, ''));
+        }
+
+        // Get booking fee based on price
+        function getBookingFee(price) {
+            // < 50jt = 1jt, >= 50jt = 1.5jt
+            return price < 50000000 ? 1000000 : 1500000;
+        }
+
+        // Calculate Simulation for both 1 and 2 years
+        function calculateBothSimulations(unitPrice) {
+            const price = parsePrice(unitPrice);
+            const config = SIMULATION_CONFIG;
+            const bookingFee = getBookingFee(price);
+            const dp = Math.round(price * (config.dpPercent / 100));
+            const principal = price - dp; // Pinjaman setelah DP
+            
+            // 1 Tahun
+            const bunga1tahun = Math.round(principal * (config.interestRate / 100) * 1);
+            const total1tahun = principal + bunga1tahun;
+            const cicilan1tahun = Math.round(total1tahun / 12);
+            
+            // 2 Tahun
+            const bunga2tahun = Math.round(principal * (config.interestRate / 100) * 2);
+            const total2tahun = principal + bunga2tahun;
+            const cicilan2tahun = Math.round(total2tahun / 24);
+            
+            return {
+                price: price,
+                bookingFee: bookingFee,
+                dp: dp,
+                principal: principal,
+                year1: {
+                    bunga: bunga1tahun,
+                    bungaPercent: 12,
+                    cicilan: cicilan1tahun,
+                    total: total1tahun
+                },
+                year2: {
+                    bunga: bunga2tahun,
+                    bungaPercent: 24,
+                    cicilan: cicilan2tahun,
+                    total: total2tahun
+                }
+            };
+        }
+
+        // Open Modal with specific unit
+        function openSimulationModal(unitId, unitPrice) {
+            const unit = dataTanahTable.find(u => u.id === unitId);
+            if (!unit) return;
+            
+            currentUnitData = unit;
+            
+            // Calculate both scenarios
+            const calc = calculateBothSimulations(unit.harga);
+            currentSimulationData = calc;
+            
+            // Update Modal Info
+            document.getElementById('modalUnitInfo').textContent = `Unit ${unit.id} | Luas ${unit.luas}m² | Status ${unit.status}`;
+            document.getElementById('simBookingFee').textContent = formatCurrency(calc.bookingFee);
+            
+            // Fill Table Column 1 (1 Tahun)
+            document.getElementById('col1Harga').textContent = formatCurrency(calc.price);
+            document.getElementById('col1DP').textContent = formatCurrency(calc.dp);
+            document.getElementById('col1Pinjaman').textContent = formatCurrency(calc.principal);
+            document.getElementById('col1Bunga').textContent = formatCurrency(calc.year1.bunga);
+            document.getElementById('col1Cicilan').textContent = formatCurrency(calc.year1.cicilan);
+            
+            // Fill Table Column 2 (2 Tahun)
+            document.getElementById('col2Harga').textContent = formatCurrency(calc.price);
+            document.getElementById('col2DP').textContent = formatCurrency(calc.dp);
+            document.getElementById('col2Pinjaman').textContent = formatCurrency(calc.principal);
+            document.getElementById('col2Bunga').textContent = formatCurrency(calc.year2.bunga);
+            document.getElementById('col2Cicilan').textContent = formatCurrency(calc.year2.cicilan);
+            
+            // Show modal
+            document.getElementById('simulationModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Re-init icons for new content
+            lucide.createIcons();
+            
+            fbq('track', 'ViewContent', {content_name: 'Simulasi Unit ' + unitId});
+        }
+
+        // Close Modal
+        function closeSimulationModal() {
+            document.getElementById('simulationModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Download Simulation PDF
+        function downloadSimulationPDF() {
+            if (!currentSimulationData || !currentUnitData) return;
+            
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            const calc = currentSimulationData;
+            const unit = currentUnitData;
+            
+            // Header
+            doc.setFontSize(16);
+            doc.setTextColor(0, 0, 0);
+            doc.text("Simulasi Pembayaran Kavling Kebun Maoslor", 14, 20);
+            doc.setFontSize(10);
+            doc.setTextColor(100);
+            doc.text(`Unit: ${unit.id} | Luas: ${unit.luas}m² | Status: ${unit.status}`, 14, 28);
+            doc.text(`Generated: ${new Date().toLocaleString('id-ID')}`, 14, 34);
+            
+            // Booking Fee Info
+            doc.setFontSize(11);
+            doc.setTextColor(0, 0, 0);
+            doc.text(`*Booking Fee: ${formatCurrency(calc.bookingFee)} (dibayar diawal)`, 14, 44);
+            
+            // Table Data
+            const tableData = [
+                ['Harga', formatCurrency(calc.price), formatCurrency(calc.price)],
+                ['DP 30%', formatCurrency(calc.dp), formatCurrency(calc.dp)],
+                ['Pinjaman', formatCurrency(calc.principal), formatCurrency(calc.principal)],
+                ['Bunga Total', `${formatCurrency(calc.year1.bunga)} (12%)`, `${formatCurrency(calc.year2.bunga)} (24%)`],
+                ['Cicilan/Bulan', formatCurrency(calc.year1.cicilan), formatCurrency(calc.year2.cicilan)]
+            ];
+            
+            doc.autoTable({
+                startY: 50,
+                head: [['Komponen', '1 Tahun', '2 Tahun']],
+                body: tableData,
+                theme: 'grid',
+                headStyles: { 
+                    fillColor: [99, 102, 241],
+                    textColor: 255,
+                    fontStyle: 'bold',
+                    halign: 'center'
+                },
+                columnStyles: {
+                    0: { fontStyle: 'bold', fillColor: [240, 240, 240] },
+                    1: { halign: 'center' },
+                    2: { halign: 'center' }
+                },
+                styles: { fontSize: 10 },
+                didParseCell: function (data) {
+                    // Bold last row (cicilan)
+                    if (data.row.index === 4) {
+                        data.cell.styles.fontStyle = 'bold';
+                        data.cell.styles.textColor = [34, 197, 94];
+                    }
+                }
+            });
+            
+            // Notes
+            const finalY = doc.lastAutoTable.finalY + 10;
+            doc.setFontSize(9);
+            doc.setTextColor(100);
+            doc.text("Catatan:", 14, finalY);
+            doc.setFontSize(8);
+            doc.text("• Perhitungan menggunakan bunga flat 12% per tahun", 14, finalY + 6);
+            doc.text("• Booking fee dibayar sekali diawal sebagai tanda jadi", 14, finalY + 11);
+            doc.text("• Angka dapat berubah sesuai ketentuan marketing terbaru", 14, finalY + 16);
+            
+            // Footer
+            doc.setFontSize(8);
+            doc.text("Kavling Kebun Maoslor | WA: 0877-8852-6410 | Maos, Cilacap", 14, doc.internal.pageSize.height - 10);
+            
+            doc.save(`Simulasi_Unit_${unit.id}_${formatDateTime()}.pdf`);
+            
+            fbq('track', 'AddToCart', {content_name: 'Download Simulasi PDF Unit ' + unit.id});
+        }
+
+        // Contact Marketing with simulation context
+        function contactMarketingSimulation() {
+            if (!currentSimulationData || !currentUnitData) return;
+            
+            const unit = currentUnitData;
+            const calc = currentSimulationData;
+            
+            const message = `Halo Admin Maoslor,
+
+Saya tertarik dengan UNIT ${unit.id} (${formatCurrency(calc.price)}) dan ingin tanya tentang simulasi pembayaran:
+
+📊 *Perbandingan Simulasi:*
+• Booking Fee: ${formatCurrency(calc.bookingFee)}
+
+*1 Tahun:*
+• DP 30%: ${formatCurrency(calc.dp)}
+• Pinjaman: ${formatCurrency(calc.principal)}
+• Bunga (12%): ${formatCurrency(calc.year1.bunga)}
+• Cicilan: ${formatCurrency(calc.year1.cicilan)}/bln
+
+*2 Tahun:*
+• DP 30%: ${formatCurrency(calc.dp)}
+• Pinjaman: ${formatCurrency(calc.principal)}
+• Bunga (24%): ${formatCurrency(calc.year2.bunga)}
+• Cicilan: ${formatCurrency(calc.year2.cicilan)}/bln
+
+Mohon info lebih lanjut. Terima kasih!`;
+            
+            const url = `https://wa.me/6287788526410?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+            
+            fbq('track', 'Contact', {content_name: 'Tanya Marketing Simulasi Unit ' + unit.id});
+        }
+
+        // Fungsi helper: format timestamp
+        function formatDateTime() {
+            const now = new Date();
+            const pad = n => String(n).padStart(2, '0');
+            return `${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}`;
+        }
+
+        // Fungsi Render Tabel ke HTML
         function renderTable() {
             try {
                 const body = document.getElementById('dataTanahBody');
-                if (!body) {
-                    console.error('Tabel body tidak ditemukan');
-                    return;
-                }
+                if (!body) return;
                 
                 body.innerHTML = dataTanahTable.map(d => {
                     const statusColor = d.status === "Tersedia" ? "status-tersedia" : (d.status === "Booking" ? "status-booking" : "status-terjual");
-                    const waLink = `https://wa.me/6287788526410?text=${encodeURIComponent('Halo Admin Maoslor, saya tertarik dengan UNIT ' + d.id + ' yang berstatus ' + d.status)}`;
-                    const trackingEvent = `fbq('track', 'Contact', {content_name: 'Unit ${d.id}'});`;
+                    const btnClass = d.status === "Tersedia" 
+                        ? "bg-indigo-500/10 hover:bg-indigo-500 text-indigo-400 hover:text-white cursor-pointer" 
+                        : "bg-gray-500/10 text-gray-500 cursor-not-allowed";
+                    const btnAction = d.status === "Tersedia" 
+                        ? `onclick="openSimulationModal('${d.id}', '${d.harga}'); return false;"` 
+                        : 'disabled';
                     
                     return `
                         <tr class="hover:bg-white/5 transition">
@@ -879,34 +1547,27 @@
                             <td class="p-3 md:p-5 font-bold ${statusColor}">${d.status}</td>
                             <td class="p-3 md:p-5 font-semibold text-white">${d.harga}</td>
                             <td class="p-3 md:p-5 text-center">
-                                <a href="${waLink}" 
-                                   target="_blank" 
-                                   onclick="${trackingEvent}"
-                                   class="bg-indigo-500/10 hover:bg-indigo-500 text-indigo-400 hover:text-white px-3 py-1 md:px-4 md:py-2 rounded-md md:rounded-lg text-xs md:text-sm font-bold transition flex items-center justify-center gap-1 md:gap-2">
-                                    <i data-lucide="message-circle" class="w-3 h-3 md:w-4 md:h-4"></i> 
-                                    <span class="hidden sm:inline">Cek Unit</span>
-                                    <span class="sm:hidden">Chat</span>
-                                </a>
+                                <button ${btnAction}
+                                   class="${btnClass} px-3 py-1 md:px-4 md:py-2 rounded-md md:rounded-lg text-xs md:text-sm font-bold transition flex items-center justify-center gap-1 md:gap-2 touch-friendly w-full">
+                                    <i data-lucide="calculator" class="w-3 h-3 md:w-4 md:h-4"></i> 
+                                    <span>Simulasi</span>
+                                </button>
                             </td>
                         </tr>
                     `;
                 }).join('');
                 
-                // Re-initialize lucide icons for new content
                 lucide.createIcons();
             } catch (error) {
                 console.error('Error rendering table:', error);
             }
         }
 
-        // Fungsi Pencarian Unit - DIPERBAIKI
+        // Fungsi Pencarian Unit
         function filterTable() {
             try {
                 const input = document.getElementById('searchUnit');
-                if (!input) {
-                    console.error('Input pencarian tidak ditemukan');
-                    return;
-                }
+                if (!input) return;
                 
                 const filter = input.value.toUpperCase();
                 const rows = document.getElementById('dataTanahBody').getElementsByTagName('tr');
@@ -923,14 +1584,7 @@
             }
         }
 
-        // Fungsi helper: format timestamp (YYYYMMDD_HHMMSS)
-        function formatDateTime() {
-            const now = new Date();
-            const pad = n => String(n).padStart(2, '0');
-            return `${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
-        }
-
-        // Fungsi Download PDF Profesional - DIPERBAIKI
+        // Fungsi Download PDF Daftar Harga
         function downloadPDF() {
             try {
                 const { jsPDF } = window.jspdf;
@@ -940,15 +1594,12 @@
                 }
                 
                 const doc = new jsPDF();
-
-                // Header PDF
                 doc.setFontSize(18);
                 doc.text("Daftar Harga & Unit Kavling Maoslor", 14, 20);
                 doc.setFontSize(10);
                 doc.setTextColor(100);
                 doc.text("Generated on: " + new Date().toLocaleString('id-ID'), 14, 28);
 
-                // Map data untuk AutoTable
                 const tableRows = dataTanahTable.map(item => [
                     `UNIT ${item.id}`,
                     `${item.luas} m²`,
@@ -962,18 +1613,24 @@
                     body: tableRows,
                     startY: 35,
                     theme: 'grid',
-                    headStyles: { fillColor: [99, 102, 241] }, // Indigo
+                    headStyles: { fillColor: [99, 102, 241] },
                     didParseCell: function (data) {
                         if (data.section === 'body' && data.column.index === 3) {
                             const status = data.cell.raw;
-                            if (status === 'Tersedia') data.cell.styles.textColor = [34, 197, 94];   // hijau
-                            if (status === 'Booking')  data.cell.styles.textColor = [234, 179, 8];   // kuning
-                            if (status === 'Terjual')  data.cell.styles.textColor = [239, 68, 68];   // merah
+                            if (status === 'Tersedia') data.cell.styles.textColor = [34, 197, 94];
+                            if (status === 'Booking')  data.cell.styles.textColor = [234, 179, 8];
+                            if (status === 'Terjual')  data.cell.styles.textColor = [239, 68, 68];
                         }
                     }
                 });
 
-                // Simpan dengan timestamp
+                const pageCount = doc.internal.getNumberOfPages();
+                for(let i = 1; i <= pageCount; i++) {
+                    doc.setPage(i);
+                    doc.setFontSize(9);
+                    doc.text("Kavling Kebun Maoslor | Maos, Cilacap, JATENG | WA: 0877-8852-6410", 14, doc.internal.pageSize.height - 10);
+                }
+
                 doc.save(`Daftar_Harga_KavlingKebunMaoslor_${formatDateTime()}.pdf`);
             } catch (error) {
                 console.error('Error downloading PDF:', error);
@@ -1002,27 +1659,32 @@
         // Close menu when clicking outside
         if (mobileMenuPanel) {
             mobileMenuPanel.addEventListener('click', (e) => {
-                if (e.target === mobileMenuPanel) {
-                    toggleMobileMenu();
-                }
+                if (e.target === mobileMenuPanel) toggleMobileMenu();
             });
         }
 
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        // Initialize icons and animations
+        // Close modal when clicking overlay
+        document.getElementById('simulationModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('simulationModal')) {
+                closeSimulationModal();
+            }
+        });
+
+        // Escape key to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSimulationModal();
+        });
+
+        // Initialize
         lucide.createIcons();
         AOS.init({ 
             duration: 1000, 
@@ -1030,16 +1692,14 @@
             disable: window.innerWidth < 768 ? 'mobile' : false
         });
 
-        // Add touch-friendly class to all interactive elements
+        // Add touch-friendly class
         document.querySelectorAll('button, a, input').forEach(element => {
             element.classList.add('touch-friendly');
         });
 
-        // PASTIKAN tabel dirender setelah DOM loaded
+        // Render table on load
         document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(() => {
-                renderTable();
-            }, 100);
+            setTimeout(() => renderTable(), 100);
         });
     </script>
 </body>
