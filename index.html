@@ -70,7 +70,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
         body {
@@ -703,11 +703,11 @@
                                 <td class="p-2 md:p-3 border-r border-white/5 font-medium text-gray-300">Bunga Total</td>
                                 <td class="p-2 md:p-3 border-r border-white/5 text-center">
                                     <div class="text-white" id="col1Bunga">-</div>
-                                    <div class="text-[9px] md:text-xs text-yellow-400">(12%)</div>
+                                    <div class="text-[9px] md:text-xs text-yellow-400">(8%)</div>
                                 </td>
                                 <td class="p-2 md:p-3 text-center">
                                     <div class="text-white" id="col2Bunga">-</div>
-                                    <div class="text-[9px] md:text-xs text-yellow-400">(24%)</div>
+                                    <div class="text-[9px] md:text-xs text-yellow-400">(16%)</div>
                                 </td>
                             </tr>
                             <tr class="bg-emerald-500/10 font-bold">
@@ -723,7 +723,7 @@
                 <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-3 text-xs text-yellow-200/80 flex items-start gap-2">
                     <i data-lucide="info" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
                     <div class="space-y-1">
-                        <p>Perhitungan menggunakan sistem bunga flat 12% per tahun.</p>
+                        <p>Perhitungan menggunakan sistem bunga flat 8% per tahun.</p>
                         <p class="text-yellow-400/60 text-[10px] md:text-xs">*Booking fee dibayar sekali diawal sebagai tanda jadi pemesanan</p>
                     </div>
                 </div>
@@ -849,6 +849,10 @@
                     <div class="mt-4 text-gray-300 text-sm md:text-base leading-relaxed">
                         Ya, Kavling Kebun Maoslor menyediakan opsi pembayaran <strong>cicilan dengan skema yang fleksibel</strong>. Anda bisa menghubungi marketing kami di nomor <a href="https://wa.me/6287788526410" class="text-indigo-400 hover:underline">0877-8852-6410</a> untuk informasi lengkap mengenai skema cicilan, DP minimal, dan tenor yang tersedia.
                     </div>
+			<a href="#harga" class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-semibold transition mt-2">
+    			<i class="fas fa-calculator"></i>
+    			Coba Simulasi Cicilan
+			</a>
                 </details>
                 
                 <details class="glass p-4 md:p-6 rounded-xl md:rounded-2xl border border-white/5 group">
@@ -1260,7 +1264,7 @@
         // ==========================================
         const SIMULATION_CONFIG = {
             dpPercent: 30,           // DP 30%
-            interestRate: 12,        // Bunga 12% per tahun
+            interestRate: 8,        // Bunga 8% per tahun
         };
 
         // Data Lengkap Unit Tanah
@@ -1348,13 +1352,13 @@
                 principal: principal,
                 year1: {
                     bunga: bunga1tahun,
-                    bungaPercent: 12,
+                    bungaPercent: 8,
                     cicilan: cicilan1tahun,
                     total: total1tahun
                 },
                 year2: {
                     bunga: bunga2tahun,
-                    bungaPercent: 24,
+                    bungaPercent: 16,
                     cicilan: cicilan2tahun,
                     total: total2tahun
                 }
@@ -1435,7 +1439,7 @@
                 ['Harga', formatCurrency(calc.price), formatCurrency(calc.price)],
                 ['DP 30%', formatCurrency(calc.dp), formatCurrency(calc.dp)],
                 ['Pinjaman', formatCurrency(calc.principal), formatCurrency(calc.principal)],
-                ['Bunga Total', `${formatCurrency(calc.year1.bunga)} (12%)`, `${formatCurrency(calc.year2.bunga)} (24%)`],
+                ['Bunga Total', `${formatCurrency(calc.year1.bunga)} (8%)`, `${formatCurrency(calc.year2.bunga)} (16%)`],
                 ['Cicilan/Bulan', formatCurrency(calc.year1.cicilan), formatCurrency(calc.year2.cicilan)]
             ];
             
@@ -1501,13 +1505,13 @@ Saya tertarik dengan UNIT ${unit.id} (${formatCurrency(calc.price)}) dan ingin t
 *1 Tahun:*
 • DP 30%: ${formatCurrency(calc.dp)}
 • Pinjaman: ${formatCurrency(calc.principal)}
-• Bunga (12%): ${formatCurrency(calc.year1.bunga)}
+• Bunga (8%): ${formatCurrency(calc.year1.bunga)}
 • Cicilan: ${formatCurrency(calc.year1.cicilan)}/bln
 
 *2 Tahun:*
 • DP 30%: ${formatCurrency(calc.dp)}
 • Pinjaman: ${formatCurrency(calc.principal)}
-• Bunga (24%): ${formatCurrency(calc.year2.bunga)}
+• Bunga (16%): ${formatCurrency(calc.year2.bunga)}
 • Cicilan: ${formatCurrency(calc.year2.cicilan)}/bln
 
 Mohon info lebih lanjut. Terima kasih!`;
