@@ -316,6 +316,32 @@
                 max-height: 95vh;
             }
         }
+
+        /* Styles dari pengembalian.html untuk section home */
+        .concept-box {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+            border-left: 4px solid #22c55e;
+            transition: transform 0.3s ease;
+        }
+        .concept-box:hover {
+            transform: translateY(-5px);
+        }
+        .glass-strong {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .input-field {
+            background: #0a0a0a !important;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #6366f1;
+            background: rgba(255, 255, 255, 0.08);
+        }
     </style>
     
     <!-- ✅ GANTI 3: Schema RealEstateAgent & LocalBusiness URL -->
@@ -455,9 +481,9 @@
                 <a href="#kontak" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Kontak'});">Info & Pemasaran</a>
             </div>
             
-            <button onclick="window.location.href='#harga'" class="hidden md:block bg-white text-black text-xs px-4 py-2 md:px-5 rounded-full font-bold touch-friendly">
-                DAPATKAN UNIT
-            </button>
+            <button onclick="openSimulasi()" class="bg-white text-black px-6 py-3 rounded-full font-bold touch-friendly">
+    		Lihat Simulasi Hasil
+		</button>
         </div>
         
         <!-- Mobile Menu Panel -->
@@ -474,9 +500,7 @@
                 <a href="#faq" onclick="fbq('track', 'ViewContent', {content_name: 'Menu FAQ'});" class="mobile-menu-link text-white hover:text-indigo-400 transition">FAQ</a>
                 <a href="#kontak" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Kontak'});" class="mobile-menu-link text-white hover:text-indigo-400 transition">Info & Pemasaran</a>
 
-                <button onclick="window.location.href='#harga'; fbq('track', 'InitiateCheckout', {content_name: 'Tombol Dapatkan Unit'});" class="bg-white text-black px-6 py-3 rounded-full font-bold touch-friendly">
-                    DAPATKAN UNIT
-                </button>
+                
             </div>
         </div>
     </nav>
@@ -507,79 +531,55 @@
         </div>
     </div>
 
-    <!-- Mobile-optimized Hero Section -->
-    <section id="home" class="min-h-screen flex flex-col items-center justify-center py-16 md:py-20" itemscope itemtype="https://schema.org/RealEstateListing">
-        <meta itemprop="name" content="Kavling Kebun Maoslor" />
-        <div class="text-center mb-8 md:mb-8 px-4">
-            <h1 data-aos="fade-up" class="mobile-text-2xl md:text-4xl lg:text-6xl font-extrabold mb-2 md:mb-4 text-gradient" itemprop="description">
-                Kavling Kebun Maoslor
+    <!-- SECTION HOME BARU DARI PENGEMBALIAN.HTML -->
+    <section id="home" class="min-h-[60vh] flex items-center justify-center py-16 md:py-20" itemscope itemtype="https://schema.org/RealEstateListing">
+        <div class="max-w-5xl mx-auto text-center px-4">
+            <div data-aos="fade-up" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-indigo-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6 border border-emerald-500/30">
+                <i data-lucide="trending-up" class="w-4 h-4"></i>
+                Investasi Cara Baru dan Lebih Produktif 2026
+            </div>
+            
+            <h1 data-aos="fade-up" class="text-4xl md:text-5xl font-extrabold mb-6 text-gradient leading-tight">
+                Kavling Kebun yang Bekerja<br>
+                <span class="text-emerald-300">Untuk Membayar Dirinya Sendiri</span>
             </h1>
-            <p data-aos="fade-up" data-aos-delay="200" class="mobile-text-sm md:text-base text-gray-400 max-w-lg md:max-w-xl mx-auto px-2">
-                Kavling kebun Hydroponik harga masih terjangkau di Maoslor, Cilacap.
+            
+            <p data-aos="fade-up" data-aos-delay="100" class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-8">
+                <strong class="text-white">Paradigma baru memiliki tanah:</strong> Sewa sambil usaha. 
+                Kavling Kebun bukan hanya aset mati—tapi <span class="text-emerald-400 font-semibold">Mesin penghasil Passive Income</span> 
+                yang menutup <span class="text-emerald-400 font-semibold">sendiri Sewanya</span>. DP 30% jadi modal awal, 
+                Hasil Panen Anda yang melanjutkan pembayaran Sewa. 
+                <strong class="text-white">Gratis tanah dalam 2 tahun?</strong> Bukan mimpi, tapi sistem yang membuat menjadi nyata.
             </p>
-        </div>
 
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 px-4 md:px-4">
-            <!-- Card 3 -->
-            <div data-aos="fade-up" data-aos-delay="400" class="glass p-6 md:p-8 rounded-2xl md:rounded-[40px] flex flex-col justify-between border-white/5 hover:border-emerald-500/30 transition group">
-                <div>
-                    <div class="bg-emerald-500/20 w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 transition-transform group-hover:scale-110">
-                        <i data-lucide="sprout" class="text-emerald-400 w-5 h-5 md:w-6 md:h-6"></i>
+            <!-- Value Proposition Cards -->
+            <div data-aos="fade-up" data-aos-delay="200" class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-8">
+                <div class="glass p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5">
+                    <div class="w-10 h-10 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="sprout" class="w-5 h-5 text-emerald-400"></i>
                     </div>
-                    <h2 class="mobile-text-xl md:text-2xl font-bold mb-2 md:mb-4">Investasi Kavling Kebun Hydroponik</h2>
-                    <p class="mobile-text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-8">
-                        Kavling kebun Hydroponik di Maoslor dengan akses jalan mudah, akses fasilitas umum yang mudah dan dekat.<br>Dapat ditanami tanaman dengan cara Hydroponik yang menguntungkan
-                    </p>
+                    <h3 class="text-white font-bold text-sm mb-2">Sewa Membayar Sewa</h3>
+                    <p class="text-gray-400 text-xs">Usaha Kavling Kebun selama masa sewa. Hasil panen menutup sewa bulanan. Jadi Anda tidak membeli dengan uang anda sendiri</p>
                 </div>
-
-                <a href="#denah" class="flex items-center gap-2 text-emerald-400 mobile-text-sm md:text-base font-bold hover:text-emerald-300 transition-all group/btn w-fit">
-                    <span>Lihat Denah 3D</span>
-                    <i data-lucide="arrow-right" class="w-3 h-3 md:w-4 md:h-4 transition-transform group-hover/btn:translate-x-1"></i>
-                </a>
-            </div>
-
-            <!-- Card 2 -->
-            <div data-aos="fade-left" data-aos-delay="500" class="glass p-6 md:p-8 rounded-2xl md:rounded-[40px] flex flex-col items-center justify-center text-center border-white/5 bg-indigo-500/5">
-                <p class="mobile-text-xs md:text-sm font-bold text-indigo-400 uppercase tracking-widest mb-2 md:mb-4">Siap Memulai?</p>
-                <h3 class="mobile-text-lg md:text-xl font-bold mb-4 md:mb-8">Sudahkan anda hitung berapa Profit Anda?</h3>
-                <p class="mobile-text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-8">
-                    Kavling kebun Hydroponik anda tanami sayuran, Asumsi waktu panen per 35-40 hari, Hasil panen harga jual rata-rata Rp 2.000 per lubang untuk sayuran (Selada Romaine/Kale/Butterhead).
-                </p>
-                <a href="https://beasiswaku2.github.io/beasiswaku2.github.io-kavling_Kebun_maoslor.github.io/#simulasi" 
-                   target="_blank" 
-                   onclick="fbq('track', 'Lead', {content_name: 'Simulasi Profit'}); fbq('track', 'ViewContent', {content_name: 'Tombol Simulasi Profit'});"
-                   style="display: inline-block; 
-                   background-color: #4CAF50; 
-                   color: white; 
-                   padding: 12px 24px; 
-                   text-decoration: none; 
-                   border-radius: 4px; 
-                   font-size: 16px;"
-                   class="hover:bg-green-600 transition touch-friendly">
-                    Buka Simulasi Profit Anda <br>(ROI >100% dalam 1 tahun)
-                </a>
-            </div>
-
-            <!-- Card 1 -->
-            <div data-aos="fade-right" data-aos-delay="300" class="glass p-6 md:p-8 rounded-2xl md:rounded-[40px] flex flex-col justify-between border-white/5 hover:border-indigo-500/30 transition">
-                <div>
-                    <div class="bg-indigo-500/20 w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6">
-                        <i data-lucide="users" class="text-indigo-400 w-5 h-5 md:w-6 md:h-6"></i>
+                
+                <div class="glass p-4 rounded-xl border border-indigo-500/20 bg-indigo-500/5">
+                    <div class="w-10 h-10 bg-indigo-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="wallet" class="w-5 h-5 text-indigo-400"></i>
                     </div>
-                    <h3 class="mobile-text-xl md:text-2xl font-bold mb-2 md:mb-4">Gabung Sebagai Marketing Freelance</h3>
-                    <p class="mobile-text-sm md:text-base text-gray-400 leading-relaxed">
-                        Ingin penghasilan tambahan? Jadilah mitra marketing kami dan dapatkan komisi menarik untuk setiap unit yang terjual.
-                    </p>
-                    <p class="text-green-400 font-bold text-sm mb-4 uppercase tracking-wider mt-4">Daftar Jadi Mitra:</p>
-                    <a href="https://wa.me/6287788526410?text=Halo%20Admin,%20saya%20ingin%20tanya%20syarat%20menjadi%20marketing%20lepas/freelance%20Kavling%20Kebun%20Maoslor" 
-                       target="_blank"
-                       onclick="fbq('track', 'Contact', {content_name: 'Marketing Freelance'});"
-                       class="flex items-center justify-center gap-3 bg-white text-emerald-950 px-6 py-4 rounded-2xl text-xl font-bold hover:bg-emerald-50 transition shadow-xl active:scale-95 touch-friendly">
-                        <i data-lucide="user-plus" class="w-6 h-6"></i> Gabung Sekarang
-                    </a>
-                    <p class="mt-4 text-xs opacity-50 italic text-emerald-50">Terbuka untuk umum, tanpa ikatan waktu kerja</p>
+                    <h3 class="text-white font-bold text-sm mb-2">DP = Jaminan Utuh</h3>
+                    <p class="text-gray-400 text-xs">Setop kapan saja, uang kembali (dengan ketentuan). Risiko minimal, peluang maksimal dan Keuntungan dari hasil Kebun</p>
+                </div>
+                
+                <div class="glass p-4 rounded-xl border border-yellow-500/20 bg-yellow-500/5">
+                    <div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="key" class="w-5 h-5 text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-sm mb-2">Jadi Milik Pribadi</h3>
+                    <p class="text-gray-400 text-xs">Setelah Sewa 1 sampai 2 tahun selesai, Kavling Kebun menjadi Milik Anda, Profit sekarang Milik Anda sepenuhnya</p>
                 </div>
             </div>
+
+            
         </div>
     </section>
 
@@ -606,9 +606,9 @@
     <section id="harga" class="py-12 md:py-20">
         <div class="max-w-6xl mx-auto px-4 md:px-6">
             <div class="text-center mb-8 md:mb-12">
-                <h2 data-aos="fade-up" class="mobile-text-2xl md:text-4xl font-bold mb-2 md:mb-4 text-gradient">Daftar Harga Per Unit Kavling Kebun Maoslor</h2>
+                <h2 data-aos="fade-up" class="mobile-text-2xl md:text-4xl font-bold mb-2 md:mb-4 text-gradient">Daftar Harga Sewa Per Unit Kavling Kebun Maoslor</h2>
                 <p data-aos="fade-up" data-aos-delay="100" class="mobile-text-sm md:text-base text-gray-400 px-4">
-                    Pilih unit impian Anda. Klik tombol "Simulasi" untuk melihat skema pembayaran cicilan.
+                    Pilih unit impian Anda. Klik tombol "Simulasi" untuk melihat skema pembayaran Sewa.
                 </p>
             </div>
 
@@ -654,7 +654,7 @@
             <!-- Header -->
             <div class="sticky top-0 bg-[#0a0a0a] border-b border-white/10 p-4 md:p-6 flex justify-between items-center z-10">
                 <div>
-                    <h3 class="text-lg md:text-2xl font-bold text-white">Simulasi Pembayaran</h3>
+                    <h3 class="text-lg md:text-2xl font-bold text-white">Simulasi Pembayaran Sewa</h3>
                     <p class="text-xs md:text-sm text-gray-400 mt-1" id="modalUnitInfo">Unit -</p>
                 </div>
                 <button onclick="closeSimulationModal()" class="touch-friendly p-2 hover:bg-white/10 rounded-full transition">
@@ -695,12 +695,12 @@
                                 <td class="p-2 md:p-3 text-center text-white" id="col2DP">-</td>
                             </tr>
                             <tr class="hover:bg-white/5">
-                                <td class="p-2 md:p-3 border-r border-white/5 font-medium text-gray-300">Pinjaman</td>
+                                <td class="p-2 md:p-3 border-r border-white/5 font-medium text-gray-300">Pokok Sewa</td>
                                 <td class="p-2 md:p-3 border-r border-white/5 text-center text-white" id="col1Pinjaman">-</td>
                                 <td class="p-2 md:p-3 text-center text-white" id="col2Pinjaman">-</td>
                             </tr>
                             <tr class="hover:bg-white/5">
-                                <td class="p-2 md:p-3 border-r border-white/5 font-medium text-gray-300">Bunga Total</td>
+                                <td class="p-2 md:p-3 border-r border-white/5 font-medium text-gray-300">Progresif Sewa Total</td>
                                 <td class="p-2 md:p-3 border-r border-white/5 text-center">
                                     <div class="text-white" id="col1Bunga">-</div>
                                     <div class="text-[9px] md:text-xs text-yellow-400">(8%)</div>
@@ -711,7 +711,7 @@
                                 </td>
                             </tr>
                             <tr class="bg-emerald-500/10 font-bold">
-                                <td class="p-2 md:p-3 border-r border-white/5 font-bold text-emerald-400">Cicilan/Bulan</td>
+                                <td class="p-2 md:p-3 border-r border-white/5 font-bold text-emerald-400">Sewa/Bulan</td>
                                 <td class="p-2 md:p-3 border-r border-white/5 text-center text-emerald-400 text-sm md:text-base font-bold" id="col1Cicilan">-</td>
                                 <td class="p-2 md:p-3 text-center text-emerald-400 text-sm md:text-base font-bold" id="col2Cicilan">-</td>
                             </tr>
@@ -723,7 +723,7 @@
                 <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-3 text-xs text-yellow-200/80 flex items-start gap-2">
                     <i data-lucide="info" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
                     <div class="space-y-1">
-                        <p>Perhitungan menggunakan sistem bunga flat 8% per tahun.</p>
+                        <p>Disarankan pengambilan jangka waktu Sewa 2 tahun agar biaya Sewa lebih kecil.</p>
                         <p class="text-yellow-400/60 text-[10px] md:text-xs">*Booking fee dibayar sekali diawal sebagai tanda jadi pemesanan</p>
                     </div>
                 </div>
@@ -822,51 +822,63 @@
     </section>
 
     <!-- FAQ Section for SEO Rich Snippets -->
-    <section id="faq" class="py-12 md:py-20 bg-[#0a0a0a]">
-        <div class="max-w-4xl mx-auto px-4 md:px-6">
-            <div class="text-center mb-8 md:mb-12">
-                <h2 data-aos="fade-up" class="mobile-text-2xl md:text-4xl font-bold mb-4 text-gradient">Pertanyaan Umum (FAQ)</h2>
-                <p data-aos="fade-up" data-aos-delay="100" class="text-gray-400">Jawaban untuk pertanyaan seputar Kavling Kebun Maoslor</p>
-            </div>
-            
-            <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
-                <details class="glass p-4 md:p-6 rounded-xl md:rounded-2xl border border-white/5 group">
-                    <summary class="font-bold text-indigo-400 mobile-text-base md:text-lg pr-8">Berapa harga kavling Kebun Maoslor per unit?</summary>
-                    <div class="mt-4 text-gray-300 text-sm md:text-base leading-relaxed">
-                        Harga kavling Kebun Maoslor mulai dari <strong>Rp 35.000.000</strong> untuk unit standar hingga <strong>Rp 62.000.000</strong> untuk unit strategis dekat jalan desa. Semua unit memiliki luas 150m² dengan dimensi 15m x 10m. Harga tergantung pada lokasi unit dalam cluster.
-                    </div>
+    <section id="faq" class="py-12 md:py-20">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-8 text-center text-gradient">Pertanyaan Umum</h2>
+            <p style="text-align: center; margin-bottom: 12px; font-weight: 500;">
+  Kavling kebun Sistem Sewa jadi Milik, konsep perkebunan Hidroponik
+</p>
+            <div class="space-y-4">
+
+		<details class="glass p-5 rounded-xl group cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-white list-none">
+                        <span>Apa bedanya sewa biasa dengan sistem ini?</span>
+                        
+                    </summary>
+                    <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+                        Jika sewa biasa, Anda bayar tiap bulan tapi tidak pernah jadi milik. 
+                        Di sistem ini, jika Anda lunas (bayar sampai selesai), <strong>lahan menjadi HAK MILIK Anda</strong>. 
+                        Plus, ada jaminan uang kembali (DP) jika berhenti di tengah jalan.
+                    </p>
                 </details>
-                
-                <details class="glass p-4 md:p-6 rounded-xl md:rounded-2xl border border-white/5 group">
-                    <summary class="font-bold text-indigo-400 mobile-text-base md:text-lg pr-8">Apakah lokasi Kavling Kebun Maoslor strategis?</summary>
-                    <div class="mt-4 text-gray-300 text-sm md:text-base leading-relaxed">
-                        Ya, Kavling Kebun Maoslor terletak di <strong>Maos, Cilacap, Jawa Tengah</strong> dengan akses jalan desa yang mudah dijangkau. Lokasi dekat dengan fasilitas umum seperti sekolah, pasar, dan akses transportasi umum. Koordinat lokasi: <strong>-7.592451, 109.142820</strong>. Akses jalan lebar 1,5 meter mengarah timur-barat.
-                    </div>
+                <details class="glass p-5 rounded-xl group cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-white list-none">
+                        <span>Apakah saya bisa mundur sewaktu-waktu?</span>
+                        
+                    </summary>
+                    <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+                        Bisa. Jika Anda berhenti membayar cicilan (sewa) selama 3 bulan berturut-turut, 
+                        sistem otomatis menganggap Anda mengundurkan diri. DP akan dikembalikan sesuai perhitungan di atas.
+                    </p>
                 </details>
-                
-                <details class="glass p-4 md:p-6 rounded-xl md:rounded-2xl border border-white/5 group">
-                    <summary class="font-bold text-indigo-400 mobile-text-base md:text-lg pr-8">Apakah bisa membayar kavling dengan cara dicicil?</summary>
-                    <div class="mt-4 text-gray-300 text-sm md:text-base leading-relaxed">
-                        Ya, Kavling Kebun Maoslor menyediakan opsi pembayaran <strong>cicilan dengan skema yang fleksibel</strong>. Anda bisa menghubungi marketing kami di nomor <a href="https://wa.me/6287788526410" class="text-indigo-400 hover:underline">0877-8852-6410</a> untuk informasi lengkap mengenai skema cicilan, DP minimal, dan tenor yang tersedia.
-                    </div>
-			<a href="#harga" class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-semibold transition mt-2">
-    			<i class="fas fa-calculator"></i>
-    			Coba Simulasi Cicilan
-			</a>
+
+                <details class="glass p-5 rounded-xl group cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-white list-none">
+                        <span>Mengapa cicilan yang sudah dibayar tidak kembali?</span>
+                        
+                    </summary>
+                    <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+                        Karena setiap cicilan dianggap sebagai <strong>biaya sewa lahan untuk bulan tersebut</strong>, 
+                        mirip dengan sewa rumah/kontrakan. Anda sudah "menghuni" lahan tersebut selama bulan-bulan yang dibayar, 
+                        sehingga uang sewa sudah digunakan dan tidak bisa diklaim kembali.
+                    </p>
                 </details>
-                
+
                 <details class="glass p-4 md:p-6 rounded-xl md:rounded-2xl border border-white/5 group">
-                    <summary class="font-bold text-indigo-400 mobile-text-base md:text-lg pr-8">Tanaman apa yang cocok ditanam di kavling ini?</summary>
-                    <div class="mt-4 text-gray-300 text-sm md:text-base leading-relaxed">
-                        Kavling ini optimal untuk <strong>sistem hidroponik modern</strong>. Tanaman yang recommended adalah Selada Romaine, Kale, dan Butterhead dengan asumsi waktu panen 35-40 hari dan estimasi harga jual Rp 2.000 per lubang. Dengan perhitungan yang tepat, <strong>ROI bisa mencapai lebih dari 100% dalam satu tahun</strong>.
-                    </div>
+                    <summary class="flex justify-between items-center font-bold text-white list-none">
+                        <span>Berapa lama proses refund?</span>
+                        
+                    </summary>
+                    <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+                        Maksimal <strong>14 hari kerja</strong> sejak penandatanganan berita acara pembatalan. 
+                        Dana akan ditransfer langsung ke rekening bank yang terdaftar atas nama pembeli (tidak bisa dialihkan).
+                    </p>
                 </details>
-                
-                <details class="glass p-4 md:p-6 rounded-xl md:rounded-2xl border border-white/5 group">
-                    <summary class="font-bold text-indigo-400 mobile-text-base md:text-lg pr-8">Bagaimana cara menjadi mitra marketing freelance?</summary>
-                    <div class="mt-4 text-gray-300 text-sm md:text-base leading-relaxed">
+		<details class="glass p-4 md:p-6 rounded-xl md:rounded-2xl border border-white/5 group">
+                    <summary class="flex justify-between items-center font-bold text-white list-none">Bagaimana cara menjadi mitra marketing freelance?</summary>
+                    <p class="mt-3 text-sm text-gray-400 leading-relaxed">
                         Program marketing lepas (freelance) Kavling Kebun Maoslor terbuka untuk umum tanpa ikatan waktu kerja. Mitra mendapatkan <strong>komisi menarik per unit terjual</strong>, akses ke website dengan denah 3D interactivif, dan alat bantu pemasaran lengkap. Daftar melalui WhatsApp <a href="https://wa.me/6287788526410?text=Halo%20Admin,%20saya%20ingin%20tanya%20syarat%20menjadi%20marketing%20lepas" class="text-indigo-400 hover:underline">0877-8852-6410</a>.
-                    </div>
+                    </p>
                 </details>
             </div>
         </div>
@@ -1438,9 +1450,9 @@
             const tableData = [
                 ['Harga', formatCurrency(calc.price), formatCurrency(calc.price)],
                 ['DP 30%', formatCurrency(calc.dp), formatCurrency(calc.dp)],
-                ['Pinjaman', formatCurrency(calc.principal), formatCurrency(calc.principal)],
-                ['Bunga Total', `${formatCurrency(calc.year1.bunga)} (8%)`, `${formatCurrency(calc.year2.bunga)} (16%)`],
-                ['Cicilan/Bulan', formatCurrency(calc.year1.cicilan), formatCurrency(calc.year2.cicilan)]
+                ['Pokok Sewa', formatCurrency(calc.principal), formatCurrency(calc.principal)],
+                ['Progresif Sewa Total', `${formatCurrency(calc.year1.bunga)} (8%)`, `${formatCurrency(calc.year2.bunga)} (16%)`],
+                ['Sewa/Bulan', formatCurrency(calc.year1.cicilan), formatCurrency(calc.year2.cicilan)]
             ];
             
             doc.autoTable({
@@ -1475,7 +1487,7 @@
             doc.setTextColor(100);
             doc.text("Catatan:", 14, finalY);
             doc.setFontSize(8);
-            doc.text("• Perhitungan menggunakan bunga flat 12% per tahun", 14, finalY + 6);
+            doc.text("• Disarankan pengambilan jangka waktu Sewa 2 tahun agar biaya Sewa lebih kecil", 14, finalY + 6);
             doc.text("• Booking fee dibayar sekali diawal sebagai tanda jadi", 14, finalY + 11);
             doc.text("• Angka dapat berubah sesuai ketentuan marketing terbaru", 14, finalY + 16);
             
@@ -1504,15 +1516,15 @@ Saya tertarik dengan UNIT ${unit.id} (${formatCurrency(calc.price)}) dan ingin t
 
 *1 Tahun:*
 • DP 30%: ${formatCurrency(calc.dp)}
-• Pinjaman: ${formatCurrency(calc.principal)}
-• Bunga (8%): ${formatCurrency(calc.year1.bunga)}
-• Cicilan: ${formatCurrency(calc.year1.cicilan)}/bln
+• Pokok Sewa: ${formatCurrency(calc.principal)}
+• Progresif Sewa (8%): ${formatCurrency(calc.year1.bunga)}
+• Sewa: ${formatCurrency(calc.year1.cicilan)}/bln
 
 *2 Tahun:*
 • DP 30%: ${formatCurrency(calc.dp)}
-• Pinjaman: ${formatCurrency(calc.principal)}
-• Bunga (16%): ${formatCurrency(calc.year2.bunga)}
-• Cicilan: ${formatCurrency(calc.year2.cicilan)}/bln
+• Pokok Sewa: ${formatCurrency(calc.principal)}
+• Progresif Sewa (16%): ${formatCurrency(calc.year2.bunga)}
+• Sewa: ${formatCurrency(calc.year2.cicilan)}/bln
 
 Mohon info lebih lanjut. Terima kasih!`;
             
@@ -1707,5 +1719,16 @@ Mohon info lebih lanjut. Terima kasih!`;
             setTimeout(() => renderTable(), 100);
         });
     </script>
+<script>
+function openSimulasi() {
+    // Tracking Facebook Pixel
+    fbq('track', 'InitiateCheckout', {
+        content_name: 'Tombol Dapatkan Unit'
+    });
+    
+    // Buka tab baru
+    window.open('https://beasiswaku2.github.io/beasiswaku2.github.io-kavling_Kebun_maoslor.github.io/#simulasi', '_blank');
+}
+</script>
 </body>
 </html>
