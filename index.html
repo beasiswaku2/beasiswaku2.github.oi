@@ -64,7 +64,7 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=908178125102704&ev=PageView&noscript=1"
     alt="Facebook Pixel"
-    /></noscript>
+    />
     <!-- End Meta Pixel Code -->
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -1134,6 +1134,7 @@
             group.add(makeCompassLabel("T", new THREE.Vector3(3.5, 0, 0)));
             group.add(makeCompassLabel("B", new THREE.Vector3(-3.5, 0, 0)));
             group.position.set(13, 0.2, -14); 
+            group.rotation.y = Math.PI; // Putar 180 derajat untuk orientasi yang benar
             scene.add(group);
         }
         createCompass();
@@ -1704,3 +1705,4 @@ Mohon info lebih lanjut. Terima kasih!`;
     </script>
 </body>
 </html>
+
