@@ -342,6 +342,9 @@
             border-color: #6366f1;
             background: rgba(255, 255, 255, 0.08);
         }
+	#tooltip-denah {
+    	z-index: 150; /* Turunkan dari 1000 agar di bawah modal (z-index 200) */
+	}
     </style>
     
     <!-- ✅ GANTI 3: Schema RealEstateAgent & LocalBusiness URL -->
@@ -520,8 +523,8 @@
     </div>
 
     <!-- SECTION HOME BARU DARI PENGEMBALIAN.HTML -->
-    <section id="home" class="min-h-[80vh] flex items-center justify-center py-16 md:py-20" itemscope itemtype="https://schema.org/RealEstateListing">
-        <div class="max-w-7xl mx-auto text-center px-10">
+    <section id="home" class="min-h-[60vh] flex items-center justify-center py-16 md:py-20" itemscope itemtype="https://schema.org/RealEstateListing">
+        <div class="max-w-7xl mx-auto text-center px-4">
             <div data-aos="fade-up" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-indigo-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6 border border-emerald-500/30">
                 <i data-lucide="trending-up" class="w-4 h-4"></i>
                 Investasi Cara Baru dan Lebih Produktif 2026
@@ -563,7 +566,7 @@
                         <i data-lucide="key" class="w-5 h-5 text-yellow-400"></i>
                     </div>
                     <h3 class="text-white font-bold text-sm mb-2">Jadi Milik Pribadi</h3>
-                    <p class="text-gray-400 text-xs">Setelah Sewa 1 sampai 2 tahun selesai, Kavling Kebun menjadi Milik Anda, Profit sekarang Milik Anda sepenuhnya</p>
+                    <p class="text-gray-400 text-xs">Setelah Sewa 2 sampai 3 tahun selesai, Kavling Kebun menjadi Milik Anda, Profit sekarang Milik Anda sepenuhnya</p>
                 </div>
             </div>
 
@@ -636,7 +639,7 @@
         </div>
     </section>
 
-    <!-- Modal Simulasi Kredit - Format Baru Perbandingan 1 Tahun vs 2 Tahun -->
+    <!-- Modal Simulasi Kredit - Format Baru Perbandingan 2 Tahun vs 3 Tahun (Bunga 10%) -->
     <div id="simulationModal" class="modal-overlay">
         <div class="modal-content">
             <!-- Header -->
@@ -667,8 +670,8 @@
                         <thead>
                             <tr class="bg-indigo-600/20 text-indigo-400 text-xs md:text-sm font-bold">
                                 <th class="p-2 md:p-3 border-b border-white/10 border-r w-[35%]">Komponen</th>
-                                <th class="p-2 md:p-3 border-b border-white/10 border-r text-center w-[32.5%]">1 Tahun</th>
-                                <th class="p-2 md:p-3 border-b border-white/10 text-center w-[32.5%]">2 Tahun</th>
+                                <th class="p-2 md:p-3 border-b border-white/10 border-r text-center w-[32.5%]">2 Tahun</th>
+                                <th class="p-2 md:p-3 border-b border-white/10 text-center w-[32.5%]">3 Tahun</th>
                             </tr>
                         </thead>
                         <tbody class="text-[11px] md:text-sm divide-y divide-white/5">
@@ -691,11 +694,11 @@
                                 <td class="p-2 md:p-3 border-r border-white/5 font-medium text-gray-300">Progresif Sewa Total</td>
                                 <td class="p-2 md:p-3 border-r border-white/5 text-center">
                                     <div class="text-white" id="col1Bunga">-</div>
-                                    <div class="text-[9px] md:text-xs text-yellow-400">(8%)</div>
+                                    <div class="text-[9px] md:text-xs text-yellow-400">(20%)</div>
                                 </td>
                                 <td class="p-2 md:p-3 text-center">
                                     <div class="text-white" id="col2Bunga">-</div>
-                                    <div class="text-[9px] md:text-xs text-yellow-400">(16%)</div>
+                                    <div class="text-[9px] md:text-xs text-yellow-400">(30%)</div>
                                 </td>
                             </tr>
                             <tr class="bg-emerald-500/10 font-bold">
@@ -711,8 +714,8 @@
                 <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-3 text-xs text-yellow-200/80 flex items-start gap-2">
                     <i data-lucide="info" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
                     <div class="space-y-1">
-                        <p>Disarankan pengambilan jangka waktu Sewa 2 tahun agar biaya Sewa lebih kecil.</p>
-                        <p class="text-yellow-400/60 text-[10px] md:text-xs">*Booking fee dibayar sekali diawal sebagai tanda jadi pemesanan</p>
+                        <p>Disarankan pengambilan jangka waktu Sewa 3 tahun agar cicilan bulanan lebih ringan.</p>
+                        <p class="text-yellow-400/60 text-[10px] md:text-xs">*Booking fee dibayar sekali diawal sebagai tanda jadi pemesanan (Bunga 10% per tahun)</p>
                     </div>
                 </div>
             </div>
@@ -1058,19 +1061,24 @@
         let hoveredObject = null;
         const plots = [];
 
-        // --- KLIK INTERAKSI WA --- 
+        // --- KLIK INTERAKSI MODAL SIMULASI (DIUBAH DARI WA KE MODAL) --- 
         container.addEventListener('click', () => {
-            if (hoveredObject) {
-                const d = hoveredObject.userData;
-                if (d.status === "Tersedia") {
-                    fbq('track', 'Contact', {content_name: 'Unit 3D ' + d.id}); // FB PIXEL TRACKING
-                    const noWA = "6287788526410";
-                    const pesan = `Halo Admin Maoslor, saya tertarik dengan UNIT ${d.id} yang berstatus TERSEDIA. Bisa minta info lebih lanjut?`;
-                    const urlWA = `https://wa.me/${noWA}?text=${encodeURIComponent(pesan)}`;
-                    window.open(urlWA, '_blank');
-                }
+    if (hoveredObject) {
+        const d = hoveredObject.userData;
+        if (d.status === "Tersedia") {
+            // HILANGKAN TOOLTIP DAN RESET HOVER
+            tooltip.style.display = 'none';
+            if(hoveredObject) hoveredObject.scale.set(1,1,1);
+            hoveredObject = null;
+            container.style.cursor = "default";
+            
+            fbq('track', 'ViewContent', {content_name: 'Unit 3D ' + d.id});
+            if (typeof openSimulationModal === 'function') {
+                openSimulationModal(d.id, d.harga);
             }
-        });
+        }
+    }
+});
 
         // --- JALAN DESA ---
         function addRoad(x, z, w, d, rot, name) {
@@ -1260,11 +1268,11 @@
     
     <script>
         // ==========================================
-        // KONFIGURASI SIMULASI
+        // KONFIGURASI SIMULASI - DIUBAH KE 10% DAN 2 VS 3 TAHUN
         // ==========================================
         const SIMULATION_CONFIG = {
             dpPercent: 30,           // DP 30%
-            interestRate: 8,        // Bunga 8% per tahun
+            interestRate: 10,        // Bunga 10% per tahun (diubah dari 8%)
         };
 
         // Data Lengkap Unit Tanah
@@ -1327,7 +1335,7 @@
             return price < 50000000 ? 1000000 : 1500000;
         }
 
-        // Calculate Simulation for both 1 and 2 years
+        // Calculate Simulation for both 2 and 3 years (diubah dari 1 dan 2 tahun)
         function calculateBothSimulations(unitPrice) {
             const price = parsePrice(unitPrice);
             const config = SIMULATION_CONFIG;
@@ -1335,44 +1343,44 @@
             const dp = Math.round(price * (config.dpPercent / 100));
             const principal = price - dp; // Pinjaman setelah DP
             
-            // 1 Tahun
-            const bunga1tahun = Math.round(principal * (config.interestRate / 100) * 1);
-            const total1tahun = principal + bunga1tahun;
-            const cicilan1tahun = Math.round(total1tahun / 12);
-            
-            // 2 Tahun
-            const bunga2tahun = Math.round(principal * (config.interestRate / 100) * 2);
+            // 2 Tahun (24 bulan)
+            const bunga2tahun = Math.round(principal * (config.interestRate / 100) * 2); // 10% x 2 = 20%
             const total2tahun = principal + bunga2tahun;
-            const cicilan2tahun = Math.round(total2tahun / 24);
+            const cicilan2tahun = Math.round(total2tahun / 24); // 24 bulan
+            
+            // 3 Tahun (36 bulan)
+            const bunga3tahun = Math.round(principal * (config.interestRate / 100) * 3); // 10% x 3 = 30%
+            const total3tahun = principal + bunga3tahun;
+            const cicilan3tahun = Math.round(total3tahun / 36); // 36 bulan
             
             return {
                 price: price,
                 bookingFee: bookingFee,
                 dp: dp,
                 principal: principal,
-                year1: {
-                    bunga: bunga1tahun,
-                    bungaPercent: 8,
-                    cicilan: cicilan1tahun,
-                    total: total1tahun
-                },
-                year2: {
+                year2: { // 2 tahun
                     bunga: bunga2tahun,
-                    bungaPercent: 16,
+                    bungaPercent: 20, // 10% x 2 tahun
                     cicilan: cicilan2tahun,
                     total: total2tahun
+                },
+                year3: { // 3 tahun
+                    bunga: bunga3tahun,
+                    bungaPercent: 30, // 10% x 3 tahun
+                    cicilan: cicilan3tahun,
+                    total: total3tahun
                 }
             };
         }
 
-        // Open Modal with specific unit
+        // Open Modal with specific unit (diupdate untuk 2 vs 3 tahun)
         function openSimulationModal(unitId, unitPrice) {
             const unit = dataTanahTable.find(u => u.id === unitId);
             if (!unit) return;
             
             currentUnitData = unit;
             
-            // Calculate both scenarios
+            // Calculate both scenarios (2 tahun vs 3 tahun)
             const calc = calculateBothSimulations(unit.harga);
             currentSimulationData = calc;
             
@@ -1380,19 +1388,19 @@
             document.getElementById('modalUnitInfo').textContent = `Unit ${unit.id} | Luas ${unit.luas}m² | Status ${unit.status}`;
             document.getElementById('simBookingFee').textContent = formatCurrency(calc.bookingFee);
             
-            // Fill Table Column 1 (1 Tahun)
+            // Fill Table Column 1 (2 Tahun)
             document.getElementById('col1Harga').textContent = formatCurrency(calc.price);
             document.getElementById('col1DP').textContent = formatCurrency(calc.dp);
             document.getElementById('col1Pinjaman').textContent = formatCurrency(calc.principal);
-            document.getElementById('col1Bunga').textContent = formatCurrency(calc.year1.bunga);
-            document.getElementById('col1Cicilan').textContent = formatCurrency(calc.year1.cicilan);
+            document.getElementById('col1Bunga').textContent = formatCurrency(calc.year2.bunga);
+            document.getElementById('col1Cicilan').textContent = formatCurrency(calc.year2.cicilan);
             
-            // Fill Table Column 2 (2 Tahun)
+            // Fill Table Column 2 (3 Tahun)
             document.getElementById('col2Harga').textContent = formatCurrency(calc.price);
             document.getElementById('col2DP').textContent = formatCurrency(calc.dp);
             document.getElementById('col2Pinjaman').textContent = formatCurrency(calc.principal);
-            document.getElementById('col2Bunga').textContent = formatCurrency(calc.year2.bunga);
-            document.getElementById('col2Cicilan').textContent = formatCurrency(calc.year2.cicilan);
+            document.getElementById('col2Bunga').textContent = formatCurrency(calc.year3.bunga);
+            document.getElementById('col2Cicilan').textContent = formatCurrency(calc.year3.cicilan);
             
             // Show modal
             document.getElementById('simulationModal').classList.add('active');
@@ -1410,7 +1418,7 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Download Simulation PDF
+        // Download Simulation PDF (diupdate untuk 2 vs 3 tahun dengan bunga 10%)
         function downloadSimulationPDF() {
             if (!currentSimulationData || !currentUnitData) return;
             
@@ -1439,13 +1447,13 @@
                 ['Harga', formatCurrency(calc.price), formatCurrency(calc.price)],
                 ['DP 30%', formatCurrency(calc.dp), formatCurrency(calc.dp)],
                 ['Pokok Sewa', formatCurrency(calc.principal), formatCurrency(calc.principal)],
-                ['Progresif Sewa Total', `${formatCurrency(calc.year1.bunga)} (8%)`, `${formatCurrency(calc.year2.bunga)} (16%)`],
-                ['Sewa/Bulan', formatCurrency(calc.year1.cicilan), formatCurrency(calc.year2.cicilan)]
+                ['Progresif Sewa Total', `${formatCurrency(calc.year2.bunga)} (20%)`, `${formatCurrency(calc.year3.bunga)} (30%)`],
+                ['Sewa/Bulan', formatCurrency(calc.year2.cicilan), formatCurrency(calc.year3.cicilan)]
             ];
             
             doc.autoTable({
                 startY: 50,
-                head: [['Komponen', '1 Tahun', '2 Tahun']],
+                head: [['Komponen', '2 Tahun', '3 Tahun']], // Header diubah
                 body: tableData,
                 theme: 'grid',
                 headStyles: { 
@@ -1475,9 +1483,10 @@
             doc.setTextColor(100);
             doc.text("Catatan:", 14, finalY);
             doc.setFontSize(8);
-            doc.text("• Disarankan pengambilan jangka waktu Sewa 2 tahun agar biaya Sewa lebih kecil", 14, finalY + 6);
+            doc.text("• Disarankan pengambilan jangka waktu Sewa 3 tahun agar cicilan bulanan lebih ringan", 14, finalY + 6);
             doc.text("• Booking fee dibayar sekali diawal sebagai tanda jadi", 14, finalY + 11);
-            doc.text("• Angka dapat berubah sesuai ketentuan marketing terbaru", 14, finalY + 16);
+            doc.text("• Bunga 10% per tahun (20% untuk 2 tahun, 30% untuk 3 tahun)", 14, finalY + 16);
+            doc.text("• Angka dapat berubah sesuai ketentuan marketing terbaru", 14, finalY + 21);
             
             // Footer
             doc.setFontSize(8);
@@ -1488,7 +1497,7 @@
             fbq('track', 'AddToCart', {content_name: 'Download Simulasi PDF Unit ' + unit.id});
         }
 
-        // Contact Marketing with simulation context
+        // Contact Marketing with simulation context (diupdate untuk 2 vs 3 tahun dengan bunga 10%)
         function contactMarketingSimulation() {
             if (!currentSimulationData || !currentUnitData) return;
             
@@ -1499,20 +1508,20 @@
 
 Saya tertarik dengan UNIT ${unit.id} (${formatCurrency(calc.price)}) dan ingin tanya tentang simulasi pembayaran:
 
-📊 *Perbandingan Simulasi:*
+📊 *Perbandingan Simulasi (Bunga 10% per tahun):*
 • Booking Fee: ${formatCurrency(calc.bookingFee)}
 
-*1 Tahun:*
+*2 Tahun (20%):*
 • DP 30%: ${formatCurrency(calc.dp)}
 • Pokok Sewa: ${formatCurrency(calc.principal)}
-• Progresif Sewa (8%): ${formatCurrency(calc.year1.bunga)}
-• Sewa: ${formatCurrency(calc.year1.cicilan)}/bln
-
-*2 Tahun:*
-• DP 30%: ${formatCurrency(calc.dp)}
-• Pokok Sewa: ${formatCurrency(calc.principal)}
-• Progresif Sewa (16%): ${formatCurrency(calc.year2.bunga)}
+• Progresif Sewa Total: ${formatCurrency(calc.year2.bunga)}
 • Sewa: ${formatCurrency(calc.year2.cicilan)}/bln
+
+*3 Tahun (30%):*
+• DP 30%: ${formatCurrency(calc.dp)}
+• Pokok Sewa: ${formatCurrency(calc.principal)}
+• Progresif Sewa Total: ${formatCurrency(calc.year3.bunga)}
+• Sewa: ${formatCurrency(calc.year3.cicilan)}/bln
 
 Mohon info lebih lanjut. Terima kasih!`;
             
@@ -1720,8 +1729,3 @@ function openSimulasi() {
 </script>
 </body>
 </html>
-
-
-
-
-
