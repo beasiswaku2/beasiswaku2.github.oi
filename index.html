@@ -130,56 +130,6 @@
             .ui-panel-denah { top: 15px; left: 20px; padding: 15px 25px; border-radius: 20px; }
         }
 
-        /* --- TOMBOL REQUEST BROSUR --- */
-        .btn-brosur-container {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            z-index: 10;
-        }
-        @media (min-width: 768px) {
-            .btn-brosur-container {
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-
-        .btn-brosur {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            animation: pulse-btn 2s infinite;
-        }
-        @media (min-width: 768px) {
-            .btn-brosur {
-                padding: 16px 28px;
-                font-size: 14px;
-                border-radius: 16px;
-            }
-        }
-
-        @keyframes pulse-btn {
-            0%, 100% { transform: scale(1); box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3); }
-            50% { transform: scale(1.05); box-shadow: 0 15px 35px rgba(245, 158, 11, 0.5); }
-        }
-
-        .btn-brosur:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(245, 158, 11, 0.5);
-        }
-
         #tooltip-denah {
             position: fixed; 
             display: none; 
@@ -365,162 +315,6 @@
                 border-radius: 16px;
                 max-height: 95vh;
             }
-        }
-
-        /* Modal Form Brosur Styles */
-        .modal-form-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(10px);
-            z-index: 250;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .modal-form-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .modal-form-content {
-            background: linear-gradient(145deg, #0a0a0a 0%, #1a1a1a 100%);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            border-radius: 24px;
-            max-width: 450px;
-            width: 100%;
-            position: relative;
-            transform: scale(0.9) translateY(20px);
-            transition: transform 0.3s ease;
-            overflow: hidden;
-        }
-        
-        .modal-form-overlay.active .modal-form-content {
-            transform: scale(1) translateY(0);
-        }
-
-        .modal-form-header {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            padding: 24px 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        .modal-form-body {
-            padding: 28px 24px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-label {
-            display: block;
-            color: #9ca3af;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-
-        .form-input {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 14px 16px;
-            color: white;
-            font-size: 14px;
-            transition: all 0.3s;
-            box-sizing: border-box;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: #f59e0b;
-            background: rgba(245, 158, 11, 0.05);
-            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
-        }
-
-        .form-input::placeholder {
-            color: #6b7280;
-        }
-
-        .btn-submit-form {
-            width: 100%;
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            color: white;
-            padding: 16px;
-            border: none;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 8px;
-        }
-
-        .btn-submit-form:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
-        }
-
-        .btn-submit-form:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .form-success {
-            text-align: center;
-            padding: 40px 24px;
-            display: none;
-        }
-
-        .form-success.active {
-            display: block;
-        }
-
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            animation: scaleIn 0.5s ease;
-        }
-
-        @keyframes scaleIn {
-            0% { transform: scale(0); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-
-        .loading-spinner {
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
 
         /* Styles dari pengembalian.html untuk section home */
@@ -795,80 +589,9 @@
                         <p class="text-white mobile-text-sm md:text-[20px]">Arahkan kursor dan klik unit "Tersedia" untuk info lebih lanjut.</p>
                     </div>
                 </div>
-
-                <!-- TOMBOL REQUEST BROSUR -->
-                <div class="btn-brosur-container">
-                    <button onclick="openBrosurModal()" class="btn-brosur touch-friendly">
-                        <i data-lucide="file-text" class="w-4 h-4 md:w-5 md:h-5"></i>
-                        <span>Minta Brosur Lengkap</span>
-                    </button>
-                </div>
             </div>
         </div>
     </section>
-
-    <!-- MODAL FORM REQUEST BROSUR -->
-    <div id="modalFormBrosur" class="modal-form-overlay">
-        <div class="modal-form-content">
-            <!-- Header -->
-            <div class="modal-form-header">
-                <button onclick="closeBrosurModal()" class="absolute top-4 right-4 text-white/80 hover:text-white transition">
-                    <i data-lucide="x" class="w-6 h-6"></i>
-                </button>
-                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i data-lucide="file-text" class="w-8 h-8 text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white">Dapatkan Brosur Lengkap</h3>
-                <p class="text-white/80 text-sm mt-1">Isi nomor WhatsApp Anda, kami kirim brosur & pricelist</p>
-            </div>
-
-            <!-- Form Content -->
-            <div id="formContent" class="modal-form-body">
-                <form id="brosurForm" onsubmit="submitBrosurForm(event)">
-                    <div class="form-group">
-                        <label class="form-label">Nama Lengkap</label>
-                        <input type="text" id="inputNama" class="form-input" placeholder="Masukkan nama Anda" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Nomor WhatsApp</label>
-                        <input type="tel" id="inputWA" class="form-input" placeholder="Contoh: 081234567890" required pattern="[0-9]*" minlength="10" maxlength="15">
-                        <p class="text-xs text-gray-500 mt-2">
-                            <i data-lucide="shield-check" class="w-3 h-3 inline mr-1"></i>
-                            Data Anda aman & tidak akan disebarluaskan
-                        </p>
-                    </div>
-
-                    <button type="submit" id="btnSubmitBrosur" class="btn-submit-form touch-friendly">
-                        <span>Kirim & Terima Brosur</span>
-                        <i data-lucide="send" class="w-4 h-4"></i>
-                    </button>
-                </form>
-
-                <div class="mt-4 text-center">
-                    <p class="text-xs text-gray-500">
-                        Atau hubungi langsung: 
-                        <a href="https://wa.me/6287788526410" target="_blank" class="text-amber-400 hover:underline">0877-8852-6410</a>
-                    </p>
-                </div>
-            </div>
-
-            <!-- Success State -->
-            <div id="formSuccess" class="form-success">
-                <div class="success-icon">
-                    <i data-lucide="check" class="w-10 h-10 text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-2">Terima Kasih!</h3>
-                <p class="text-gray-400 text-sm mb-6">
-                    Brosur lengkap telah dikirim ke WhatsApp Anda.<br>
-                    Tim marketing kami akan segera menghubungi Anda.
-                </p>
-                <button onclick="closeBrosurModal()" class="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-semibold transition">
-                    Tutup
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- Mobile-optimized Harga Section -->
     <section id="harga" class="py-12 md:py-20">
@@ -1808,237 +1531,51 @@ Mohon info lebih lanjut. Terima kasih!`;
             fbq('track', 'Contact', {content_name: 'Tanya Marketing Simulasi Unit ' + unit.id});
         }
 
-        // ==========================================
-        // FUNGSI MODAL FORM BROSUR BARU
-        // ==========================================
-        
-        // URL Google Sheets Web App - GANTI DENGAN URL ANDA
-        const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxklF8HjAWSA5Qc_0oi1u5B0aNqiG6ZJoUXCEFto3mWSwasqs2teRIghqeqDB3qn-UE/exec';
-
-        
-
-function openBrosurModal() {
-    document.getElementById('modalFormBrosur').classList.add('active');
-    document.body.style.overflow = 'hidden';
-    lucide.createIcons();
-    
-    fbq('track', 'Lead', { content_name: 'Buka Form Brosur' });
-}
-
-function closeBrosurModal() {
-    document.getElementById('modalFormBrosur').classList.remove('active');
-    document.body.style.overflow = 'auto';
-    
-    setTimeout(() => {
-        resetBrosurForm();
-    }, 300);
-}
-
-function resetBrosurForm() {
-    document.getElementById('brosurForm').reset();
-    document.getElementById('formContent').style.display = 'block';
-    document.getElementById('formSuccess').classList.remove('active');
-    const btnSubmit = document.getElementById('btnSubmitBrosur');
-    btnSubmit.disabled = false;
-    btnSubmit.innerHTML = `<span>Kirim & Terima Brosur</span><i data-lucide="send" class="w-4 h-4"></i>`;
-    lucide.createIcons();
-}
-
-// METODE 1: Menggunakan fetch dengan no-cors (data akan terkirim tapi response tidak terbaca)
-async function submitBrosurForm(e) {
-    e.preventDefault();
-    
-    const nama = document.getElementById('inputNama').value.trim();
-    const wa = document.getElementById('inputWA').value.trim();
-    const btnSubmit = document.getElementById('btnSubmitBrosur');
-    
-    if (!nama || !wa) {
-        alert('Mohon isi semua field');
-        return;
-    }
-    
-    if (wa.replace(/\D/g, '').length < 10) {
-        alert('Nomor WhatsApp minimal 10 digit');
-        return;
-    }
-    
-    // Disable button dan tampilkan loading
-    btnSubmit.disabled = true;
-    btnSubmit.innerHTML = `<div class="loading-spinner"></div><span>Mengirim...</span>`;
-    
-    // Format data
-    const data = {
-        nama: nama,
-        whatsapp: wa,
-        source: 'Website Kavling Maoslor',
-        page: window.location.href,
-        timestamp: new Date().toISOString()
-    };
-    
-    try {
-        // Method 1: Coba fetch dengan no-cors (untuk Google Apps Script)
-        await fetch(GOOGLE_SHEETS_URL, {
-            method: 'POST',
-            mode: 'no-cors', // Ini membuat request jalan tapi response tidak bisa dibaca
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        });
-        
-        // Karena mode no-cors, kita anggap sukses setelah delay
-        // Tapi untuk memastikan, kita coba pakai method alternatif
-        
-        // Method 2: Submit menggunakan form iframe (paling reliable untuk GAS)
-        await submitViaIframe(data);
-        
-    } catch (error) {
-        console.log('Fetch error (expected with no-cors), trying iframe method...');
-        // Fallback ke iframe method
-        try {
-            await submitViaIframe(data);
-        } catch (iframeError) {
-            console.error('Both methods failed:', iframeError);
-            showError('Gagal mengirim data. Silakan coba lagi atau hubungi marketing.');
-            btnSubmit.disabled = false;
-            btnSubmit.innerHTML = `<span>Kirim & Terima Brosur</span><i data-lucide="send" class="w-4 h-4"></i>`;
-            lucide.createIcons();
-            return;
+        // Fungsi helper: format timestamp
+        function formatDateTime() {
+            const now = new Date();
+            const pad = n => String(n).padStart(2, '0');
+            return `${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}`;
         }
-    }
-}
 
-// METODE 2: Submit menggunakan hidden iframe (paling reliable untuk Google Apps Script)
-function submitViaIframe(data) {
-    return new Promise((resolve, reject) => {
-        // Buat form hidden
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = GOOGLE_SHEETS_URL;
-        form.target = 'hidden-iframe';
-        
-        // Tambah data sebagai input
-        for (const key in data) {
-            const input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = key;
-            input.value = data[key];
-            form.appendChild(input);
-        }
-        
-        // Buat iframe hidden untuk menangkap response
-        let iframe = document.getElementById('hidden-iframe');
-        if (!iframe) {
-            iframe = document.createElement('iframe');
-            iframe.name = 'hidden-iframe';
-            iframe.id = 'hidden-iframe';
-            iframe.style.display = 'none';
-            document.body.appendChild(iframe);
-        }
-        
-        // Handle load event
-        iframe.onload = function() {
+        // Fungsi Render Tabel ke HTML
+        function renderTable() {
             try {
-                // Coba baca response
-                const response = iframe.contentDocument.body.innerText;
-                console.log('Iframe response:', response);
+                const body = document.getElementById('dataTanahBody');
+                if (!body) return;
                 
-                // Tampilkan sukses
-                showSuccess(data);
-                resolve(true);
-            } catch (e) {
-                // Cross-origin error, tapi data sudah terkirim
-                console.log('Iframe loaded (cross-origin, data sent)');
+                body.innerHTML = dataTanahTable.map(d => {
+                    const statusColor = d.status === "Tersedia" ? "status-tersedia" : (d.status === "Booking" ? "status-booking" : "status-terjual");
+                    const btnClass = d.status === "Tersedia" 
+                        ? "bg-indigo-500/10 hover:bg-indigo-500 text-indigo-400 hover:text-white cursor-pointer" 
+                        : "bg-gray-500/10 text-gray-500 cursor-not-allowed";
+                    const btnAction = d.status === "Tersedia" 
+                        ? `onclick="openSimulationModal('${d.id}', '${d.harga}'); return false;"` 
+                        : 'disabled';
+                    
+                    return `
+                        <tr class="hover:bg-white/5 transition">
+                            <td class="p-3 md:p-5 font-bold">UNIT ${d.id}</td>
+                            <td class="p-3 md:p-5">${d.luas} m²</td>
+                            <td class="p-3 md:p-5">${d.l}m x ${d.p}m</td>
+                            <td class="p-3 md:p-5 font-bold ${statusColor}">${d.status}</td>
+                            <td class="p-3 md:p-5 font-semibold text-white">${d.harga}</td>
+                            <td class="p-3 md:p-5 text-center">
+                                <button ${btnAction}
+                                   class="${btnClass} px-3 py-1 md:px-4 md:py-2 rounded-md md:rounded-lg text-xs md:text-sm font-bold transition flex items-center justify-center gap-1 md:gap-2 touch-friendly w-full">
+                                    <i data-lucide="calculator" class="w-3 h-3 md:w-4 md:h-4"></i> 
+                                    <span>Simulasi</span>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
                 
-                // Tampilkan sukses setelah delay
-                setTimeout(() => {
-                    showSuccess(data);
-                    resolve(true);
-                }, 1500);
+                lucide.createIcons();
+            } catch (error) {
+                console.error('Error rendering table:', error);
             }
-            
-            // Cleanup
-            setTimeout(() => {
-                if (form.parentNode) form.parentNode.removeChild(form);
-            }, 1000);
-        };
-        
-        iframe.onerror = function() {
-            reject(new Error('Iframe error'));
-        };
-        
-        // Submit form
-        document.body.appendChild(form);
-        form.submit();
-    });
-}
-
-// METODE 3: Submit menggunakan image beacon (paling simple, tapi GET only)
-function submitViaImageBeacon(data) {
-    const params = new URLSearchParams({
-        nama: data.nama,
-        whatsapp: data.whatsapp,
-        source: data.source,
-        page: data.page
-    });
-    
-    const img = new Image();
-    img.src = GOOGLE_SHEETS_URL + '?' + params.toString();
-    
-    // Tampilkan sukses setelah delay
-    setTimeout(() => {
-        showSuccess(data);
-    }, 1000);
-}
-
-function showSuccess(data) {
-    // Tracking Facebook
-    fbq('track', 'Lead', {
-        content_name: 'Submit Form Brosur Sukses',
-        nama: data.nama,
-        whatsapp: data.whatsapp
-    });
-    
-    // Kirim notifikasi ke marketing (optional)
-    sendNotificationToMarketing(data.nama, data.whatsapp);
-    
-    // Tampilkan UI sukses
-    document.getElementById('formContent').style.display = 'none';
-    document.getElementById('formSuccess').classList.add('active');
-    lucide.createIcons();
-}
-
-function showError(message) {
-    alert(message);
-}
-
-function sendNotificationToMarketing(nama, wa) {
-    const message = `🔔 *LEAD BARU - KAVLING MAOSLOR*
-
-👤 *Nama:* ${nama}
-📱 *WhatsApp:* ${wa}
-📅 *Waktu:* ${new Date().toLocaleString('id-ID')}
-🔗 *Sumber:* Website Form Brosur
-
-Silakan follow up!`;
-
-    const url = `https://wa.me/6287788526410?text=${encodeURIComponent(message)}`;
-    // Buka di tab baru (optional)
-    // window.open(url, '_blank');
-}
-
-// Tambahkan event listener untuk close modal saat klik outside
-document.addEventListener('DOMContentLoaded', function() {
-    // Close modal when clicking overlay
-    const modalOverlay = document.getElementById('modalFormBrosur');
-    if (modalOverlay) {
-        modalOverlay.addEventListener('click', function(e) {
-            if (e.target === modalOverlay) {
-                closeBrosurModal();
-            }
-        });
-    }
-});
+        }
 
         // Fungsi Pencarian Unit
         function filterTable() {
@@ -2156,19 +1693,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Close brosur modal when clicking overlay
-        document.getElementById('modalFormBrosur').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('modalFormBrosur')) {
-                closeBrosurModal();
-            }
-        });
-
-        // Escape key to close modals
+        // Escape key to close modal
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeSimulationModal();
-                closeBrosurModal();
-            }
+            if (e.key === 'Escape') closeSimulationModal();
         });
 
         // Initialize
