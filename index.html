@@ -273,49 +273,68 @@
         }
 
         /* Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(8px);
-            z-index: 200;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .modal-content {
-            background: #0a0a0a;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            max-width: 600px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-        
-        .modal-overlay.active .modal-content {
-            transform: scale(1);
-        }
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 200;
+    display: flex;
+    align-items: flex-start; /* Ganti dari center ke flex-start */
+    justify-content: center;
+    padding: 0; /* Hapus padding */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
 
-        @media (max-width: 640px) {
-            .modal-content {
-                border-radius: 16px;
-                max-height: 95vh;
-            }
-        }
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: #0a0a0a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0; /* Hapus border radius atas bawah */
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 900px;
+    width: 100%;
+    height: 100vh; /* Full height */
+    max-height: 100vh; /* Full height */
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(-20px); /* Animasi dari atas */
+    transition: transform 0.3s ease;
+    padding: 0; /* Hapus padding global */
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .modal-content {
+        max-width: 100%;
+        border: none; /* Hapus border di mobile untuk fullscreen feel */
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1024px) {
+    .modal-content {
+        max-width: 1000px;
+    }
+}
+
+/* Extra Large Desktop */
+@media (min-width: 1280px) {
+    .modal-content {
+        max-width: 1100px;
+    }
+}
 
         /* Styles dari pengembalian.html untuk section home */
         .concept-box {
@@ -484,9 +503,7 @@
                 <a href="#kontak" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Kontak'});">Info & Pemasaran</a>
             </div>
             
-            <button onclick="openSimulasi()" class="bg-white text-black px-6 py-3 rounded-full font-bold touch-friendly">
-    		Lihat Simulasi Hasil
-		</button>
+            
         </div>
         
         <!-- Mobile Menu Panel -->
@@ -511,15 +528,11 @@
     
 
     <div id="tooltip-denah">
-        <div id="t-unit" class="text-lg md:text-xl font-extrabold border-b border-white/10 mb-2 md:mb-3 pb-1 text-indigo-400">UNIT --</div>
-        <div class="space-y-1 md:space-y-1.5 text-gray-300">
-            <p class="flex justify-between text-sm md:text-base"><span>Luas:</span> <span id="t-luas" class="text-white font-semibold">--</span></p>
-            <p class="flex justify-between text-sm md:text-base"><span>Dimensi:</span> <span id="t-dimensi" class="text-white font-semibold">--</span></p>
-            <p class="flex justify-between text-sm md:text-base"><span>Status:</span> <span id="t-status" class="font-bold">--</span></p>
-            <div class="pt-2 border-t border-white/5 mt-2">
-                <p id="t-harga" class="text-base md:text-lg font-bold text-white">--</p>
-            </div>
-        </div>
+        <div id="t-unit" class="text-lg md:text-xl font-extrabold text-indigo-400">UNIT --</div>
+           <div class="text-gray-300 text-sm md:text-base">
+               <span id="t-luas-dimensi" class="text-white font-semibold">--</span>
+           </div>
+        <div id="t-harga" class="text-base md:text-lg font-bold text-white">--</div>
     </div>
 
     <!-- SECTION HOME BARU DARI PENGEMBALIAN.HTML -->
@@ -540,7 +553,7 @@
                 Kavling Kebun bukan hanya aset mati—tapi <span class="text-emerald-400 font-semibold">Mesin penghasil Passive Income</span> 
                 yang menutup <span class="text-emerald-400 font-semibold">sendiri Sewanya</span>. DP 30% jadi modal awal, 
                 Hasil Panen Anda yang melanjutkan pembayaran Sewa. 
-                <strong class="text-white">Gratis tanah dalam 2 tahun?</strong> Bukan mimpi, tapi sistem yang membuat menjadi nyata.
+                <strong class="text-white">Gratis tanah dalam 2 atau 3 tahun?</strong> Bukan mimpi, tapi sistem yang membuat menjadi nyata.
             </p>
 
             <!-- Value Proposition Cards -->
@@ -586,7 +599,7 @@
                         <span class="flex items-center"><span class="dot bg-terjual"></span> Terjual</span>
                     </div>
                     <div class="text-center mb-0 mt-1 md:mt-2">
-                        <p class="text-white mobile-text-sm md:text-[20px]">Arahkan kursor dan klik unit "Tersedia" untuk info lebih lanjut.</p>
+                        <p class="text-white mobile-text-sm md:text-[20px]">Arahkan kursor dan klik unit untuk info lebih lanjut.</p>
                     </div>
                 </div>
             </div>
@@ -599,7 +612,7 @@
             <div class="text-center mb-8 md:mb-12">
                 <h2 data-aos="fade-up" class="mobile-text-2xl md:text-4xl font-bold mb-2 md:mb-4 text-gradient">Daftar Harga Sewa Per Unit Kavling Kebun Maoslor</h2>
                 <p data-aos="fade-up" data-aos-delay="100" class="mobile-text-sm md:text-base text-gray-400 px-4">
-                    Pilih unit impian Anda. Klik tombol "Simulasi" untuk melihat skema pembayaran Sewa.
+                    Pilih unit impian Anda. Klik tombol "Info" untuk melihat detail atau "Waiting List" jika unit sedang booking.
                 </p>
             </div>
 
@@ -690,17 +703,7 @@
                                 <td class="p-2 md:p-3 border-r border-white/5 text-center text-white" id="col1Pinjaman">-</td>
                                 <td class="p-2 md:p-3 text-center text-white" id="col2Pinjaman">-</td>
                             </tr>
-                            <tr class="hover:bg-white/5">
-                                <td class="p-2 md:p-3 border-r border-white/5 font-medium text-gray-300">Progresif Sewa Total</td>
-                                <td class="p-2 md:p-3 border-r border-white/5 text-center">
-                                    <div class="text-white" id="col1Bunga">-</div>
-                                    <div class="text-[9px] md:text-xs text-yellow-400">(20%)</div>
-                                </td>
-                                <td class="p-2 md:p-3 text-center">
-                                    <div class="text-white" id="col2Bunga">-</div>
-                                    <div class="text-[9px] md:text-xs text-yellow-400">(30%)</div>
-                                </td>
-                            </tr>
+                            
                             <tr class="bg-emerald-500/10 font-bold">
                                 <td class="p-2 md:p-3 border-r border-white/5 font-bold text-emerald-400">Sewa/Bulan</td>
                                 <td class="p-2 md:p-3 border-r border-white/5 text-center text-emerald-400 text-sm md:text-base font-bold" id="col1Cicilan">-</td>
@@ -715,7 +718,7 @@
                     <i data-lucide="info" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
                     <div class="space-y-1">
                         <p>Disarankan pengambilan jangka waktu Sewa 3 tahun agar cicilan bulanan lebih ringan.</p>
-                        <p class="text-yellow-400/60 text-[10px] md:text-xs">*Booking fee dibayar sekali diawal sebagai tanda jadi pemesanan (Bunga 10% per tahun)</p>
+                        <p class="text-yellow-400/60 text-[10px] md:text-xs">*Booking fee dibayar sekali diawal sebagai tanda jadi pemesanan </p>
                     </div>
                 </div>
             </div>
@@ -736,6 +739,110 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Waiting List untuk Unit Booking -->
+<div id="waitingListModal" class="modal-overlay">
+    <div class="modal-content">
+        <!-- Header -->
+        <div class="sticky top-0 bg-[#0a0a0a] border-b border-white/10 p-4 md:p-6 flex justify-between items-center z-10">
+            <div>
+                <h3 class="text-lg md:text-2xl font-bold text-white">🎯 Daftar Tunggu Prioritas</h3>
+                <p class="text-xs md:text-sm text-yellow-400 mt-1" id="waitingUnitInfo">Unit -</p>
+            </div>
+            <button onclick="closeWaitingListModal()" class="touch-friendly p-2 hover:bg-white/10 rounded-full transition">
+                <i data-lucide="x" class="w-5 h-5 md:w-6 md:h-6 text-gray-400"></i>
+            </button>
+        </div>
+        
+        <!-- Content -->
+        <div class="p-4 md:p-6">
+            <!-- Grid 2 Card -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- Card 1: Form Input -->
+                <div class="bg-gradient-to-br from-indigo-500/10 to-indigo-500/5 border border-indigo-500/20 rounded-xl p-4">
+                    <h4 class="text-white font-bold text-sm mb-3 flex items-center gap-2">
+                        <i data-lucide="user-plus" class="w-4 h-4 text-indigo-400"></i>
+                        Isi Data Anda
+                    </h4>
+                    
+                    <div class="space-y-3">
+                        <div>
+                            <label class="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1 block">Nama Lengkap</label>
+                            <input type="text" id="wlNama" placeholder="Nama lengkap" 
+                                class="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-indigo-500 transition placeholder-gray-600">
+                        </div>
+                        
+                        <div>
+                            <label class="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1 block">Email Aktif</label>
+                            <input type="email" id="wlEmail" placeholder="email@anda.com" 
+                                class="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-indigo-500 transition placeholder-gray-600">
+                        </div>
+                        
+                        <div>
+                            <label class="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1 block">WhatsApp</label>
+                            <input type="tel" id="wlWhatsApp" placeholder="081234567890" 
+                                class="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-indigo-500 transition placeholder-gray-600">
+                        </div>
+                        
+                        <div>
+                            <label class="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1 block">Unit Pilihan</label>
+                            <input type="text" id="wlUnit" readonly 
+                                class="w-full bg-yellow-500/10 border border-yellow-500/30 rounded-lg px-3 py-2.5 text-yellow-400 text-sm font-bold cursor-not-allowed">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Info & Keuntungan -->
+                <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 border border-emerald-500/20 rounded-xl p-4 flex flex-col">
+                    <h4 class="text-white font-bold text-sm mb-3 flex items-center gap-2">
+                        <i data-lucide="star" class="w-4 h-4 text-emerald-400"></i>
+                        Keuntungan Waiting List
+                    </h4>
+                    
+                    <ul class="space-y-2 flex-1">
+                        <li class="flex items-start gap-2 text-xs text-gray-300">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                            <span><strong class="text-emerald-300">Prioritas pertama</strong> jika booking batal</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-xs text-gray-300">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                            <span><strong class="text-emerald-300">Info real-time</strong> status ketersediaan</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-xs text-gray-300">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                            <span><strong class="text-emerald-300">Simulasi gratis</strong> & konsultasi</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-xs text-gray-300">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                            <span><strong class="text-emerald-300">Tanpa biaya</strong> atau komitmen</span>
+                        </li>
+                    </ul>
+
+                    <!-- Info Unit -->
+                    <div class="mt-3 p-3 bg-black/20 rounded-lg border border-white/5">
+                        <p class="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1">Status Unit</p>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            Unit ini sedang <span class="text-yellow-400 font-bold">BOOKING</span>. 
+                            Daftar sekarang untuk jadi prioritas!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="sticky bottom-0 bg-[#0a0a0a] border-t border-white/10 p-4 md:p-6 grid grid-cols-2 gap-3">
+            <button onclick="closeWaitingListModal()" class="touch-friendly w-full bg-white/5 hover:bg-white/10 text-white px-4 py-3 rounded-xl font-bold text-sm transition border border-white/10">
+                Tutup
+            </button>
+            <button onclick="submitWaitingList()" class="touch-friendly w-full bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-xl font-bold text-sm transition shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Daftar Sekarang</span>
+            </button>
+        </div>
+    </div>
+</div>
 
     <!-- Mobile-optimized Video Section -->
     <section id="video" class="bg-[#080808]">
@@ -842,6 +949,49 @@
                         sistem otomatis menganggap Anda mengundurkan diri. DP akan dikembalikan sesuai perhitungan di atas.
                     </p>
                 </details>
+		<details class="glass p-5 rounded-xl group cursor-pointer">
+    <summary class="flex justify-between items-center font-bold text-white list-none">
+        <span>Apakah unit yang sedang booking masih bisa saya dapatkan?</span>
+    </summary>
+    <div class="mt-3 text-sm text-gray-300 leading-relaxed space-y-3">
+        <p>
+            <strong class="text-emerald-400">Tentu saja bisa! 💪</strong> Status "Booking" bukanlah akhir dari harapan Anda. 
+            Ini justru <span class="text-white font-semibold">kesempatan emas</span> untuk masuk ke dalam 
+            <strong class="text-yellow-400">Daftar Prioritas Khusus</strong> kami.
+        </p>
+        
+        <div class="bg-gradient-to-r from-emerald-500/10 to-yellow-500/10 border border-emerald-500/20 rounded-lg p-3 my-3">
+            <h4 class="text-emerald-300 font-bold text-xs uppercase tracking-wider mb-2">✨ Keuntungan Menjadi Prioritas:</h4>
+            <ul class="space-y-1.5 text-xs">
+                <li class="flex items-start gap-2">
+                    <span class="text-emerald-400 mt-0.5">▸</span>
+                    <span><strong class="text-white">Posisi Pertama</strong> dalam antrian jika booking batal</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-emerald-400 mt-0.5">▸</span>
+                    <span>Notifikasi <strong class="text-white">real-time</strong> via WhatsApp</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-emerald-400 mt-0.5">▸</span>
+                    <span>Akses <strong class="text-white">simulasi & konsultasi</strong> gratis</span>
+                </li>
+            </ul>
+        </div>
+
+        <p>
+            Banyak nasabah kami yang berhasil mendapatkan unit impian justru dari status waiting list ini! 
+            <span class="text-yellow-400">Jangan menyerah</span> — daftarkan diri Anda sekarang dan biarkan kami yang mengawasi ketersediaan unit untuk Anda. Klik Tombol "Lihat Unit Tersedia & Booking" kemudian klik tombol "Waiting List" pada unit yang anda inginkan.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-2 mt-4">
+            <a href="#harga" onclick="fbq('track', 'ViewContent', {content_name: 'FAQ Link to Harga'});" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2">
+                <i data-lucide="list" class="w-3.5 h-3.5"></i>
+                Lihat Unit Tersedia & Booking
+            </a>
+            
+        </div>
+    </div>
+</details>
 
                 <details class="glass p-5 rounded-xl group cursor-pointer">
                     <summary class="flex justify-between items-center font-bold text-white list-none">
@@ -997,27 +1147,27 @@
         const tooltip = document.getElementById('tooltip-denah');
 
         const dataTanah = [
-            { id: "30", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
-            { id: "27", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
+            { id: "30", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 62.000.000" },
+            { id: "27", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 60.000.000" },
             { id: "24", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
             { id: "21", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
             { id: "18", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
             { id: "15", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
-            { id: "13", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 45.000.000" },
-            { id: "11", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 44.000.000" },
+            { id: "13", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 45.000.000" },
+            { id: "11", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 44.000.000" },
             { id: "9",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 43.000.000" },
             { id: "7",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 42.000.000" },
             { id: "5",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 41.000.000" },
             { id: "3",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 40.000.000" },
             { id: "1",  luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 36.000.000" },
             { id: "1a", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 35.000.000" },
-            { id: "31", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
+            { id: "31", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 62.000.000" },
             { id: "28", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
             { id: "25", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
             { id: "22", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
             { id: "19", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
             { id: "16", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
-            { id: "14", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 45.000.000" },
+            { id: "14", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 45.000.000" },
             { id: "12", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 44.000.000" },
             { id: "10", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 43.000.000" },
             { id: "8",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 42.000.000" },
@@ -1025,15 +1175,15 @@
             { id: "4",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 40.000.000" },
             { id: "2",  luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 36.000.000" },
             { id: "2a", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 35.000.000" },
-            { id: "32", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
-            { id: "29", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
+            { id: "32", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 62.000.000" },
+            { id: "29", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 60.000.000" },
             { id: "26", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
             { id: "23", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
             { id: "20", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
             { id: "17", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
-            { id: "35", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 43.000.000" },
-            { id: "34", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 44.000.000" },
-            { id: "33", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 45.000.000" }
+            { id: "35", luas: 150, p: "Khusus ", l: "Khusus ", status: "Tersedia", harga: "Rp 43.000.000" },
+            { id: "34", luas: 150, p: "Khusus ", l: "Khusus ", status: "Tersedia", harga: "Rp 44.000.000" },
+            { id: "33", luas: 150, p: "Khusus ", l: "Khusus ", status: "Tersedia", harga: "Rp 45.000.000" }
         ];
 
         const statusColors = { "Tersedia": "#22c55e", "Booking": "#eab308", "Terjual": "#ef4444" };
@@ -1061,24 +1211,32 @@
         let hoveredObject = null;
         const plots = [];
 
-        // --- KLIK INTERAKSI MODAL SIMULASI (DIUBAH DARI WA KE MODAL) --- 
+        // --- KLIK INTERAKSI MODAL (Tersedia = Simulasi, Booking = Waiting List) --- 
         container.addEventListener('click', () => {
-    if (hoveredObject) {
-        const d = hoveredObject.userData;
-        if (d.status === "Tersedia") {
-            // HILANGKAN TOOLTIP DAN RESET HOVER
-            tooltip.style.display = 'none';
-            if(hoveredObject) hoveredObject.scale.set(1,1,1);
-            hoveredObject = null;
-            container.style.cursor = "default";
-            
-            fbq('track', 'ViewContent', {content_name: 'Unit 3D ' + d.id});
-            if (typeof openSimulationModal === 'function') {
-                openSimulationModal(d.id, d.harga);
+            if (hoveredObject) {
+                const d = hoveredObject.userData;
+                
+                // HILANGKAN TOOLTIP DAN RESET HOVER
+                tooltip.style.display = 'none';
+                if(hoveredObject) hoveredObject.scale.set(1,1,1);
+                hoveredObject = null;
+                container.style.cursor = "default";
+                
+                fbq('track', 'ViewContent', {content_name: 'Unit 3D ' + d.id});
+                
+                if (d.status === "Tersedia") {
+                    // Untuk Tersedia: Buka Simulasi Modal
+                    if (typeof openSimulationModal === 'function') {
+                        openSimulationModal(d.id, d.harga);
+                    }
+                } else if (d.status === "Booking") {
+                    // Untuk Booking: Buka Waiting List Modal (baru)
+                    if (typeof openWaitingListModal === 'function') {
+                        openWaitingListModal(d.id, d.harga);
+                    }
+                }
             }
-        }
-    }
-});
+        });
 
         // --- JALAN DESA ---
         function addRoad(x, z, w, d, rot, name) {
@@ -1215,38 +1373,43 @@
             }
         });
 
-        function animate() {
-            requestAnimationFrame(animate);
-            raycaster.setFromCamera(mouse, camera);
-            const hits = raycaster.intersectObjects(plots);
-            if (hits.length > 0) {
-                const obj = hits[0].object;
-                if (hoveredObject !== obj) {
-                    if(hoveredObject) hoveredObject.scale.set(1,1,1);
-                    hoveredObject = obj;
-                    const d = obj.userData;
-                    document.getElementById('t-unit').innerText = "UNIT " + d.id;
-                    document.getElementById('t-luas').innerText = d.luas + " m²";
-                    document.getElementById('t-dimensi').innerText = d.l + "m x " + d.p + "m";
-                    document.getElementById('t-status').innerText = d.status.toUpperCase();
-                    document.getElementById('t-status').style.color = statusColors[d.status];
-                    document.getElementById('t-harga').innerText = d.harga;
-                    tooltip.style.display = 'block';
-                    obj.scale.set(1.05, 5, 1.05);
-                    container.style.cursor = d.status === "Tersedia" ? "pointer" : "default";
-                }
-            } else {
-                if (hoveredObject) {
-                    hoveredObject.scale.set(1, 1, 1);
-                    container.style.cursor = "default";
-                }
-                hoveredObject = null;
-                tooltip.style.display = 'none';
-            }
-            controls.update();
-            renderer.render(scene, camera);
+function animate() {
+    requestAnimationFrame(animate);
+    raycaster.setFromCamera(mouse, camera);
+    const hits = raycaster.intersectObjects(plots);
+    if (hits.length > 0) {
+        const obj = hits[0].object;
+        if (hoveredObject !== obj) {
+            if(hoveredObject) hoveredObject.scale.set(1,1,1);
+            hoveredObject = obj;
+            const d = obj.userData;
+            
+            // Baris 1: Unit dan Status (ukuran status diperbesar)
+            document.getElementById('t-unit').innerHTML = `UNIT ${d.id} <span style="color: ${statusColors[d.status]}; font-size: 1em; font-weight: 800; margin-left: 10px;">${d.status.toUpperCase()}</span>`;
+            
+            // Baris 2: Luas dan Dimensi digabung
+            document.getElementById('t-luas-dimensi').innerText = `${d.luas}m² | ${d.l}m x ${d.p}m`;
+            
+            // Baris 3: Harga
+            document.getElementById('t-harga').innerText = d.harga;
+            
+            tooltip.style.display = 'block';
+            obj.scale.set(1.05, 5, 1.05);
+            // Cursor pointer untuk semua status yang bisa diklik (Tersedia & Booking)
+            container.style.cursor = (d.status === "Tersedia" || d.status === "Booking") ? "pointer" : "default";
         }
-        animate();
+    } else {
+        if (hoveredObject) {
+            hoveredObject.scale.set(1, 1, 1);
+            container.style.cursor = "default";
+        }
+        hoveredObject = null;
+        tooltip.style.display = 'none';
+    }
+    controls.update();
+    renderer.render(scene, camera);
+}
+animate();
 
         // Handle window resize with debouncing
         let resizeTimeout;
@@ -1277,27 +1440,27 @@
 
         // Data Lengkap Unit Tanah
         const dataTanahTable = [
-            { id: "30", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
-            { id: "27", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
+            { id: "30", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 62.000.000" },
+            { id: "27", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 60.000.000" },
             { id: "24", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
             { id: "21", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
             { id: "18", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
             { id: "15", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
-            { id: "13", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 45.000.000" },
-            { id: "11", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 44.000.000" },
+            { id: "13", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 45.000.000" },
+            { id: "11", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 44.000.000" },
             { id: "9",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 43.000.000" },
             { id: "7",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 42.000.000" },
             { id: "5",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 41.000.000" },
             { id: "3",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 40.000.000" },
             { id: "1",  luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 36.000.000" },
             { id: "1a", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 35.000.000" },
-            { id: "31", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
+            { id: "31", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 62.000.000" },
             { id: "28", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
             { id: "25", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
             { id: "22", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
             { id: "19", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
             { id: "16", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
-            { id: "14", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 45.000.000" },
+            { id: "14", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 45.000.000" },
             { id: "12", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 44.000.000" },
             { id: "10", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 43.000.000" },
             { id: "8",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 42.000.000" },
@@ -1305,19 +1468,20 @@
             { id: "4",  luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 40.000.000" },
             { id: "2",  luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 36.000.000" },
             { id: "2a", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 35.000.000" },
-            { id: "32", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 62.000.000" },
-            { id: "29", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 60.000.000" },
+            { id: "32", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 62.000.000" },
+            { id: "29", luas: 150, p: 15, l: 10, status: "Booking", harga: "Rp 60.000.000" },
             { id: "26", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 58.000.000" },
             { id: "23", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
             { id: "20", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
             { id: "17", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
-            { id: "35", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 43.000.000" },
-            { id: "34", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 44.000.000" },
-            { id: "33", luas: 150, p: 0, l: 0, status: "Tersedia", harga: "Rp 45.000.000" }
+            { id: "35", luas: 150, p: "Khusus ", l: "Khusus ", status: "Tersedia", harga: "Rp 43.000.000" },
+            { id: "34", luas: 150, p: "Khusus ", l: "Khusus ", status: "Tersedia", harga: "Rp 44.000.000" },
+            { id: "33", luas: 150, p: "Khusus ", l: "Khusus ", status: "Tersedia", harga: "Rp 45.000.000" }
         ];
 
         let currentSimulationData = null;
         let currentUnitData = null;
+        let currentWaitingUnitData = null;
 
         // Format currency
         function formatCurrency(num) {
@@ -1392,14 +1556,14 @@
             document.getElementById('col1Harga').textContent = formatCurrency(calc.price);
             document.getElementById('col1DP').textContent = formatCurrency(calc.dp);
             document.getElementById('col1Pinjaman').textContent = formatCurrency(calc.principal);
-            document.getElementById('col1Bunga').textContent = formatCurrency(calc.year2.bunga);
+            
             document.getElementById('col1Cicilan').textContent = formatCurrency(calc.year2.cicilan);
             
             // Fill Table Column 2 (3 Tahun)
             document.getElementById('col2Harga').textContent = formatCurrency(calc.price);
             document.getElementById('col2DP').textContent = formatCurrency(calc.dp);
             document.getElementById('col2Pinjaman').textContent = formatCurrency(calc.principal);
-            document.getElementById('col2Bunga').textContent = formatCurrency(calc.year3.bunga);
+            
             document.getElementById('col2Cicilan').textContent = formatCurrency(calc.year3.cicilan);
             
             // Show modal
@@ -1417,6 +1581,122 @@
             document.getElementById('simulationModal').classList.remove('active');
             document.body.style.overflow = 'auto';
         }
+
+        // ==========================================
+        // FUNGSI BARU: WAITING LIST MODAL
+        // ==========================================
+        
+        // Open Waiting List Modal - UPDATE
+function openWaitingListModal(unitId, unitPrice) {
+    const unit = dataTanahTable.find(u => u.id === unitId);
+    if (!unit) return;
+    
+    currentWaitingUnitData = unit;
+    
+    // Update Modal Info
+    document.getElementById('waitingUnitInfo').textContent = `Unit ${unit.id} | Luas ${unit.luas}m² | Harga ${unit.harga} | Status ${unit.status}`;
+    
+    // Set unit yang sedang dipilih (readonly)
+    document.getElementById('wlUnit').value = `UNIT ${unit.id}`;
+    
+    // Reset form jika sebelumnya sudah terisi
+    document.getElementById('wlNama').value = '';
+    document.getElementById('wlEmail').value = '';
+    document.getElementById('wlWhatsApp').value = '';
+    
+    // Show modal
+    document.getElementById('waitingListModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Re-init icons for new content
+    lucide.createIcons();
+    
+    fbq('track', 'Lead', {
+        content_name: 'Waiting List Unit ' + unitId,
+        status: 'booking'
+    });
+}
+
+// Close Waiting List Modal
+function closeWaitingListModal() {
+    document.getElementById('waitingListModal').classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// NEW: Submit Waiting List dengan data form
+function submitWaitingList() {
+    if (!currentWaitingUnitData) return;
+    
+    const unit = currentWaitingUnitData;
+    
+    // Ambil data dari form
+    const nama = document.getElementById('wlNama').value.trim();
+    const email = document.getElementById('wlEmail').value.trim();
+    const whatsapp = document.getElementById('wlWhatsApp').value.trim();
+    
+    // Validasi form
+    if (!nama || !email || !whatsapp) {
+        alert('Mohon lengkapi semua data (Nama, Email, dan WhatsApp) sebelum mendaftar.');
+        return;
+    }
+    
+    // Validasi email sederhana
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Mohon masukkan email yang valid.');
+        return;
+    }
+    
+    // Validasi nomor WhatsApp (minimal 10 digit)
+    const waRegex = /^[0-9]{10,15}$/;
+    const waClean = whatsapp.replace(/[^0-9]/g, '');
+    if (!waRegex.test(waClean)) {
+        alert('Mohon masukkan nomor WhatsApp yang valid (10-15 digit angka).');
+        return;
+    }
+    
+    // Buat pesan WhatsApp dengan data form
+    const message = `Halo Admin Kavling Kebun Maoslor! 👋
+
+Saya ingin mendaftar *WAITING LIST PRIORITAS* untuk:
+
+📍 *Detail Unit:*
+• Unit: UNIT ${unit.id}
+• Luas: ${unit.luas}m²
+• Dimensi: ${unit.l}m x ${unit.p}m
+• Harga: ${unit.harga}
+• Status: ${unit.status}
+
+👤 *Data Pendaftar:*
+• Nama: ${nama}
+• Email: ${email}
+• WhatsApp: ${whatsapp}
+
+Mohon informasi lebih lanjut tentang:
+1️⃣ Proses dan ketentuan Waiting List
+2️⃣ Estimasi waktu ketersediaan unit
+3️⃣ Alternatif unit lain yang masih tersedia
+
+Terima kasih! 🙏`;
+    
+    const url = `https://wa.me/6287788526410?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+    
+    // Tutup modal setelah klik daftar
+    closeWaitingListModal();
+    
+    fbq('track', 'Contact', {
+        content_name: 'Waiting List Submitted Unit ' + unit.id,
+        content_category: 'lead_generation',
+        nama: nama,
+        email: email,
+        whatsapp: whatsapp
+    });
+    
+    fbq('track', 'Lead', {
+        content_name: 'Waiting List Form Submitted'
+    });
+}
 
         // Download Simulation PDF (diupdate untuk 2 vs 3 tahun dengan bunga 10%)
         function downloadSimulationPDF() {
@@ -1447,7 +1727,6 @@
                 ['Harga', formatCurrency(calc.price), formatCurrency(calc.price)],
                 ['DP 30%', formatCurrency(calc.dp), formatCurrency(calc.dp)],
                 ['Pokok Sewa', formatCurrency(calc.principal), formatCurrency(calc.principal)],
-                ['Progresif Sewa Total', `${formatCurrency(calc.year2.bunga)} (20%)`, `${formatCurrency(calc.year3.bunga)} (30%)`],
                 ['Sewa/Bulan', formatCurrency(calc.year2.cicilan), formatCurrency(calc.year3.cicilan)]
             ];
             
@@ -1538,7 +1817,7 @@ Mohon info lebih lanjut. Terima kasih!`;
             return `${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}`;
         }
 
-        // Fungsi Render Tabel ke HTML
+        // Fungsi Render Tabel ke HTML - DIUBAH UNTUK BOOKING = WAITING LIST
         function renderTable() {
             try {
                 const body = document.getElementById('dataTanahBody');
@@ -1546,12 +1825,26 @@ Mohon info lebih lanjut. Terima kasih!`;
                 
                 body.innerHTML = dataTanahTable.map(d => {
                     const statusColor = d.status === "Tersedia" ? "status-tersedia" : (d.status === "Booking" ? "status-booking" : "status-terjual");
-                    const btnClass = d.status === "Tersedia" 
-                        ? "bg-indigo-500/10 hover:bg-indigo-500 text-indigo-400 hover:text-white cursor-pointer" 
-                        : "bg-gray-500/10 text-gray-500 cursor-not-allowed";
-                    const btnAction = d.status === "Tersedia" 
-                        ? `onclick="openSimulationModal('${d.id}', '${d.harga}'); return false;"` 
-                        : 'disabled';
+                    
+                    // UBAH LOGIKA TOMBOL: Booking sekarang aktif dengan fungsi Waiting List
+                    let btnClass, btnAction, btnText, btnIcon;
+                    
+                    if (d.status === "Tersedia") {
+                        btnClass = "bg-indigo-500/10 hover:bg-indigo-500 text-indigo-400 hover:text-white cursor-pointer";
+                        btnAction = `onclick="openSimulationModal('${d.id}', '${d.harga}'); return false;"`;
+                        btnText = "Simulasi";
+                        btnIcon = "calculator";
+                    } else if (d.status === "Booking") {
+                        btnClass = "bg-yellow-500/10 hover:bg-yellow-500 text-yellow-400 hover:text-black cursor-pointer border border-yellow-500/30";
+                        btnAction = `onclick="openWaitingListModal('${d.id}', '${d.harga}'); return false;"`;
+                        btnText = "Waiting List";
+                        btnIcon = "clock";
+                    } else {
+                        btnClass = "bg-gray-500/10 text-gray-500 cursor-not-allowed";
+                        btnAction = 'disabled';
+                        btnText = "Terjual";
+                        btnIcon = "check-circle";
+                    }
                     
                     return `
                         <tr class="hover:bg-white/5 transition">
@@ -1563,8 +1856,8 @@ Mohon info lebih lanjut. Terima kasih!`;
                             <td class="p-3 md:p-5 text-center">
                                 <button ${btnAction}
                                    class="${btnClass} px-3 py-1 md:px-4 md:py-2 rounded-md md:rounded-lg text-xs md:text-sm font-bold transition flex items-center justify-center gap-1 md:gap-2 touch-friendly w-full">
-                                    <i data-lucide="calculator" class="w-3 h-3 md:w-4 md:h-4"></i> 
-                                    <span>Simulasi</span>
+                                    <i data-lucide="${btnIcon}" class="w-3 h-3 md:w-4 md:h-4"></i> 
+                                    <span>${btnText}</span>
                                 </button>
                             </td>
                         </tr>
@@ -1692,10 +1985,19 @@ Mohon info lebih lanjut. Terima kasih!`;
                 closeSimulationModal();
             }
         });
+        
+        document.getElementById('waitingListModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('waitingListModal')) {
+                closeWaitingListModal();
+            }
+        });
 
-        // Escape key to close modal
+        // Escape key to close modals
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeSimulationModal();
+            if (e.key === 'Escape') {
+                closeSimulationModal();
+                closeWaitingListModal();
+            }
         });
 
         // Initialize
