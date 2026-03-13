@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -12,7 +11,7 @@
     <meta name="author" content="Kavling Kebun Maoslor">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     
-    <!-- ✅ GANTI 1: Canonical URL -->
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://beasiswaku2.github.io/beasiswaku2.github.io/#denah" />
     
     <!-- Open Graph / Facebook -->
@@ -24,10 +23,7 @@
     <meta property="og:image:width" content="1280">
     <meta property="og:image:height" content="720">
     <meta property="og:image:alt" content="Denah Kavling Kebun Maoslor Cilacap">
-    
-    <!-- ✅ GANTI 2: Open Graph URL -->
     <meta property="og:url" content="https://beasiswaku2.github.io/beasiswaku2.github.io/#denah">
-    
     <meta property="og:locale" content="id_ID">
     
     <!-- Twitter Card -->
@@ -49,143 +45,119 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://connect.facebook.net">
     
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '908178125102704');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=908178125102704&ev=PageView&noscript=1"
-    alt="Facebook Pixel"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+    
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
+        /* Container utama yang responsif */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
         
-    /* Container utama yang responsif */
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    
-    /* Tombol responsif */
-    .btn-kavling {
-      width: 100%;
-      max-width: 400px;
-      padding: 15px 25px;
-      background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
-      color: white;
-      border-radius: 12px;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-      border: none;
-      box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
-      transition: transform 0.2s, box-shadow 0.2s;
-      margin: 20px auto;
-      display: block;
-    }
-    
-    .btn-kavling:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
-    }
-    
-    .btn-kavling:active {
-      transform: translateY(0);
-    }
-    
-    /* Wrapper chatbot yang responsif */
-    .chatbot-wrapper {
-      width: 100%;
-      height: 70vh; /* 70% tinggi viewport */
-      min-height: 400px;
-      max-height: 800px;
-      border: 1px solid #ddd;
-      border-radius: 16px;
-      overflow: hidden;
-      background: white;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    }
-    
-    /* Override Botpress styling */
-    #webchat .bpWebchat {
-      position: unset !important;
-      width: 100% !important;
-      height: 100% !important;
-      max-height: 100% !important;
-      max-width: 100% !important;
-    }
-
-    #webchat .bpFab {
-      display: none !important;
-    }
-    
-    /* Mobile adjustments */
-    @media (max-width: 768px) {
-      body {
-        padding: 5px;
-      }
-      
-      .btn-kavling {
-        font-size: 14px;
-        padding: 12px 20px;
-        border-radius: 10px;
-      }
-      
-      .chatbot-wrapper {
-        height: 75vh; /* Lebih tinggi di mobile */
-        min-height: 350px;
-        border-radius: 12px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .chatbot-wrapper {
-        height: 80vh;
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-      }
-    }
-  </style>
-    <style>
+        /* Tombol responsif */
+        .btn-kavling {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+            color: white;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 20px auto;
+            display: block;
+        }
+        
+        .btn-kavling:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+        
+        .btn-kavling:active {
+            transform: translateY(0);
+        }
+        
+        /* Wrapper chatbot yang responsif */
+        .chatbot-wrapper {
+            width: 100%;
+            height: 70vh;
+            min-height: 400px;
+            max-height: 800px;
+            border: 1px solid #ddd;
+            border-radius: 16px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        
+        
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+            
+            .btn-kavling {
+                font-size: 14px;
+                padding: 12px 20px;
+                border-radius: 10px;
+            }
+            
+            .chatbot-wrapper {
+                height: 75vh;
+                min-height: 350px;
+                border-radius: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .chatbot-wrapper {
+                height: 80vh;
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
+        }
+        
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
         body {
-            font-family: 'Plus+Jakarta+Sans', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #050505;
             color: white;
             scroll-behavior: smooth;
             margin: 0;
             overflow-x: hidden;
         }
+        
         .glass {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+        
         .gradient-blue {
             background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
         }
+        
         .text-gradient {
             background: linear-gradient(180deg, #ffffff 0%, #888888 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        
         section { padding: 60px 20px; }
+        
         @media (min-width: 768px) { section { padding: 100px 20px; } }
 
         /* --- STYLES DENAH 3D --- */
@@ -198,9 +170,11 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             background: #050505;
         }
+        
         @media (min-width: 768px) {
             #denah-canvas-container { height: 500px; border-radius: 30px; }
         }
+        
         @media (min-width: 1024px) {
             #denah-canvas-container { height: 700px; border-radius: 40px; }
         }
@@ -217,6 +191,7 @@
             border: 1px solid rgba(255,255,255,0.1);
             pointer-events: none;
         }
+        
         @media (min-width: 768px) {
             .ui-panel-denah { top: 15px; left: 20px; padding: 15px 25px; border-radius: 20px; }
         }
@@ -237,6 +212,7 @@
             min-width: 200px;
             max-width: 280px;
         }
+        
         @media (min-width: 768px) {
             #tooltip-denah { padding: 15px; font-size: 13px; min-width: 220px; border-radius: 16px; }
         }
@@ -248,6 +224,7 @@
             border-radius: 50%; 
             margin-right: 4px; 
         }
+        
         @media (min-width: 768px) {
             .dot { width: 10px; height: 10px; margin-right: 5px; }
         }
@@ -263,6 +240,7 @@
         .mobile-text-lg { font-size: 1.125rem; }
         .mobile-text-xl { font-size: 1.25rem; }
         .mobile-text-2xl { font-size: 1.5rem; }
+        
         @media (min-width: 768px) {
             .mobile-text-xs { font-size: 0.875rem; }
             .mobile-text-sm { font-size: 1rem; }
@@ -271,6 +249,7 @@
             .mobile-text-xl { font-size: 1.5rem; }
             .mobile-text-2xl { font-size: 1.875rem; }
         }
+        
         @media (min-width: 1024px) {
             .mobile-text-2xl { font-size: 2.25rem; }
         }
@@ -300,9 +279,11 @@
             position: relative;
             padding-right: 30px;
         }
+        
         details > summary::-webkit-details-marker {
             display: none;
         }
+        
         details > summary::after {
             content: "+";
             position: absolute;
@@ -312,6 +293,7 @@
             font-size: 1.5rem;
             transition: transform 0.3s;
         }
+        
         details[open] > summary::after {
             content: "−";
         }
@@ -364,105 +346,942 @@
         }
 
         /* Modal Styles */
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
-    z-index: 200;
-    display: flex;
-    align-items: flex-start; /* Ganti dari center ke flex-start */
-    justify-content: center;
-    padding: 0; /* Hapus padding */
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 200;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
 
-.modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
 
-.modal-content {
-    background: #0a0a0a;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0; /* Hapus border radius atas bawah */
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 900px;
-    width: 100%;
-    height: 100vh; /* Full height */
-    max-height: 100vh; /* Full height */
-    overflow-y: auto;
-    position: relative;
-    transform: translateY(-20px); /* Animasi dari atas */
-    transition: transform 0.3s ease;
-    padding: 0; /* Hapus padding global */
-}
+        .modal-content {
+            background: #0a0a0a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 900px;
+            width: 100%;
+            height: 100vh;
+            max-height: 100vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+            padding: 0;
+        }
 
-.modal-overlay.active .modal-content {
-    transform: translateY(0);
-}
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
 
-/* Mobile */
-@media (max-width: 640px) {
-    .modal-content {
-        max-width: 100%;
-        border: none; /* Hapus border di mobile untuk fullscreen feel */
-    }
-}
+        @media (max-width: 640px) {
+            .modal-content {
+                max-width: 100%;
+                border: none;
+            }
+        }
 
-/* Large Desktop */
-@media (min-width: 1024px) {
-    .modal-content {
-        max-width: 1000px;
-    }
-}
+        @media (min-width: 1024px) {
+            .modal-content {
+                max-width: 1000px;
+            }
+        }
 
-/* Extra Large Desktop */
-@media (min-width: 1280px) {
-    .modal-content {
-        max-width: 1100px;
-    }
-}
+        @media (min-width: 1280px) {
+            .modal-content {
+                max-width: 1100px;
+            }
+        }
 
-        /* Styles dari pengembalian.html untuk section home */
         .concept-box {
             background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
             border-left: 4px solid #22c55e;
             transition: transform 0.3s ease;
         }
+        
         .concept-box:hover {
             transform: translateY(-5px);
         }
+        
         .glass-strong {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
+        
         .input-field {
             background: #0a0a0a !important;
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: white;
             transition: all 0.3s;
         }
+        
         .input-field:focus {
             outline: none;
             border-color: #6366f1;
             background: rgba(255, 255, 255, 0.08);
         }
-	#tooltip-denah {
-    	z-index: 150; /* Turunkan dari 1000 agar di bawah modal (z-index 200) */
-	}
-    </style>
-            <style>
-        /* Menghilangkan style default yang mungkin bertabrakan di file index.html Anda */
-        .bpWebchat {
-            position: relative !important;
+        
+        #tooltip-denah {
+            z-index: 150;
         }
-        </style>
-    <!-- ✅ GANTI 3: Schema RealEstateAgent & LocalBusiness URL -->
+        
+        /* Chatbot Navigation Styles */
+        /* Chatbot Navigation Styles - JARAK 20px (TANPA MENGUBAH WARNA BACKGROUND) */
+.chatbot-nav-container {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 100 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+}
+
+.chatbot-nav-panel {
+    width: 380px;
+    background: linear-gradient(165deg, #0a0a0a 0%, #1a1a1a 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 28px;
+    margin-bottom: 15px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    display: none;
+    transform-origin: bottom right;
+    animation: slideIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.chatbot-nav-panel.active {
+    display: block;
+}
+
+.chatbot-header {
+    background: linear-gradient(135deg, #059669, #10b981);
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.chatbot-header::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 180%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(10%, 10%); }
+}
+
+.chatbot-header h3 {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.chatbot-header h3 i {
+    width: 22px;
+    height: 22px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.chatbot-close-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chatbot-close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 18px;
+    background: rgba(0, 0, 0, 0.4);
+    scroll-behavior: smooth;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #10b981;
+    border-radius: 10px;
+}
+
+.message {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    animation: messagePop 0.3s ease;
+}
+
+@keyframes messagePop {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.user {
+    align-items: flex-end;
+}
+
+.message.bot {
+    align-items: flex-start;
+}
+
+.message-bubble {
+    max-width: 85%;
+    padding: 14px 18px;
+    border-radius: 22px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    position: relative;
+    word-wrap: break-word;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.message.user .message-bubble {
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: white;
+    border-bottom-right-radius: 6px;
+}
+
+.message.bot .message-bubble {
+    background: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #f3f4f6;
+    border-bottom-left-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 185, 129, 0.1);
+}
+
+.message-time {
+    font-size: 10px;
+    color: #6b7280;
+    margin-top: 6px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.chatbot-status {
+    display: flex;
+    align-items: center;
+    padding: 12px 18px;
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #9ca3af;
+    font-size: 12px;
+    gap: 8px;
+}
+
+.chatbot-status i {
+    width: 16px;
+    height: 16px;
+    color: #10b981;
+}
+
+.suggestions-container {
+    padding: 14px 18px;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.suggestions-title {
+    font-size: 11px;
+    color: #9ca3af;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+}
+
+.suggestions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.suggestion-chip {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 30px;
+    padding: 8px 14px;
+    font-size: 11.5px;
+    color: #d1d5db;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.suggestion-chip:hover {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: #10b981;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.2);
+}
+
+.typing-indicator {
+    display: flex;
+    gap: 6px;
+    padding: 10px 16px;
+    background: rgba(30, 30, 30, 0.95);
+    border-radius: 25px;
+    margin-left: 16px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: typing 1.2s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) { animation-delay: 0.2s; background: #059669; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.4s; background: #10b981; }
+
+@keyframes typing {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.chatbot-input-area {
+    display: flex;
+    gap: 10px;
+    padding: 16px 18px;
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chatbot-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 12px 18px;
+    color: white;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.chatbot-input:focus {
+    outline: none;
+    border-color: #10b981;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.chatbot-input::placeholder {
+    color: #6b7280;
+    font-style: italic;
+}
+
+.chatbot-send-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #059669, #10b981);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.chatbot-send-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.chatbot-floating-btn {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #059669, #10b981);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.chatbot-floating-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(16, 185, 129, 0.6);
+}
+
+/* Navigation highlight effects */
+.section-highlight {
+    animation: highlightPulse 1.5s ease 2;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+@keyframes highlightPulse {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+    50% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.button-click-effect {
+    animation: buttonClick 0.3s ease;
+}
+
+@keyframes buttonClick {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.unit-highlight {
+    background: rgba(16, 185, 129, 0.3) !important;
+    border: 2px solid #10b981 !important;
+    transition: all 0.3s ease;
+}
+
+/* PERBAIKAN MOBILE - JARAK 20px */
+@media (max-width: 768px) {
+    .chatbot-nav-panel {
+        width: 340px !important;
+        right: 10px !important;
+        bottom: 80px !important;
+    }
+    .chatbot-nav-container {
+        bottom: 20px !important;
+        right: 10px !important;
+    }
+}
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .chatbot-nav-panel.active {
+            display: block;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #059669, #10b981);
+            padding: 18px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chatbot-header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(10%, 10%); }
+        }
+
+        .chatbot-header h3 {
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .chatbot-header h3 i {
+            width: 22px;
+            height: 22px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .chatbot-close-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .chatbot-close-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .chat-messages {
+            height: 280px;
+            overflow-y: auto;
+            padding: 18px;
+            background: rgba(0, 0, 0, 0.4);
+            scroll-behavior: smooth;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 10px;
+        }
+
+        .message {
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            animation: messagePop 0.3s ease;
+        }
+
+        @keyframes messagePop {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user {
+            align-items: flex-end;
+        }
+
+        .message.bot {
+            align-items: flex-start;
+        }
+
+        .message-bubble {
+            max-width: 85%;
+            padding: 14px 18px;
+            border-radius: 22px;
+            font-size: 13.5px;
+            line-height: 1.6;
+            position: relative;
+            word-wrap: break-word;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .message.user .message-bubble {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            border-bottom-right-radius: 6px;
+        }
+
+        .message.bot .message-bubble {
+            background: rgba(30, 30, 30, 0.95);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #f3f4f6;
+            border-bottom-left-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 185, 129, 0.1);
+        }
+
+        .message-time {
+            font-size: 10px;
+            color: #6b7280;
+            margin-top: 6px;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+
+        .chatbot-status {
+            display: flex;
+            align-items: center;
+            padding: 12px 18px;
+            background: rgba(0, 0, 0, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #9ca3af;
+            font-size: 12px;
+            gap: 8px;
+        }
+
+        .chatbot-status i {
+            width: 16px;
+            height: 16px;
+            color: #10b981;
+        }
+
+        .suggestions-container {
+            padding: 14px 18px;
+            background: rgba(0, 0, 0, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .suggestions-title {
+            font-size: 11px;
+            color: #9ca3af;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: 600;
+        }
+
+        .suggestions-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .suggestion-chip {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 30px;
+            padding: 8px 14px;
+            font-size: 11.5px;
+            color: #d1d5db;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+
+        .suggestion-chip:hover {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: #10b981;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(16, 185, 129, 0.2);
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 6px;
+            padding: 10px 16px;
+            background: rgba(30, 30, 30, 0.95);
+            border-radius: 25px;
+            margin-left: 16px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: typing 1.2s infinite ease-in-out;
+        }
+
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; background: #059669; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; background: #10b981; }
+
+        @keyframes typing {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .chatbot-input-area {
+            display: flex;
+            gap: 10px;
+            padding: 16px 18px;
+            background: rgba(0, 0, 0, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .chatbot-input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 12px 18px;
+            color: white;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+
+        .chatbot-input:focus {
+            outline: none;
+            border-color: #10b981;
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+
+        .chatbot-input::placeholder {
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        .chatbot-send-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #059669, #10b981);
+            border: none;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .chatbot-send-btn:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .chatbot-floating-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #059669, #10b981);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .chatbot-floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 25px rgba(16, 185, 129, 0.6);
+        }
+
+        /* Navigation highlight effects */
+        .section-highlight {
+            animation: highlightPulse 1.5s ease 2;
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.5);
+            transition: box-shadow 0.3s ease;
+        }
+
+        @keyframes highlightPulse {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+            50% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .button-click-effect {
+            animation: buttonClick 0.3s ease;
+        }
+
+        @keyframes buttonClick {
+            0% { transform: scale(1); }
+            50% { transform: scale(0.95); }
+            100% { transform: scale(1); }
+        }
+
+        .unit-highlight {
+            background: rgba(16, 185, 129, 0.3) !important;
+            border: 2px solid #10b981 !important;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+    .chatbot-nav-panel {
+        width: 340px;
+        right: 10px;
+        bottom: 80px;
+    }
+    .chatbot-nav-container {
+        bottom: 100px;  /* ← SAMA DENGAN DESKTOP */
+        right: 10px;
+    }
+}
+/* Suggestions Dropdown Styles */
+.suggestions-container {
+    padding: 14px 18px;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.suggestions-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    padding: 5px 0;
+}
+
+.suggestions-header:hover {
+    opacity: 0.6;
+}
+
+.suggestions-title {
+    font-size: 11px;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.suggestions-toggle-icon {
+    color: #10b981;
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.suggestions-toggle-icon.rotate {
+    transform: rotate(180deg);
+}
+
+.suggestions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.2s ease;
+    opacity: 0;
+}
+
+.suggestions-grid.expanded {
+    max-height: 200px; /* Cukup untuk menampung semua chip */
+    overflow-y: auto;
+    opacity: 1;
+    transition: max-height 0.4s ease-in, opacity 0.3s ease;
+}
+
+/* Styling scrollbar untuk suggestions grid */
+.suggestions-grid.expanded::-webkit-scrollbar {
+    width: 4px;
+}
+
+.suggestions-grid.expanded::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.suggestions-grid.expanded::-webkit-scrollbar-thumb {
+    background: #10b981;
+    border-radius: 4px;
+}
+
+.suggestion-chip {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 30px;
+    padding: 8px 14px;
+    font-size: 11.5px;
+    color: #d1d5db;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.suggestion-chip:hover {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: #10b981;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.2);
+}
+    </style>
+    
+    <!-- ✅ Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -560,7 +1379,7 @@
     }
     </script>
     
-    <!-- ✅ GANTI 4 & 5: Schema WebSite URL dan SearchAction Target -->
+    <!-- WebSite Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -598,8 +1417,6 @@
                 <a href="#faq" onclick="fbq('track', 'ViewContent', {content_name: 'Menu FAQ'});">FAQ</a>
                 <a href="#kontak" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Kontak'});">Info & Pemasaran</a>
             </div>
-            
-            
         </div>
         
         <!-- Mobile Menu Panel -->
@@ -611,95 +1428,90 @@
                 <a href="#home" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Home'});" class="mobile-menu-link text-white hover:text-indigo-400 transition">Home</a>
                 <a href="#denah" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Denah'});" class="mobile-menu-link text-white hover:text-indigo-400 transition">Denah</a>
                 <a href="#harga" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Harga'});" class="mobile-menu-link text-white hover:text-indigo-400 transition">Harga</a>
-                                
                 <a href="#video" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Video'});" class="mobile-menu-link text-white hover:text-indigo-400 transition">Video</a>
                 <a href="#faq" onclick="fbq('track', 'ViewContent', {content_name: 'Menu FAQ'});" class="mobile-menu-link text-white hover:text-indigo-400 transition">FAQ</a>
                 <a href="#kontak" onclick="fbq('track', 'ViewContent', {content_name: 'Menu Kontak'});" class="mobile-menu-link text-white hover:text-indigo-400 transition">Info & Pemasaran</a>
-
-                
             </div>
         </div>
     </nav>
 
-    
-
     <div id="tooltip-denah">
         <div id="t-unit" class="text-lg md:text-xl font-extrabold text-indigo-400">UNIT --</div>
-           <div class="text-gray-300 text-sm md:text-base">
-               <span id="t-luas-dimensi" class="text-white font-semibold">--</span>
-           </div>
+        <div class="text-gray-300 text-sm md:text-base">
+            <span id="t-luas-dimensi" class="text-white font-semibold">--</span>
+        </div>
         <div id="t-harga" class="text-base md:text-lg font-bold text-white">--</div>
     </div>
 
-    <!-- SECTION HOME BARU DARI PENGEMBALIAN.HTML -->
+    <!-- SECTION HOME -->
     <section id="home" class="min-h-[60vh] flex items-center justify-center py-16 md:py-20" itemscope itemtype="https://schema.org/RealEstateListing">
-    <div class="max-w-7xl mx-auto text-center px-4">
-        <div data-aos="fade-up" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-indigo-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6 border border-emerald-500/30">
-            <i data-lucide="trending-up" class="w-4 h-4"></i>
-            Investasi Properti Masa Depan 2026
-        </div>
-        
-        <h1 data-aos="fade-up" class="text-4xl md:text-5xl font-extrabold mb-6 text-gradient leading-tight">
-            Miliki Kavling Impian<br>
-            <span class="text-emerald-300">Dengan Cicilan Ringan 1-3 Tahun</span>
-        </h1>
-        
-        <p data-aos="fade-up" data-aos-delay="100" class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-8">
-            <strong class="text-white">Kemudahan memiliki aset tanah:</strong> Tanpa ribet, tanpa bunga bank yang mencekik. 
-            Kavling Kebun Maoslor kini hadir dengan <span class="text-emerald-400 font-semibold">Sistem Cicilan Fleksibel</span> 
-            langsung ke developer. Cukup dengan <span class="text-emerald-400 font-semibold">DP 30%</span>, 
-            Anda sudah bisa mengamankan unit dan mulai merencanakan kebun hidroponik Anda. 
-            <strong class="text-white">Tenor panjang hingga 3 tahun</strong> memberikan keleluasaan finansial bagi investasi masa depan keluarga Anda.
-        </p>
+        <div class="max-w-7xl mx-auto text-center px-4">
+            <div data-aos="fade-up" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-indigo-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6 border border-emerald-500/30">
+                <i data-lucide="trending-up" class="w-4 h-4"></i>
+                Investasi Properti Masa Depan 2026
+            </div>
+            
+            <h1 data-aos="fade-up" class="text-4xl md:text-5xl font-extrabold mb-6 text-gradient leading-tight">
+                Miliki Kavling Impian<br>
+                <span class="text-emerald-300">Dengan Cicilan Ringan 1-3 Tahun</span>
+            </h1>
+            
+            <p data-aos="fade-up" data-aos-delay="100" class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-8">
+                <strong class="text-white">Kemudahan memiliki aset tanah:</strong> Tanpa ribet, tanpa bunga bank yang mencekik. 
+                Kavling Kebun Maoslor kini hadir dengan <span class="text-emerald-400 font-semibold">Sistem Cicilan Fleksibel</span> 
+                langsung ke developer. Cukup dengan <span class="text-emerald-400 font-semibold">DP 30%</span>, 
+                Anda sudah bisa mengamankan unit dan mulai merencanakan kebun hidroponik Anda. 
+                <strong class="text-white">Tenor panjang hingga 3 tahun</strong> memberikan keleluasaan finansial bagi investasi masa depan keluarga Anda.
+            </p>
 
-        <div data-aos="fade-up" data-aos-delay="200" class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-8">
-            <div class="glass p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5">
-                <div class="w-10 h-10 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i data-lucide="calendar" class="w-5 h-5 text-emerald-400"></i>
-                </div>
-                <h3 class="text-white font-bold text-sm mb-2">Tenor 1-3 Tahun</h3>
-                <p class="text-gray-400 text-xs">Pilihan jangka waktu cicilan yang fleksibel selama 12, 24, hingga 36 bulan sesuai kemampuan keuangan Anda.</p>
-            </div>
-            
-            <div class="glass p-4 rounded-xl border border-indigo-500/20 bg-indigo-500/5">
-                <div class="w-10 h-10 bg-indigo-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i data-lucide="wallet" class="w-5 h-5 text-indigo-400"></i>
-                </div>
-                <h3 class="text-white font-bold text-sm mb-2">DP Terjangkau</h3>
-                <p class="text-gray-400 text-xs">Cukup bayar DP 30% dari harga kavling, sisa pembayaran dapat diangsur setiap bulan tanpa proses bank yang rumit.</p>
-            </div>
-            
-            <div class="glass p-4 rounded-xl border border-yellow-500/20 bg-yellow-500/5">
-                <div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-yellow-400"></i>
-                </div>
-                <h3 class="text-white font-bold text-sm mb-2">Pasti Disetujui</h3>
-                <p class="text-gray-400 text-xs">Sistem cicilan internal langsung ke manajemen. Tanpa BI Checking, proses cepat, dan syarat sangat mudah.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Mobile-optimized Denah Section -->
-    <section id="denah" class="bg-[#080808]">
-        <div class="max-w-6xl mx-auto px-4">
-            
-            <div data-aos="zoom-in" id="denah-canvas-container" role="img" aria-label="Denah 3D Interaktif Kavling Kebun Maoslor dengan 37 unit">
-                <div class="ui-panel-denah">
-                    <div class="flex gap-2 md:gap-4 mt-1 md:mt-2 mobile-text-xs md:text-[10px] uppercase tracking-widest font-bold">
-                        <span class="flex items-center"><span class="dot bg-tersedia"></span> Tersedia</span>
-                        <span class="flex items-center"><span class="dot bg-booking"></span> Booking</span>
-                        <span class="flex items-center"><span class="dot bg-terjual"></span> Terjual</span>
+            <div data-aos="fade-up" data-aos-delay="200" class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-8">
+                <div class="glass p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5">
+                    <div class="w-10 h-10 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="calendar" class="w-5 h-5 text-emerald-400"></i>
                     </div>
-                    <div class="text-center mb-0 mt-1 md:mt-2">
-                        <p class="text-white mobile-text-sm md:text-[20px]">Arahkan kursor dan klik unit untuk info lebih lanjut.</p>
+                    <h3 class="text-white font-bold text-sm mb-2">Tenor 1-3 Tahun</h3>
+                    <p class="text-gray-400 text-xs">Pilihan jangka waktu cicilan yang fleksibel selama 12, 24, hingga 36 bulan sesuai kemampuan keuangan Anda.</p>
+                </div>
+                
+                <div class="glass p-4 rounded-xl border border-indigo-500/20 bg-indigo-500/5">
+                    <div class="w-10 h-10 bg-indigo-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="wallet" class="w-5 h-5 text-indigo-400"></i>
                     </div>
+                    <h3 class="text-white font-bold text-sm mb-2">DP Terjangkau</h3>
+                    <p class="text-gray-400 text-xs">Cukup bayar DP 30% dari harga kavling, sisa pembayaran dapat diangsur setiap bulan tanpa proses bank yang rumit.</p>
+                </div>
+                
+                <div class="glass p-4 rounded-xl border border-yellow-500/20 bg-yellow-500/5">
+                    <div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-sm mb-2">Pasti Disetujui</h3>
+                    <p class="text-gray-400 text-xs">Sistem cicilan internal langsung ke manajemen. Tanpa BI Checking, proses cepat, dan syarat sangat mudah.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mobile-optimized Harga Section -->
+
+    <!-- Denah Section -->
+<section id="denah" class="bg-[#080808]">
+    <div class="max-w-6xl mx-auto px-4">
+        <div data-aos="zoom-in" id="denah-canvas-container" role="img" aria-label="Denah 3D Interaktif Kavling Kebun Maoslor dengan 37 unit">
+            <div class="ui-panel-denah">
+                <div class="flex gap-2 md:gap-4 mt-1 md:mt-2 mobile-text-xs md:text-[10px] uppercase tracking-widest font-bold">
+                    <span class="flex items-center"><span class="dot bg-tersedia"></span> Tersedia</span>
+                    <span class="flex items-center"><span class="dot bg-booking"></span> Booking</span>
+                    <span class="flex items-center"><span class="dot bg-terjual"></span> Terjual</span>
+                </div>
+                <div class="text-center mb-0 mt-1 md:mt-2">
+                    <p class="text-white mobile-text-sm md:text-[20px]">Arahkan kursor dan klik unit untuk info lebih lanjut.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Harga Section -->
     <section id="harga" class="py-12 md:py-20">
         <div class="max-w-6xl mx-auto px-4 md:px-6">
             <div class="text-center mb-8 md:mb-12">
@@ -745,10 +1557,9 @@
         </div>
     </section>
 
-    <!-- Modal Simulasi Kredit - Format Baru Perbandingan 2 Tahun vs 3 Tahun (Bunga 10%) -->
+    <!-- Modal Simulasi -->
     <div id="simulationModal" class="modal-overlay">
         <div class="modal-content">
-            <!-- Header -->
             <div class="sticky top-0 bg-[#0a0a0a] border-b border-white/10 p-4 md:p-6 flex justify-between items-center z-10">
                 <div>
                     <h3 class="text-lg md:text-2xl font-bold text-white">Simulasi Pembayaran Cicilan</h3>
@@ -759,9 +1570,7 @@
                 </button>
             </div>
             
-            <!-- Content -->
             <div class="p-4 md:p-6 space-y-4">
-                <!-- Info Booking Fee -->
                 <div class="bg-blue-500/10 border border-blue-500/20 rounded-lg p-3 flex items-center justify-between">
                     <div class="flex items-center gap-2">
                         <i data-lucide="ticket" class="w-4 h-4 text-blue-400"></i>
@@ -770,7 +1579,6 @@
                     <span class="text-sm md:text-base font-bold text-blue-400" id="simBookingFee">Rp 1.500.000</span>
                 </div>
 
-                <!-- Tabel Perbandingan -->
                 <div class="overflow-hidden rounded-xl border border-white/10">
                     <table class="w-full text-left border-collapse">
                         <thead>
@@ -806,17 +1614,15 @@
                     </table>
                 </div>
 
-                <!-- Catatan -->
                 <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-3 text-xs text-yellow-200/80 flex items-start gap-2">
                     <i data-lucide="info" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
                     <div class="space-y-1">
                         <p>Disarankan pengambilan jangka waktu Cicilan 3 tahun agar cicilan bulanan lebih ringan.</p>
-                        <p class="text-yellow-400/60 text-[10px] md:text-xs">*Booking fee dibayar sekali diawal sebagai tanda jadi pemesanan </p>
+                        <p class="text-yellow-400/60 text-[10px] md:text-xs">*Booking fee dibayar sekali diawal sebagai tanda jadi pemesanan</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Footer Buttons -->
             <div class="sticky bottom-0 bg-[#0a0a0a] border-t border-white/10 p-4 md:p-6 grid grid-cols-3 gap-2 md:gap-3">
                 <button onclick="downloadSimulationPDF()" class="touch-friendly bg-indigo-600 hover:bg-indigo-700 text-white px-2 md:px-4 py-3 rounded-lg md:rounded-xl font-bold text-xs md:text-sm transition flex items-center justify-center gap-1 md:gap-2">
                     <i data-lucide="download" class="w-3 h-3 md:w-4 md:h-4"></i>
@@ -833,125 +1639,116 @@
         </div>
     </div>
 
-    <!-- Modal Waiting List untuk Unit Booking -->
-<div id="waitingListModal" class="modal-overlay">
-    <div class="modal-content">
-        <!-- Header -->
-        <div class="sticky top-0 bg-[#0a0a0a] border-b border-white/10 p-4 md:p-6 flex justify-between items-center z-10">
-            <div>
-                <h3 class="text-lg md:text-2xl font-bold text-white">🎯 Daftar Tunggu Prioritas "BOOKING"</h3>
-                <p class="text-xs md:text-sm text-yellow-400 mt-1" id="waitingUnitInfo">Unit -</p>
+    <!-- Modal Waiting List -->
+    <div id="waitingListModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="sticky top-0 bg-[#0a0a0a] border-b border-white/10 p-4 md:p-6 flex justify-between items-center z-10">
+                <div>
+                    <h3 class="text-lg md:text-2xl font-bold text-white">🎯 Daftar Tunggu Prioritas</h3>
+                    <p class="text-xs md:text-sm text-yellow-400 mt-1" id="waitingUnitInfo">Unit -</p>
+                </div>
+                <button onclick="closeWaitingListModal()" class="touch-friendly p-2 hover:bg-white/10 rounded-full transition">
+                    <i data-lucide="x" class="w-5 h-5 md:w-6 md:h-6 text-gray-400"></i>
+                </button>
             </div>
-            <button onclick="closeWaitingListModal()" class="touch-friendly p-2 hover:bg-white/10 rounded-full transition">
-                <i data-lucide="x" class="w-5 h-5 md:w-6 md:h-6 text-gray-400"></i>
-            </button>
-        </div>
-        
-        
-        <!-- Content -->
-        <div class="p-4 md:p-6 space-y-4">
-            <!-- Info Banner -->
-            <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
-                <div class="flex items-start gap-3">
-                    <i data-lucide="alert-circle" class="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0"></i>
-                    <div>
-                        <h4 class="text-white font-bold text-sm mb-1">Unit Sedang Dalam Proses Booking</h4>
-                        <p class="text-gray-300 text-xs leading-relaxed">
-                            Unit ini sedang dalam proses booking oleh calon pembeli lain. 
-                            <span class="text-yellow-400 font-semibold">Namun, Anda bisa mendaftar ke Daftar Tunggu Prioritas "BOOKING"!</span>
-                        </p>
+            
+            <div class="p-4 md:p-6 space-y-4">
+                <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="alert-circle" class="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0"></i>
+                        <div>
+                            <h4 class="text-white font-bold text-sm mb-1">Unit Sedang Dalam Proses Booking</h4>
+                            <p class="text-gray-300 text-xs leading-relaxed">
+                                Unit ini sedang dalam proses booking oleh calon pembeli lain. 
+                                <span class="text-yellow-400 font-semibold">Namun, Anda bisa mendaftar ke Daftar Tunggu Prioritas!</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Grid 2 Card -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 
-                <!-- Card 1: Form Input -->
-                <div class="bg-gradient-to-br from-indigo-500/10 to-indigo-500/5 border border-indigo-500/20 rounded-xl p-4 md:p-6">
-    <h4 class="text-white font-bold text-sm mb-4 flex items-center gap-2">
-        <i data-lucide="user-plus" class="w-4 h-4 text-indigo-400"></i>
-        Isi Data Anda untuk Daftar Tunggu Prioritas "BOOKING"
-    </h4>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-            <label class="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1 block">Nama Lengkap</label>
-            <input type="text" id="wlNama" placeholder="Nama lengkap" 
-                class="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-indigo-500 transition placeholder-gray-600">
-        </div>
-        
-        <div>
-            <label class="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1 block">Email Aktif</label>
-            <input type="email" id="wlEmail" placeholder="email@anda.com" 
-                class="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-indigo-500 transition placeholder-gray-600">
-        </div>
-        
-        <div>
-            <label class="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1 block">WhatsApp</label>
-            <input type="tel" id="wlWhatsApp" placeholder="081234567890" 
-                class="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-indigo-500 transition placeholder-gray-600">
-        </div>
-        
-        <div>
-            <label class="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1 block">Unit Pilihan</label>
-            <input type="text" id="wlUnit" readonly 
-                class="w-full bg-yellow-500/10 border border-yellow-500/30 rounded-lg px-3 py-2.5 text-yellow-400 text-sm font-bold cursor-not-allowed">
-        </div>
-    </div>
-</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-gradient-to-br from-indigo-500/10 to-indigo-500/5 border border-indigo-500/20 rounded-xl p-4 md:p-6">
+                        <h4 class="text-white font-bold text-sm mb-4 flex items-center gap-2">
+                            <i data-lucide="user-plus" class="w-4 h-4 text-indigo-400"></i>
+                            Isi Data Anda
+                        </h4>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1 block">Nama Lengkap</label>
+                                <input type="text" id="wlNama" placeholder="Nama lengkap" 
+                                    class="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-indigo-500 transition placeholder-gray-600">
+                            </div>
+                            
+                            <div>
+                                <label class="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1 block">Email Aktif</label>
+                                <input type="email" id="wlEmail" placeholder="email@anda.com" 
+                                    class="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-indigo-500 transition placeholder-gray-600">
+                            </div>
+                            
+                            <div>
+                                <label class="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1 block">WhatsApp</label>
+                                <input type="tel" id="wlWhatsApp" placeholder="081234567890" 
+                                    class="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-indigo-500 transition placeholder-gray-600">
+                            </div>
+                            
+                            <div>
+                                <label class="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1 block">Unit Pilihan</label>
+                                <input type="text" id="wlUnit" readonly 
+                                    class="w-full bg-yellow-500/10 border border-yellow-500/30 rounded-lg px-3 py-2.5 text-yellow-400 text-sm font-bold cursor-not-allowed">
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Card 2: Info & Keuntungan -->
-                <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 border border-emerald-500/20 rounded-xl p-4 flex flex-col">
-                    <h4 class="text-white font-bold text-sm mb-3 flex items-center gap-2">
-                        <i data-lucide="star" class="w-4 h-4 text-emerald-400"></i>
-                        Keuntungan Daftar Tunggu Prioritas "BOOKING"
-                    </h4>
-                    
-                    <ul class="space-y-2 flex-1">
-                        <li class="flex items-start gap-2 text-xs text-gray-300">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
-                            <span><strong class="text-emerald-300">Prioritas pertama</strong> jika booking batal</span>
-                        </li>
-                        <li class="flex items-start gap-2 text-xs text-gray-300">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
-                            <span><strong class="text-emerald-300">Info real-time</strong> status ketersediaan</span>
-                        </li>
-                        <li class="flex items-start gap-2 text-xs text-gray-300">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
-                            <span><strong class="text-emerald-300">Simulasi gratis</strong> & konsultasi</span>
-                        </li>
-                        <li class="flex items-start gap-2 text-xs text-gray-300">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
-                            <span><strong class="text-emerald-300">Tanpa biaya</strong> atau komitmen</span>
-                        </li>
-                    </ul>
+                    <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 border border-emerald-500/20 rounded-xl p-4 flex flex-col">
+                        <h4 class="text-white font-bold text-sm mb-3 flex items-center gap-2">
+                            <i data-lucide="star" class="w-4 h-4 text-emerald-400"></i>
+                            Keuntungan Daftar Tunggu
+                        </h4>
+                        
+                        <ul class="space-y-2 flex-1">
+                            <li class="flex items-start gap-2 text-xs text-gray-300">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                <span><strong class="text-emerald-300">Prioritas pertama</strong> jika booking batal</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-xs text-gray-300">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                <span><strong class="text-emerald-300">Info real-time</strong> status ketersediaan</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-xs text-gray-300">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                <span><strong class="text-emerald-300">Simulasi gratis</strong> & konsultasi</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-xs text-gray-300">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                <span><strong class="text-emerald-300">Tanpa biaya</strong> atau komitmen</span>
+                            </li>
+                        </ul>
 
-                    <!-- Info Unit -->
-                    <div class="mt-3 p-3 bg-black/20 rounded-lg border border-white/5">
-                        <p class="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1">Status Unit</p>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            Unit ini sedang <span class="text-yellow-400 font-bold">BOOKING</span>. 
-                            Daftar sekarang untuk jadi prioritas!
-                        </p>
+                        <div class="mt-3 p-3 bg-black/20 rounded-lg border border-white/5">
+                            <p class="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1">Status Unit</p>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                Unit ini sedang <span class="text-yellow-400 font-bold">BOOKING</span>. 
+                                Daftar sekarang untuk jadi prioritas!
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Footer -->
-        <div class="sticky bottom-0 bg-[#0a0a0a] border-t border-white/10 p-4 md:p-6 grid grid-cols-2 gap-3">
-            <button onclick="closeWaitingListModal()" class="touch-friendly w-full bg-white/5 hover:bg-white/10 text-white px-4 py-3 rounded-xl font-bold text-sm transition border border-white/10">
-                Tutup
-            </button>
-            <button onclick="submitWaitingList()" class="touch-friendly w-full bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-xl font-bold text-sm transition shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2">
-                <i data-lucide="send" class="w-4 h-4"></i>
-                <span>Daftar Sekarang</span>
-            </button>
+            <div class="sticky bottom-0 bg-[#0a0a0a] border-t border-white/10 p-4 md:p-6 grid grid-cols-2 gap-3">
+                <button onclick="closeWaitingListModal()" class="touch-friendly w-full bg-white/5 hover:bg-white/10 text-white px-4 py-3 rounded-xl font-bold text-sm transition border border-white/10">
+                    Tutup
+                </button>
+                <button onclick="submitWaitingList()" class="touch-friendly w-full bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-xl font-bold text-sm transition shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>Daftar Sekarang</span>
+                </button>
+            </div>
         </div>
     </div>
-</div>
 
-    <!-- Mobile-optimized Video Section -->
+    <!-- Video Section -->
     <section id="video" class="bg-[#080808]">
         <div class="max-w-7xl mx-auto px-4 md:px-6">
             <div class="text-center mb-8 md:mb-16">
@@ -971,7 +1768,7 @@
                              alt="Video drone kavling kebun maoslor bidang 1 dengan 24 unit di Maos Cilacap"
                              loading="lazy">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black" aria-label="Play Video">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black">
                                 <i data-lucide="play" fill="currentColor" class="ml-0.5 md:ml-1 w-5 h-5 md:w-6 md:h-6"></i>
                             </div>
                         </div>
@@ -991,7 +1788,7 @@
                              alt="Peta lokasi kavling kebun maoslor dengan fasilitas sekitar sekolah pasar dan akses jalan desa di Maos Cilacap Jawa Tengah"
                              loading="lazy">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black" aria-label="Lihat Peta Full">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black">
                                 <i data-lucide="maximize" class="w-5 h-5 md:w-8 md:h-8"></i>
                             </div>
                         </div>
@@ -1012,7 +1809,7 @@
                              alt="Video drone kavling kebun maoslor bidang 2 dengan 16 unit di Maos Cilacap"
                              loading="lazy">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black" aria-label="Play Video">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center transition-transform group-hover:scale-125 group-hover:bg-white group-hover:text-black">
                                 <i data-lucide="play" fill="currentColor" class="ml-0.5 md:ml-1 w-5 h-5 md:w-6 md:h-6"></i>
                             </div>
                         </div>
@@ -1026,69 +1823,69 @@
         </div>
     </section>
 
-    <!-- FAQ Section for SEO Rich Snippets -->
+    <!-- FAQ Section -->
     <section id="faq" class="py-12 md:py-20 bg-[#050505]">
-    <div class="max-w-4xl mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold mb-4 text-gradient">Pertanyaan Umum (FAQ)</h2>
-            <p data-aos="fade-up" data-aos-delay="100" class="text-gray-400">Informasi detail mengenai sistem cicilan, jadwal pembayaran, dan ketentuan kepemilikan.</p>
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold mb-4 text-gradient">Pertanyaan Umum (FAQ)</h2>
+                <p data-aos="fade-up" data-aos-delay="100" class="text-gray-400">Informasi detail mengenai sistem cicilan, jadwal pembayaran, dan ketentuan kepemilikan.</p>
+            </div>
+
+            <div class="space-y-4">
+                <details class="glass rounded-xl border border-white/10 overflow-hidden" data-aos="fade-up">
+                    <summary class="p-4 md:p-6 font-bold text-white hover:bg-white/5 transition cursor-pointer flex justify-between items-center">
+                        Bagaimana sistem cicilan di Kavling Kebun Maoslor?
+                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </summary>
+                    <div class="p-4 md:p-6 text-gray-400 border-t border-white/5 bg-white/5">
+                        Kami menggunakan sistem cicilan internal (langsung ke developer) tanpa bunga bank. Anda cukup membayar DP minimal 30%, dan sisa pelunasan dapat diangsur selama 12, 24, hingga 36 bulan (1-3 tahun) sesuai kesepakatan awal.
+                    </div>
+                </details>
+
+                <details class="glass rounded-xl border border-white/10 overflow-hidden" data-aos="fade-up">
+                    <summary class="p-4 md:p-6 font-bold text-white hover:bg-white/5 transition cursor-pointer flex justify-between items-center">
+                        Kapan jadwal pembayaran cicilan setiap bulannya?
+                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </summary>
+                    <div class="p-4 md:p-6 text-gray-400 border-t border-white/5 bg-white/5">
+                        Pembayaran cicilan dilakukan paling lambat **tanggal 5 setiap bulan berjalan**. Kami menyarankan pembayaran melalui transfer bank untuk memudahkan verifikasi otomatis oleh tim administrasi kami.
+                    </div>
+                </details>
+
+                <details class="glass rounded-xl border border-white/10 overflow-hidden" data-aos="fade-up">
+                    <summary class="p-4 md:p-6 font-bold text-white hover:bg-white/5 transition cursor-pointer flex justify-between items-center">
+                        Bagaimana jika saya terlambat membayar cicilan?
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-yellow-500"></i>
+                    </summary>
+                    <div class="p-4 md:p-6 text-gray-400 border-t border-white/5 bg-white/5">
+                        Keterlambatan pembayaran melebihi tanggal 5 akan dikenakan **denda administratif**. Kami menghimbau agar pembayaran dilakukan tepat waktu untuk menjaga kelancaran administrasi dan hak penggunaan kavling Anda.
+                    </div>
+                </details>
+
+                <details class="glass rounded-xl border border-white/10 overflow-hidden" data-aos="fade-up">
+                    <summary class="p-4 md:p-6 font-bold text-white hover:bg-white/5 transition cursor-pointer flex justify-between items-center">
+                        Apa konsekuensinya jika menunggak 3 bulan berturut-turut?
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-red-500"></i>
+                    </summary>
+                    <div class="p-4 md:p-6 text-gray-400 border-t border-white/5 bg-white/5">
+                        Nasabah yang tidak melakukan pembayaran selama **3 bulan berturut-turut** akan dikenakan sanksi berupa **penalti berat atau pemutusan perjanjian sepihak** sesuai dengan butir kesepakatan yang tertuang dalam Surat Perjanjian Kerjasama (SPK). Pastikan Anda berkonsultasi dengan tim kami jika mengalami kendala finansial sebelum masa tunggakan mencapai 3 bulan.
+                    </div>
+                </details>
+
+                <details class="glass rounded-xl border border-white/10 overflow-hidden" data-aos="fade-up">
+                    <summary class="p-4 md:p-6 font-bold text-white hover:bg-white/5 transition cursor-pointer flex justify-between items-center">
+                        Kapan saya menerima sertifikat/dokumen kepemilikan?
+                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </summary>
+                    <div class="p-4 md:p-6 text-gray-400 border-t border-white/5 bg-white/5">
+                        Dokumen kepemilikan penuh akan diproses dan diserahkan kepada Anda segera setelah seluruh cicilan dilunasi. Selama masa cicilan berjalan, hak penggunaan lahan sepenuhnya sudah menjadi milik Anda untuk dikelola sebagai kebun hidroponik.
+                    </div>
+                </details>
+            </div>
         </div>
+    </section>
 
-        <div class="space-y-4">
-            <details class="glass rounded-xl border border-white/10 overflow-hidden" data-aos="fade-up">
-                <summary class="p-4 md:p-6 font-bold text-white hover:bg-white/5 transition cursor-pointer flex justify-between items-center">
-                    Bagaimana sistem cicilan di Kavling Kebun Maoslor?
-                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                </summary>
-                <div class="p-4 md:p-6 text-gray-400 border-t border-white/5 bg-white/5">
-                    Kami menggunakan sistem cicilan internal (langsung ke developer) tanpa bunga bank. Anda cukup membayar DP minimal 30%, dan sisa pelunasan dapat diangsur selama 12, 24, hingga 36 bulan (1-3 tahun) sesuai kesepakatan awal.
-                </div>
-            </details>
-
-            <details class="glass rounded-xl border border-white/10 overflow-hidden" data-aos="fade-up">
-                <summary class="p-4 md:p-6 font-bold text-white hover:bg-white/5 transition cursor-pointer flex justify-between items-center">
-                    Kapan jadwal pembayaran cicilan setiap bulannya?
-                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                </summary>
-                <div class="p-4 md:p-6 text-gray-400 border-t border-white/5 bg-white/5">
-                    Pembayaran cicilan dilakukan paling lambat **tanggal 5 setiap bulan berjalan**. Kami menyarankan pembayaran melalui transfer bank untuk memudahkan verifikasi otomatis oleh tim administrasi kami.
-                </div>
-            </details>
-
-            <details class="glass rounded-xl border border-white/10 overflow-hidden" data-aos="fade-up">
-                <summary class="p-4 md:p-6 font-bold text-white hover:bg-white/5 transition cursor-pointer flex justify-between items-center">
-                    Bagaimana jika saya terlambat membayar cicilan?
-                    <i data-lucide="chevron-down" class="w-4 h-4 text-yellow-500"></i>
-                </summary>
-                <div class="p-4 md:p-6 text-gray-400 border-t border-white/5 bg-white/5">
-                    Keterlambatan pembayaran melebihi tanggal 5 akan dikenakan **denda administratif**. Kami menghimbau agar pembayaran dilakukan tepat waktu untuk menjaga kelancaran administrasi dan hak penggunaan kavling Anda.
-                </div>
-            </details>
-
-            <details class="glass rounded-xl border border-white/10 overflow-hidden" data-aos="fade-up">
-                <summary class="p-4 md:p-6 font-bold text-white hover:bg-white/5 transition cursor-pointer flex justify-between items-center">
-                    Apa konsekuensinya jika menunggak 3 bulan berturut-turut?
-                    <i data-lucide="chevron-down" class="w-4 h-4 text-red-500"></i>
-                </summary>
-                <div class="p-4 md:p-6 text-gray-400 border-t border-white/5 bg-white/5">
-                    Nasabah yang tidak melakukan pembayaran selama **3 bulan berturut-turut** akan dikenakan sanksi berupa **penalti berat atau pemutusan perjanjian sepihak** sesuai dengan butir kesepakatan yang tertuang dalam Surat Perjanjian Kerjasama (SPK). Pastikan Anda berkonsultasi dengan tim kami jika mengalami kendala finansial sebelum masa tunggakan mencapai 3 bulan.
-                </div>
-            </details>
-
-            <details class="glass rounded-xl border border-white/10 overflow-hidden" data-aos="fade-up">
-                <summary class="p-4 md:p-6 font-bold text-white hover:bg-white/5 transition cursor-pointer flex justify-between items-center">
-                    Kapan saya menerima sertifikat/dokumen kepemilikan?
-                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                </summary>
-                <div class="p-4 md:p-6 text-gray-400 border-t border-white/5 bg-white/5">
-                    Dokumen kepemilikan penuh akan diproses dan diserahkan kepada Anda segera setelah seluruh cicilan dilunasi. Selama masa cicilan berjalan, hak penggunaan lahan sepenuhnya sudah menjadi milik Anda untuk dikelola sebagai kebun hidroponik.
-                </div>
-            </details>
-        </div>
-    </div>
-</section>
-
-    <!-- Mobile-optimized Kontak Section -->
+    <!-- Kontak Section -->
     <section id="kontak" class="py-12 md:py-20 bg-indigo-600/5">
         <div class="max-w-6xl mx-auto px-4 md:px-6">
             <div class="text-center mb-8 md:mb-16">
@@ -1184,7 +1981,7 @@
         </div>
     </section>
 
-    <!-- Mobile-optimized Footer -->
+    <!-- Footer -->
     <footer class="py-6 md:py-10 text-center text-gray-600 mobile-text-xs md:text-xs border-t border-white/5 px-4" itemscope itemtype="https://schema.org/Organization">
         <meta itemprop="name" content="Kavling Kebun Maoslor">
         <meta itemprop="address" content="Maos, Cilacap, Jawa Tengah">
@@ -1193,6 +1990,101 @@
         <p class="mt-2">Koordinat: -7.592451, 109.142820 | Harga mulai Rp 35.000.000</p>
     </footer>
 
+    <!-- ==================== CHATBOT NAVIGASI (TAMBAHAN BARU) ==================== -->
+    <!-- Chatbot Navigasi Container -->
+    <div class="chatbot-nav-container">
+        <!-- Chatbot Panel -->
+        <div class="chatbot-nav-panel" id="chatbotNavPanel">
+            <!-- Header -->
+            <div class="chatbot-header">
+                <h3>
+                    <i data-lucide="bot"></i>
+                    Evi - Asisten Kavling Maoslor
+                </h3>
+                <button class="chatbot-close-btn" onclick="toggleChatbot()">
+                    <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+                </button>
+            </div>
+            
+            <!-- Chat Messages Area -->
+            <div class="chat-messages" id="chatbotMessages">
+                
+                <div class="message bot">
+                    <div class="message-bubble">
+                        Ada yang bisa saya bantu? Silakan tanya ya tentang:<br><br>
+                        • 🌱 Unit yang masih tersedia<br>
+                        • 💰 Harga dan simulasi cicilan<br>
+                        • 📍 Lokasi dan fasilitas<br>
+                        • 🔍 Cek unit tertentu (contoh: unit 21)<br>
+                        • 📊 Sisa unit yang belum terjual
+                    </div>
+                    <div class="message-time" id="welcomeTime2"></div>
+                </div>
+            </div>
+            
+            <!-- Status -->
+            <div class="chatbot-status" id="chatbotStatus">
+                <i data-lucide="circle" style="width: 8px; height: 8px; fill: #10b981;"></i>
+                <span>Online - Siap membantu</span>
+            </div>
+            
+            <!-- Suggestions -->
+<div class="suggestions-container">
+    <div class="suggestions-header" onclick="toggleSuggestions()">
+        <div class="suggestions-title">✨ PERTANYAAN CEPAT</div>
+        <i data-lucide="chevron-down" class="suggestions-toggle-icon" id="suggestionsToggleIcon"></i>
+    </div>
+    <div class="suggestions-grid" id="suggestionsGrid">
+        <span class="suggestion-chip" onclick="quickAsk('unit tersedia')">
+            🟢 Unit tersedia
+        </span>
+        <span class="suggestion-chip" onclick="quickAsk('unit booking')">
+            📌 Unit booking
+        </span>
+        <span class="suggestion-chip" onclick="quickAsk('ke denah')">
+            🗺️ Ke Denah 3D
+        </span>
+        <span class="suggestion-chip" onclick="quickAsk('sisa unit')">
+            🔢 Sisa unit
+        </span>
+        <span class="suggestion-chip" onclick="quickAsk('unit 24')">
+            🔍 Cek unit 24
+        </span>
+        <span class="suggestion-chip" onclick="quickAsk('harga termurah')">
+            💰 Harga termurah
+        </span>
+        <span class="suggestion-chip" onclick="quickAsk('simulasi 21')">
+            📊 Simulasi 21
+        </span>
+        <span class="suggestion-chip" onclick="quickAsk('lokasi')">
+            📍 Lokasi
+        </span>
+        <span class="suggestion-chip" onclick="quickAsk('kontak marketing')">
+            📞 Kontak
+        </span>
+    </div>
+</div>
+            
+            <!-- Input Area -->
+            <div class="chatbot-input-area">
+                <input type="text" 
+                       class="chatbot-input" 
+                       id="chatbotInput" 
+                       placeholder="Ketik pertanyaan di sini... (contoh: unit 21)"
+                       onkeypress="if(event.key === 'Enter') sendChatMessage()">
+                <button class="chatbot-send-btn" onclick="sendChatMessage()">
+                    <i data-lucide="send" style="width: 18px; height: 18px;"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Floating Button -->
+        <button class="chatbot-floating-btn" id="chatbotFloatingBtn" onclick="toggleChatbot()">
+            <i data-lucide="message-circle" style="width: 32px; height: 32px; color: white;"></i>
+        </button>
+    </div>
+
+    <!-- Three.js Import -->
     <script type="importmap">
         {
             "imports": {
@@ -1202,6 +2094,7 @@
         }
     </script>
 
+    <!-- Three.js Script -->
     <script type="module">
         import * as THREE from 'three';
         import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -1244,9 +2137,9 @@
             { id: "23", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
             { id: "20", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
             { id: "17", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
-            { id: "35", luas: 150, p: "Khusus ", l: "Khusus ", status: "Tersedia", harga: "Rp 43.000.000" },
-            { id: "34", luas: 150, p: "Khusus ", l: "Khusus ", status: "Tersedia", harga: "Rp 44.000.000" },
-            { id: "33", luas: 150, p: "Khusus ", l: "Khusus ", status: "Tersedia", harga: "Rp 45.000.000" }
+            { id: "35", luas: 150, p: "Khusus", l: "Khusus", status: "Tersedia", harga: "Rp 43.000.000" },
+            { id: "34", luas: 150, p: "Khusus", l: "Khusus", status: "Tersedia", harga: "Rp 44.000.000" },
+            { id: "33", luas: 150, p: "Khusus", l: "Khusus", status: "Tersedia", harga: "Rp 45.000.000" }
         ];
 
         const statusColors = { "Tersedia": "#22c55e", "Booking": "#eab308", "Terjual": "#ef4444" };
@@ -1255,13 +2148,12 @@
         scene.background = new THREE.Color(0x050505);
         const camera = new THREE.PerspectiveCamera(45, container.clientWidth/container.clientHeight, 0.1, 1000);
         
-        // Responsive camera position based on screen size
         const isMobile = window.innerWidth < 768;
         camera.position.set(0, isMobile ? 45 : 35, isMobile ? 20 : 16);
 
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(container.clientWidth, container.clientHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio for performance
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         container.appendChild(renderer.domElement);
 
         const controls = new OrbitControls(camera, renderer.domElement);
@@ -1274,12 +2166,10 @@
         let hoveredObject = null;
         const plots = [];
 
-        // --- KLIK INTERAKSI MODAL (Tersedia = Simulasi, Booking = Waiting List) --- 
         container.addEventListener('click', () => {
             if (hoveredObject) {
                 const d = hoveredObject.userData;
                 
-                // HILANGKAN TOOLTIP DAN RESET HOVER
                 tooltip.style.display = 'none';
                 if(hoveredObject) hoveredObject.scale.set(1,1,1);
                 hoveredObject = null;
@@ -1288,12 +2178,10 @@
                 fbq('track', 'ViewContent', {content_name: 'Unit 3D ' + d.id});
                 
                 if (d.status === "Tersedia") {
-                    // Untuk Tersedia: Buka Simulasi Modal
                     if (typeof openSimulationModal === 'function') {
                         openSimulationModal(d.id, d.harga);
                     }
                 } else if (d.status === "Booking") {
-                    // Untuk Booking: Buka Waiting List Modal (baru)
                     if (typeof openWaitingListModal === 'function') {
                         openWaitingListModal(d.id, d.harga);
                     }
@@ -1301,7 +2189,6 @@
             }
         });
 
-        // --- JALAN DESA ---
         function addRoad(x, z, w, d, rot, name) {
             const canvas = document.createElement('canvas'); 
             canvas.width = 512; 
@@ -1324,7 +2211,6 @@
         addRoad(-11, -3, 16, 1.8, Math.PI/2, "J A L A N   D E S A");
         addRoad(-5, 5, 16, 1.8, -Math.PI/12, "J A L A N   D E S A");
 
-        // --- KOMPAS ---
         function makeCompassLabel(text, pos) {
             const canvas = document.createElement('canvas'); 
             canvas.width = 128; 
@@ -1367,12 +2253,11 @@
             group.add(makeCompassLabel("T", new THREE.Vector3(3.5, 0, 0)));
             group.add(makeCompassLabel("B", new THREE.Vector3(-3.5, 0, 0)));
             group.position.set(13, 0.2, -14); 
-	    group.rotation.y = Math.PI; // Putar 180 derajat untuk orientasi yang benar
+            group.rotation.y = Math.PI;
             scene.add(group);
         }
         createCompass();
 
-        // --- PLOTS ---
         function makeUnitLabel(text, color) {
             const canvas = document.createElement('canvas'); 
             canvas.width = 256; 
@@ -1408,7 +2293,6 @@
             else createPlot(item, -6 + ((i - 34) * 2), 3, 1.8, 2.8);
         });
 
-        // --- MOUSEMOVE ---
         container.addEventListener('mousemove', (e) => {
             const rect = container.getBoundingClientRect();
             mouse.x = ((e.clientX - rect.left) / container.clientWidth) * 2 - 1;
@@ -1417,7 +2301,6 @@
             tooltip.style.top = (e.clientY + 20) + 'px';
         });
 
-        // Touch support for mobile
         let touchTimeout;
         container.addEventListener('touchstart', (e) => {
             if (e.touches.length === 1) {
@@ -1436,45 +2319,38 @@
             }
         });
 
-function animate() {
-    requestAnimationFrame(animate);
-    raycaster.setFromCamera(mouse, camera);
-    const hits = raycaster.intersectObjects(plots);
-    if (hits.length > 0) {
-        const obj = hits[0].object;
-        if (hoveredObject !== obj) {
-            if(hoveredObject) hoveredObject.scale.set(1,1,1);
-            hoveredObject = obj;
-            const d = obj.userData;
-            
-            // Baris 1: Unit dan Status (ukuran status diperbesar)
-            document.getElementById('t-unit').innerHTML = `UNIT ${d.id} <span style="color: ${statusColors[d.status]}; font-size: 1em; font-weight: 800; margin-left: 10px;">${d.status.toUpperCase()}</span>`;
-            
-            // Baris 2: Luas dan Dimensi digabung
-            document.getElementById('t-luas-dimensi').innerText = `${d.luas}m² | ${d.l}m x ${d.p}m`;
-            
-            // Baris 3: Harga
-            document.getElementById('t-harga').innerText = d.harga;
-            
-            tooltip.style.display = 'block';
-            obj.scale.set(1.05, 5, 1.05);
-            // Cursor pointer untuk semua status yang bisa diklik (Tersedia & Booking)
-            container.style.cursor = (d.status === "Tersedia" || d.status === "Booking") ? "pointer" : "default";
+        function animate() {
+            requestAnimationFrame(animate);
+            raycaster.setFromCamera(mouse, camera);
+            const hits = raycaster.intersectObjects(plots);
+            if (hits.length > 0) {
+                const obj = hits[0].object;
+                if (hoveredObject !== obj) {
+                    if(hoveredObject) hoveredObject.scale.set(1,1,1);
+                    hoveredObject = obj;
+                    const d = obj.userData;
+                    
+                    document.getElementById('t-unit').innerHTML = `UNIT ${d.id} <span style="color: ${statusColors[d.status]}; font-size: 1em; font-weight: 800; margin-left: 10px;">${d.status.toUpperCase()}</span>`;
+                    document.getElementById('t-luas-dimensi').innerText = `${d.luas}m² | ${d.l}m x ${d.p}m`;
+                    document.getElementById('t-harga').innerText = d.harga;
+                    
+                    tooltip.style.display = 'block';
+                    obj.scale.set(1.05, 5, 1.05);
+                    container.style.cursor = (d.status === "Tersedia" || d.status === "Booking") ? "pointer" : "default";
+                }
+            } else {
+                if (hoveredObject) {
+                    hoveredObject.scale.set(1, 1, 1);
+                    container.style.cursor = "default";
+                }
+                hoveredObject = null;
+                tooltip.style.display = 'none';
+            }
+            controls.update();
+            renderer.render(scene, camera);
         }
-    } else {
-        if (hoveredObject) {
-            hoveredObject.scale.set(1, 1, 1);
-            container.style.cursor = "default";
-        }
-        hoveredObject = null;
-        tooltip.style.display = 'none';
-    }
-    controls.update();
-    renderer.render(scene, camera);
-}
-animate();
+        animate();
 
-        // Handle window resize with debouncing
         let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
@@ -1494,11 +2370,11 @@ animate();
     
     <script>
         // ==========================================
-        // KONFIGURASI SIMULASI - DIUBAH KE 10% DAN 2 VS 3 TAHUN
+        // KONFIGURASI SIMULASI
         // ==========================================
         const SIMULATION_CONFIG = {
-            dpPercent: 30,           // DP 30%
-            interestRate: 10,        // Bunga 10% per tahun (diubah dari 8%)
+            dpPercent: 30,
+            interestRate: 10,
         };
 
         // Data Lengkap Unit Tanah
@@ -1537,189 +2413,152 @@ animate();
             { id: "23", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 55.000.000" },
             { id: "20", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 53.000.000" },
             { id: "17", luas: 150, p: 15, l: 10, status: "Tersedia", harga: "Rp 51.000.000" },
-            { id: "35", luas: 150, p: "Khusus ", l: "Khusus ", status: "Tersedia", harga: "Rp 43.000.000" },
-            { id: "34", luas: 150, p: "Khusus ", l: "Khusus ", status: "Tersedia", harga: "Rp 44.000.000" },
-            { id: "33", luas: 150, p: "Khusus ", l: "Khusus ", status: "Tersedia", harga: "Rp 45.000.000" }
+            { id: "35", luas: 150, p: "Khusus", l: "Khusus", status: "Tersedia", harga: "Rp 43.000.000" },
+            { id: "34", luas: 150, p: "Khusus", l: "Khusus", status: "Tersedia", harga: "Rp 44.000.000" },
+            { id: "33", luas: 150, p: "Khusus", l: "Khusus", status: "Tersedia", harga: "Rp 45.000.000" }
         ];
 
         let currentSimulationData = null;
         let currentUnitData = null;
         let currentWaitingUnitData = null;
 
-        // Format currency
         function formatCurrency(num) {
             return 'Rp ' + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         }
 
-        // Parse price string to number
         function parsePrice(priceStr) {
             return parseInt(priceStr.replace(/[^0-9]/g, ''));
         }
 
-        // Get booking fee based on price
         function getBookingFee(price) {
-            // < 50jt = 1jt, >= 50jt = 1.5jt
             return price < 50000000 ? 1000000 : 1500000;
         }
 
-        // Calculate Simulation for both 2 and 3 years (diubah dari 1 dan 2 tahun)
         function calculateBothSimulations(unitPrice) {
             const price = parsePrice(unitPrice);
             const config = SIMULATION_CONFIG;
             const bookingFee = getBookingFee(price);
             const dp = Math.round(price * (config.dpPercent / 100));
-            const principal = price - dp; // Pinjaman setelah DP
+            const principal = price - dp;
             
-            // 2 Tahun (24 bulan)
-            const bunga2tahun = Math.round(principal * (config.interestRate / 100) * 2); // 10% x 2 = 20%
+            const bunga2tahun = Math.round(principal * (config.interestRate / 100) * 2);
             const total2tahun = principal + bunga2tahun;
-            const cicilan2tahun = Math.round(total2tahun / 24); // 24 bulan
+            const cicilan2tahun = Math.round(total2tahun / 24);
             
-            // 3 Tahun (36 bulan)
-            const bunga3tahun = Math.round(principal * (config.interestRate / 100) * 3); // 10% x 3 = 30%
+            const bunga3tahun = Math.round(principal * (config.interestRate / 100) * 3);
             const total3tahun = principal + bunga3tahun;
-            const cicilan3tahun = Math.round(total3tahun / 36); // 36 bulan
+            const cicilan3tahun = Math.round(total3tahun / 36);
             
             return {
                 price: price,
                 bookingFee: bookingFee,
                 dp: dp,
                 principal: principal,
-                year2: { // 2 tahun
+                year2: {
                     bunga: bunga2tahun,
-                    bungaPercent: 20, // 10% x 2 tahun
+                    bungaPercent: 20,
                     cicilan: cicilan2tahun,
                     total: total2tahun
                 },
-                year3: { // 3 tahun
+                year3: {
                     bunga: bunga3tahun,
-                    bungaPercent: 30, // 10% x 3 tahun
+                    bungaPercent: 30,
                     cicilan: cicilan3tahun,
                     total: total3tahun
                 }
             };
         }
 
-        // Open Modal with specific unit (diupdate untuk 2 vs 3 tahun)
         function openSimulationModal(unitId, unitPrice) {
             const unit = dataTanahTable.find(u => u.id === unitId);
             if (!unit) return;
             
             currentUnitData = unit;
             
-            // Calculate both scenarios (2 tahun vs 3 tahun)
             const calc = calculateBothSimulations(unit.harga);
             currentSimulationData = calc;
             
-            // Update Modal Info
             document.getElementById('modalUnitInfo').textContent = `Unit ${unit.id} | Luas ${unit.luas}m² | Status ${unit.status}`;
             document.getElementById('simBookingFee').textContent = formatCurrency(calc.bookingFee);
             
-            // Fill Table Column 1 (2 Tahun)
             document.getElementById('col1Harga').textContent = formatCurrency(calc.price);
             document.getElementById('col1DP').textContent = formatCurrency(calc.dp);
             document.getElementById('col1Pinjaman').textContent = formatCurrency(calc.principal);
-            
             document.getElementById('col1Cicilan').textContent = formatCurrency(calc.year2.cicilan);
             
-            // Fill Table Column 2 (3 Tahun)
             document.getElementById('col2Harga').textContent = formatCurrency(calc.price);
             document.getElementById('col2DP').textContent = formatCurrency(calc.dp);
             document.getElementById('col2Pinjaman').textContent = formatCurrency(calc.principal);
-            
             document.getElementById('col2Cicilan').textContent = formatCurrency(calc.year3.cicilan);
             
-            // Show modal
             document.getElementById('simulationModal').classList.add('active');
             document.body.style.overflow = 'hidden';
             
-            // Re-init icons for new content
             lucide.createIcons();
-            
             fbq('track', 'ViewContent', {content_name: 'Simulasi Unit ' + unitId});
         }
 
-        // Close Modal
         function closeSimulationModal() {
             document.getElementById('simulationModal').classList.remove('active');
             document.body.style.overflow = 'auto';
         }
 
-        // ==========================================
-        // FUNGSI BARU: WAITING LIST MODAL
-        // ==========================================
-        
-        // Open Waiting List Modal - UPDATE
-function openWaitingListModal(unitId, unitPrice) {
-    const unit = dataTanahTable.find(u => u.id === unitId);
-    if (!unit) return;
-    
-    currentWaitingUnitData = unit;
-    
-    // Update Modal Info
-    document.getElementById('waitingUnitInfo').textContent = `Unit ${unit.id} | Luas ${unit.luas}m² | Harga ${unit.harga} | Status ${unit.status}`;
-    
-    // Set unit yang sedang dipilih (readonly)
-    document.getElementById('wlUnit').value = `UNIT ${unit.id}`;
-    
-    // Reset form jika sebelumnya sudah terisi
-    document.getElementById('wlNama').value = '';
-    document.getElementById('wlEmail').value = '';
-    document.getElementById('wlWhatsApp').value = '';
-    
-    // Show modal
-    document.getElementById('waitingListModal').classList.add('active');
-    document.body.style.overflow = 'hidden';
-    
-    // Re-init icons for new content
-    lucide.createIcons();
-    
-    fbq('track', 'Lead', {
-        content_name: 'Waiting List Unit ' + unitId,
-        status: 'booking'
-    });
-}
+        function openWaitingListModal(unitId, unitPrice) {
+            const unit = dataTanahTable.find(u => u.id === unitId);
+            if (!unit) return;
+            
+            currentWaitingUnitData = unit;
+            
+            document.getElementById('waitingUnitInfo').textContent = `Unit ${unit.id} | Luas ${unit.luas}m² | Harga ${unit.harga} | Status ${unit.status}`;
+            document.getElementById('wlUnit').value = `UNIT ${unit.id}`;
+            
+            document.getElementById('wlNama').value = '';
+            document.getElementById('wlEmail').value = '';
+            document.getElementById('wlWhatsApp').value = '';
+            
+            document.getElementById('waitingListModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            lucide.createIcons();
+            fbq('track', 'Lead', {
+                content_name: 'Waiting List Unit ' + unitId,
+                status: 'booking'
+            });
+        }
 
-// Close Waiting List Modal
-function closeWaitingListModal() {
-    document.getElementById('waitingListModal').classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
+        function closeWaitingListModal() {
+            document.getElementById('waitingListModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
 
-// NEW: Submit Waiting List dengan data form
-function submitWaitingList() {
-    if (!currentWaitingUnitData) return;
-    
-    const unit = currentWaitingUnitData;
-    
-    // Ambil data dari form
-    const nama = document.getElementById('wlNama').value.trim();
-    const email = document.getElementById('wlEmail').value.trim();
-    const whatsapp = document.getElementById('wlWhatsApp').value.trim();
-    
-    // Validasi form
-    if (!nama || !email || !whatsapp) {
-        alert('Mohon lengkapi semua data (Nama, Email, dan WhatsApp) sebelum mendaftar.');
-        return;
-    }
-    
-    // Validasi email sederhana
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Mohon masukkan email yang valid.');
-        return;
-    }
-    
-    // Validasi nomor WhatsApp (minimal 10 digit)
-    const waRegex = /^[0-9]{10,15}$/;
-    const waClean = whatsapp.replace(/[^0-9]/g, '');
-    if (!waRegex.test(waClean)) {
-        alert('Mohon masukkan nomor WhatsApp yang valid (10-15 digit angka).');
-        return;
-    }
-    
-    // Buat pesan WhatsApp dengan data form
-    const message = `Halo Admin Kavling Kebun Maoslor! 👋
+        function submitWaitingList() {
+            if (!currentWaitingUnitData) return;
+            
+            const unit = currentWaitingUnitData;
+            
+            const nama = document.getElementById('wlNama').value.trim();
+            const email = document.getElementById('wlEmail').value.trim();
+            const whatsapp = document.getElementById('wlWhatsApp').value.trim();
+            
+            if (!nama || !email || !whatsapp) {
+                alert('Mohon lengkapi semua data (Nama, Email, dan WhatsApp) sebelum mendaftar.');
+                return;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Mohon masukkan email yang valid.');
+                return;
+            }
+            
+            const waRegex = /^[0-9]{10,15}$/;
+            const waClean = whatsapp.replace(/[^0-9]/g, '');
+            if (!waRegex.test(waClean)) {
+                alert('Mohon masukkan nomor WhatsApp yang valid (10-15 digit angka).');
+                return;
+            }
+            
+            const message = `Halo Admin Kavling Kebun Maoslor! 👋
 
 Saya ingin mendaftar *WAITING LIST PRIORITAS* untuk:
 
@@ -1741,27 +2580,18 @@ Mohon informasi lebih lanjut tentang:
 3️⃣ Alternatif unit lain yang masih tersedia
 
 Terima kasih! 🙏`;
-    
-    const url = `https://wa.me/6287788526410?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-    
-    // Tutup modal setelah klik daftar
-    closeWaitingListModal();
-    
-    fbq('track', 'Contact', {
-        content_name: 'Waiting List Submitted Unit ' + unit.id,
-        content_category: 'lead_generation',
-        nama: nama,
-        email: email,
-        whatsapp: whatsapp
-    });
-    
-    fbq('track', 'Lead', {
-        content_name: 'Waiting List Form Submitted'
-    });
-}
+            
+            const url = `https://wa.me/6287788526410?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+            
+            closeWaitingListModal();
+            
+            fbq('track', 'Contact', {
+                content_name: 'Waiting List Submitted Unit ' + unit.id,
+                content_category: 'lead_generation'
+            });
+        }
 
-        // Download Simulation PDF (diupdate untuk 2 vs 3 tahun dengan bunga 10%)
         function downloadSimulationPDF() {
             if (!currentSimulationData || !currentUnitData) return;
             
@@ -1771,7 +2601,6 @@ Terima kasih! 🙏`;
             const calc = currentSimulationData;
             const unit = currentUnitData;
             
-            // Header
             doc.setFontSize(16);
             doc.setTextColor(0, 0, 0);
             doc.text("Simulasi Pembayaran Kavling Kebun Maoslor", 14, 20);
@@ -1780,12 +2609,10 @@ Terima kasih! 🙏`;
             doc.text(`Unit: ${unit.id} | Luas: ${unit.luas}m² | Status: ${unit.status}`, 14, 28);
             doc.text(`Generated: ${new Date().toLocaleString('id-ID')}`, 14, 34);
             
-            // Booking Fee Info
             doc.setFontSize(11);
             doc.setTextColor(0, 0, 0);
             doc.text(`*Booking Fee: ${formatCurrency(calc.bookingFee)} (dibayar diawal)`, 14, 44);
             
-            // Table Data
             const tableData = [
                 ['Harga', formatCurrency(calc.price), formatCurrency(calc.price)],
                 ['DP 30%', formatCurrency(calc.dp), formatCurrency(calc.dp)],
@@ -1795,7 +2622,7 @@ Terima kasih! 🙏`;
             
             doc.autoTable({
                 startY: 50,
-                head: [['Komponen', '2 Tahun', '3 Tahun']], // Header diubah
+                head: [['Komponen', '2 Tahun', '3 Tahun']],
                 body: tableData,
                 theme: 'grid',
                 headStyles: { 
@@ -1811,7 +2638,6 @@ Terima kasih! 🙏`;
                 },
                 styles: { fontSize: 10 },
                 didParseCell: function (data) {
-                    // Bold last row (cicilan)
                     if (data.row.index === 4) {
                         data.cell.styles.fontStyle = 'bold';
                         data.cell.styles.textColor = [34, 197, 94];
@@ -1819,7 +2645,6 @@ Terima kasih! 🙏`;
                 }
             });
             
-            // Notes
             const finalY = doc.lastAutoTable.finalY + 10;
             doc.setFontSize(9);
             doc.setTextColor(100);
@@ -1829,7 +2654,6 @@ Terima kasih! 🙏`;
             doc.text("• Booking fee dibayar sekali diawal sebagai tanda jadi", 14, finalY + 11);
             doc.text("• Angka dapat berubah sesuai ketentuan marketing terbaru", 14, finalY + 21);
             
-            // Footer
             doc.setFontSize(8);
             doc.text("Kavling Kebun Maoslor | WA: 0877-8852-6410 | Maos, Cilacap", 14, doc.internal.pageSize.height - 10);
             
@@ -1838,7 +2662,6 @@ Terima kasih! 🙏`;
             fbq('track', 'AddToCart', {content_name: 'Download Simulasi PDF Unit ' + unit.id});
         }
 
-        // Contact Marketing with simulation context (diupdate untuk 2 vs 3 tahun dengan bunga 10%)
         function contactMarketingSimulation() {
             if (!currentSimulationData || !currentUnitData) return;
             
@@ -1855,13 +2678,11 @@ Saya tertarik dengan UNIT ${unit.id} (${formatCurrency(calc.price)}) dan ingin t
 *2 Tahun :*
 • DP 30%: ${formatCurrency(calc.dp)}
 • Pokok Cicilan: ${formatCurrency(calc.principal)}
-
 • Cicilan: ${formatCurrency(calc.year2.cicilan)}/bln
 
 *3 Tahun :*
 • DP 30%: ${formatCurrency(calc.dp)}
 • Pokok Cicilan: ${formatCurrency(calc.principal)}
-
 • Cicilan: ${formatCurrency(calc.year3.cicilan)}/bln
 
 Mohon info lebih lanjut. Terima kasih!`;
@@ -1872,14 +2693,12 @@ Mohon info lebih lanjut. Terima kasih!`;
             fbq('track', 'Contact', {content_name: 'Tanya Marketing Simulasi Unit ' + unit.id});
         }
 
-        // Fungsi helper: format timestamp
         function formatDateTime() {
             const now = new Date();
             const pad = n => String(n).padStart(2, '0');
             return `${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}`;
         }
 
-        // Fungsi Render Tabel ke HTML - DIUBAH UNTUK BOOKING = WAITING LIST
         function renderTable() {
             try {
                 const body = document.getElementById('dataTanahBody');
@@ -1888,7 +2707,6 @@ Mohon info lebih lanjut. Terima kasih!`;
                 body.innerHTML = dataTanahTable.map(d => {
                     const statusColor = d.status === "Tersedia" ? "status-tersedia" : (d.status === "Booking" ? "status-booking" : "status-terjual");
                     
-                    // UBAH LOGIKA TOMBOL: Booking sekarang aktif dengan fungsi Waiting List
                     let btnClass, btnAction, btnText, btnIcon;
                     
                     if (d.status === "Tersedia") {
@@ -1932,7 +2750,6 @@ Mohon info lebih lanjut. Terima kasih!`;
             }
         }
 
-        // Fungsi Pencarian Unit
         function filterTable() {
             try {
                 const input = document.getElementById('searchUnit');
@@ -1953,7 +2770,6 @@ Mohon info lebih lanjut. Terima kasih!`;
             }
         }
 
-        // Fungsi Download PDF Daftar Harga
         function downloadPDF() {
             try {
                 const { jsPDF } = window.jspdf;
@@ -2025,14 +2841,12 @@ Mohon info lebih lanjut. Terima kasih!`;
             link.addEventListener('click', toggleMobileMenu);
         });
 
-        // Close menu when clicking outside
         if (mobileMenuPanel) {
             mobileMenuPanel.addEventListener('click', (e) => {
                 if (e.target === mobileMenuPanel) toggleMobileMenu();
             });
         }
 
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -2041,7 +2855,6 @@ Mohon info lebih lanjut. Terima kasih!`;
             });
         });
 
-        // Close modal when clicking overlay
         document.getElementById('simulationModal').addEventListener('click', (e) => {
             if (e.target === document.getElementById('simulationModal')) {
                 closeSimulationModal();
@@ -2054,7 +2867,6 @@ Mohon info lebih lanjut. Terima kasih!`;
             }
         });
 
-        // Escape key to close modals
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeSimulationModal();
@@ -2070,96 +2882,456 @@ Mohon info lebih lanjut. Terima kasih!`;
             disable: window.innerWidth < 768 ? 'mobile' : false
         });
 
-        // Add touch-friendly class
         document.querySelectorAll('button, a, input').forEach(element => {
             element.classList.add('touch-friendly');
         });
 
-        // Render table on load
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => renderTable(), 100);
         });
-    </script>
-<script>
-function openSimulasi() {
-    // Tracking Facebook Pixel
-    fbq('track', 'InitiateCheckout', {
-        content_name: 'Tombol Dapatkan Unit'
-    });
+
+        // ==========================================
+        // CHATBOT NAVIGASI (TANPA SUARA)
+        // ==========================================
+        let chatHistory = [];
+
+        function setWelcomeTime() {
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+            document.getElementById('welcomeTime').textContent = timeStr;
+            document.getElementById('welcomeTime2').textContent = timeStr;
+        }
+
+        function toggleChatbot() {
+            const panel = document.getElementById('chatbotNavPanel');
+            const btn = document.getElementById('chatbotFloatingBtn');
+            
+            panel.classList.toggle('active');
+            
+            if (panel.classList.contains('active')) {
+                btn.innerHTML = '<i data-lucide="x" style="width: 32px; height: 32px; color: white;"></i>';
+                setTimeout(() => {
+                    document.getElementById('chatbotMessages').scrollTop = 
+                        document.getElementById('chatbotMessages').scrollHeight;
+                }, 100);
+                setWelcomeTime();
+            } else {
+                btn.innerHTML = '<i data-lucide="message-circle" style="width: 32px; height: 32px; color: white;"></i>';
+            }
+            
+            lucide.createIcons();
+        }
+
+        function addChatMessage(text, sender) {
+            const messagesDiv = document.getElementById('chatbotMessages');
+            const time = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            messageDiv.innerHTML = `
+                <div class="message-bubble">${text}</div>
+                <div class="message-time">${time}</div>
+            `;
+            
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            
+            chatHistory.push({ text, sender, time });
+        }
+
+        function showTypingIndicator() {
+            const messagesDiv = document.getElementById('chatbotMessages');
+            
+            const indicator = document.createElement('div');
+            indicator.className = 'message bot';
+            indicator.id = 'chatTypingIndicator';
+            indicator.innerHTML = `
+                <div class="typing-indicator">
+                    <span></span><span></span><span></span>
+                </div>
+            `;
+            
+            messagesDiv.appendChild(indicator);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const indicator = document.getElementById('chatTypingIndicator');
+            if (indicator) indicator.remove();
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chatbotInput');
+            const text = input.value.trim();
+            
+            if (text) {
+                addChatMessage(text, 'user');
+                processChatQuery(text);
+                input.value = '';
+            }
+        }
+
+        function quickAsk(query) {
+            addChatMessage(query, 'user');
+            processChatQuery(query);
+        }
+
+        // Fungsi navigasi chatbot
+        function highlightSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.classList.add('section-highlight');
+                section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                setTimeout(() => {
+                    section.classList.remove('section-highlight');
+                }, 2000);
+            }
+        }
+
+        function clickSimulationButton(unitId) {
+            const rows = document.querySelectorAll('#dataTanahBody tr');
+            for (let row of rows) {
+                const cells = row.querySelectorAll('td');
+                if (cells.length > 0 && cells[0].textContent.includes(`UNIT ${unitId}`)) {
+                    const simulasiBtn = row.querySelector('button');
+                    if (simulasiBtn) {
+                        simulasiBtn.classList.add('button-click-effect');
+                        setTimeout(() => {
+                            simulasiBtn.click();
+                            simulasiBtn.classList.remove('button-click-effect');
+                        }, 300);
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        function highlightUnitInTable(unitId) {
+            const rows = document.querySelectorAll('#dataTanahBody tr');
+            for (let row of rows) {
+                const cells = row.querySelectorAll('td');
+                if (cells.length > 0 && cells[0].textContent.includes(`UNIT ${unitId}`)) {
+                    row.classList.add('unit-highlight');
+                    row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    setTimeout(() => {
+                        row.classList.remove('unit-highlight');
+                    }, 3000);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function filterUnitInTable(unitId) {
+            const searchInput = document.getElementById('searchUnit');
+            if (searchInput) {
+                searchInput.value = unitId;
+                searchInput.dispatchEvent(new Event('keyup'));
+                return true;
+            }
+            return false;
+        }
+
+        function processChatQuery(query) {
+            showTypingIndicator();
+            
+            const lowerQuery = query.toLowerCase();
+            
+            setTimeout(() => {
+                removeTypingIndicator();
+                
+                // Cek unit tertentu (contoh: unit 21, unit 24, dll)
+                const unitMatch = lowerQuery.match(/unit ([\w]+)/);
+                if (unitMatch) {
+                    const unitId = unitMatch[1];
+                    const unit = dataTanahTable.find(u => u.id === unitId);
+                    
+                    if (unit) {
+                        // Navigasi ke section harga
+                        highlightSection('harga');
+                        
+                        // Filter tabel untuk unit tersebut
+                        filterUnitInTable(unitId);
+                        
+                        // Highlight baris unit
+                        setTimeout(() => {
+                            highlightUnitInTable(unitId);
+                        }, 500);
+                        
+                        let response = `Saya temukan Unit ${unit.id}.\n\n`;
+                        response += `📍 Status: ${unit.status}\n`;
+                        response += `💰 Harga: ${unit.harga}\n`;
+                        response += `📏 Luas: ${unit.luas}m² (${unit.l}m x ${unit.p}m)\n\n`;
+                        
+                        if (unit.status === 'Tersedia') {
+                            response += `Unit ini masih tersedia. Apakah ingin saya bukakan simulasi cicilannya?`;
+                        } else if (unit.status === 'Booking') {
+                            response += `Unit ini sedang dalam proses booking. Anda bisa mendaftar waiting list ya.`;
+                        } else {
+                            response += `Unit ini sudah terjual.`;
+                        }
+                        
+                        addChatMessage(response, 'bot');
+                        
+                        // Jika Tersedia, tawarkan untuk buka simulasi
+                        if (unit.status === 'Tersedia') {
+                            setTimeout(() => {
+                                addChatMessage(`Ketik "simulasi ${unit.id}" untuk melihat simulasi cicilan.`, 'bot');
+                            }, 1000);
+                        }
+                        
+                        // Jika Booking, tawarkan waiting list
+                        if (unit.status === 'Booking') {
+                            setTimeout(() => {
+                                addChatMessage(`Ketik "waiting ${unit.id}" untuk mendaftar waiting list.`, 'bot');
+                            }, 1000);
+                        }
+                        
+                        return;
+                    }
+                }
+                // Cek perintah untuk denah - LETAKKAN DI PALING ATAS
+if (lowerQuery.includes('denah') || 
+    lowerQuery.includes('tampilkan denah') || 
+    lowerQuery.includes('lihat denah') || 
+    lowerQuery.includes('ke denah') ||
+    lowerQuery.includes('denah 3d') ||
+    lowerQuery === 'denah') {
     
-    // Buka tab baru
-    window.open('https://beasiswaku2.github.io/beasiswaku2.github.io-kavling_Kebun_maoslor.github.io/#simulasi', '_blank');
-}
-</script>
-	
-<!-- In your <head> tag -->
-<script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
-<style>
-  #webchat .bpWebchat {
-    position: unset;
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-    max-width: 100%;
-  }
-
-  #webchat .bpFab {
-    display: none;
-  }
-</style>
-
-
-<!-- In your <body> tag -->
-<div style="text-align: center; margin: 20px 0;">
-  <button onclick="pilihKavlingOtomatis()" style="padding: 15px 30px; background: #28a745; color: white; border-radius: 8px; font-weight: bold; cursor: pointer; border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-    🟢 LIHAT DAFTAR KAVLING & HARGA
-  </button>
-</div>
-<!-- Container Chatbot -->
-    <div class="chatbot-wrapper">
-      <div id="webchat"></div>
-    </div>
-
-<script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
-<script>
-    // Inisialisasi Botpress
-    window.botpress.init({
-      "botId": "f2724ba3-1727-4792-8f79-800c0ba4c527",
-      "clientId": "92a21a47-563d-470d-94a5-e6fcf01c100c",
-      "selector": "#webchat",
-      "configuration": {
-        "version": "v2",
-        "color": "#3276EA",
-        "variant": "solid",
-        "headerVariant": "glass",
-        "themeMode": "light",
-        "fontFamily": "inter",
-        "radius": 4,
-        "showPoweredBy": false
-      }
-    });
+    removeTypingIndicator();
     
-    // Auto-open saat ready
-    window.botpress.on("webchat:ready", () => {
-      window.botpress.open();
-    });
-
-    function pilihKavlingOtomatis() {
-      window.botpress.open();
-      
-      // Delay sedikit untuk memastikan chat terbuka
-      setTimeout(() => {
-        window.botpress.sendPayload({
-          type: 'trigger',
-          payload: { action: 'tampilkan_pilihan_kavling' }
+    // Cari section denah
+    const denahSection = document.getElementById('denah');
+    
+    if (denahSection) {
+        // Scroll ke section denah
+        denahSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
         });
-      }, 300);
+        
+        // Tambah highlight
+        denahSection.classList.add('section-highlight');
+        
+        // Hapus highlight setelah 2 detik
+        setTimeout(() => {
+            denahSection.classList.remove('section-highlight');
+        }, 2000);
+        
+        // Kirim pesan ke chat
+        addChatMessage('Saya arahkan ke denah 3D. Silakan arahkan kursor ke unit untuk melihat info, atau klik untuk simulasi/waiting list.', 'bot');
+    } else {
+        // Jika section tidak ditemukan
+        addChatMessage('Maaf, section denah tidak ditemukan. Silakan refresh halaman.', 'bot');
+        console.error('Section denah tidak ditemukan!');
     }
-  </script>
+    
+    return; // Hentikan proses
+}
+                // Cek perintah simulasi
+                const simulasiMatch = lowerQuery.match(/simulasi ([\w]+)/);
+                if (simulasiMatch) {
+                    const unitId = simulasiMatch[1];
+                    const unit = dataTanahTable.find(u => u.id === unitId);
+                    
+                    if (unit && unit.status === 'Tersedia') {
+                        highlightSection('harga');
+                        setTimeout(() => {
+                            if (clickSimulationButton(unitId)) {
+                                addChatMessage(`Saya bukakan simulasi untuk Unit ${unitId}. Silakan dilihat detailnya.`, 'bot');
+                            } else {
+                                addChatMessage(`Maaf, tombol simulasi untuk Unit ${unitId} tidak ditemukan.`, 'bot');
+                            }
+                        }, 500);
+                        return;
+                    }
+                }
+                
+                // Cek perintah waiting list
+                const waitingMatch = lowerQuery.match(/waiting ([\w]+)/);
+                if (waitingMatch) {
+                    const unitId = waitingMatch[1];
+                    const unit = dataTanahTable.find(u => u.id === unitId);
+                    
+                    if (unit && unit.status === 'Booking') {
+                        if (typeof openWaitingListModal === 'function') {
+                            openWaitingListModal(unitId, unit.harga);
+                            addChatMessage(`Saya bukakan formulir waiting list untuk Unit ${unitId}. Silakan isi datanya.`, 'bot');
+                        }
+                        return;
+                    }
+                }
+                
+                // Cek unit tersedia
+                if (lowerQuery.includes('unit tersedia') || lowerQuery.includes('tersedia')) {
+                    const availableUnits = dataTanahTable.filter(u => u.status === 'Tersedia').map(u => u.id);
+                    
+                    highlightSection('harga');
+                    
+                    let response = `Unit yang masih tersedia ada ${availableUnits.length} unit:\n\n`;
+                    response += `📍 ${availableUnits.join(', ')}\n\n`;
+                    response += `Ketik "unit [nomor]" untuk lihat detail, contoh: unit 21`;
+                    
+                    addChatMessage(response, 'bot');
+                    return;
+                }
+                
+                // Cek unit booking
+                if (lowerQuery.includes('unit booking') || lowerQuery.includes('booking')) {
+                    const bookedUnits = dataTanahTable.filter(u => u.status === 'Booking').map(u => u.id);
+                    
+                    highlightSection('harga');
+                    
+                    let response = `Unit yang sedang booking ada ${bookedUnits.length} unit:\n\n`;
+                    response += `📍 ${bookedUnits.join(', ')}\n\n`;
+                    response += `Ketik "waiting [nomor]" untuk daftar waiting list, contoh: waiting 30`;
+                    
+                    addChatMessage(response, 'bot');
+                    return;
+                }
+                
+                // Cek sisa unit
+                if (lowerQuery.includes('sisa unit') || lowerQuery.includes('sisa')) {
+                    const total = dataTanahTable.length;
+                    const available = dataTanahTable.filter(u => u.status === 'Tersedia').length;
+                    const booked = dataTanahTable.filter(u => u.status === 'Booking').length;
+                    const sold = dataTanahTable.filter(u => u.status === 'Terjual').length;
+                    
+                    let response = `📊 Status unit saat ini:\n\n`;
+                    response += `• Total: ${total} unit\n`;
+                    response += `• Tersedia: ${available} unit\n`;
+                    response += `• Booking: ${booked} unit\n`;
+                    response += `• Terjual: ${sold} unit\n\n`;
+                    response += `Ketik "unit tersedia" untuk lihat daftarnya.`;
+                    
+                    addChatMessage(response, 'bot');
+                    return;
+                }
+                
+                // Cek harga termurah
+                if (lowerQuery.includes('harga termurah') || lowerQuery.includes('termurah')) {
+                    const units = [...dataTanahTable];
+                    units.sort((a, b) => parsePrice(a.harga) - parsePrice(b.harga));
+                    
+                    const termurah = units[0];
+                    
+                    highlightSection('harga');
+                    
+                    let response = `Harga termurah adalah Unit ${termurah.id}:\n\n`;
+                    response += `💰 Harga: ${termurah.harga}\n`;
+                    response += `📍 Status: ${termurah.status}\n\n`;
+                    
+                    if (termurah.status === 'Tersedia') {
+                        response += `Ketik "unit ${termurah.id}" untuk lihat detail.`;
+                    }
+                    
+                    addChatMessage(response, 'bot');
+                    return;
+                }
+                
+                // Cek lokasi
+                if (lowerQuery.includes('lokasi') || lowerQuery.includes('alamat')) {
+                    highlightSection('video');
+                    
+                    let response = `📍 Lokasi Kavling Kebun Maoslor:\n\n`;
+                    response += `• Desa: Maoslor, Maos, Cilacap\n`;
+                    response += `• Jawa Tengah 53272\n`;
+                    response += `• Koordinat: -7.592451, 109.142820\n\n`;
+                    response += `Fasilitas sekitar: dekat jalan desa, sekolah, pasar, dan akses transportasi umum.`;
+                    
+                    addChatMessage(response, 'bot');
+                    return;
+                }
+                
+                // Cek kontak
+                if (lowerQuery.includes('kontak') || lowerQuery.includes('marketing') || lowerQuery.includes('hubungi')) {
+                    highlightSection('kontak');
+                    
+                    let response = `📞 Kontak Marketing:\n\n`;
+                    response += `• Nama: Ribut Nurdiansyah\n`;
+                    response += `• WhatsApp: 0877-8852-6410\n\n`;
+                    response += `Klik tombol "Chat Marketing" untuk langsung chat WA.`;
+                    
+                    addChatMessage(response, 'bot');
+                    return;
+                }
+                
+                // Cek simulasi 3 tahun
+                if (lowerQuery.includes('simulasi 3 tahun') || lowerQuery.includes('cicilan 3 tahun')) {
+                    let response = `Untuk simulasi cicilan 3 tahun:\n\n`;
+                    response += `• DP 30% dari harga unit\n`;
+                    response += `• Bunga 10% per tahun (total 30% selama 3 tahun)\n`;
+                    response += `• Cicilan per bulan = (Pokok + Bunga 30%) / 36\n\n`;
+                    response += `Contoh unit 21 (Rp 55jt):\n`;
+                    response += `• DP: Rp 16.500.000\n`;
+                    response += `• Pokok: Rp 38.500.000\n`;
+                    response += `• Bunga 3th: Rp 11.550.000\n`;
+                    response += `• Total: Rp 50.050.000\n`;
+                    response += `• Cicilan/bulan: Rp 1.390.278\n\n`;
+                    response += `Ketik "unit [nomor]" untuk lihat detail unit.`;
+                    
+                    addChatMessage(response, 'bot');
+                    return;
+                }
+                
+                // Jika tidak ada yang cocok
+                let response = `Maaf, saya belum paham. Bisa coba pertanyaan berikut:\n\n`;
+                response += `• "unit tersedia" - lihat unit yang masih ada\n`;
+                response += `• "unit 21" - cek detail unit 21\n`;
+                response += `• "sisa unit" - lihat statistik\n`;
+                response += `• "lokasi" - info lokasi\n`;
+                response += `• "kontak" - info marketing`;
+                
+                addChatMessage(response, 'bot');
+                
+            }, 1000);
+        }
 
+        // Auto open chatbot setelah 3 detik
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                document.getElementById('chatbotNavPanel').classList.add('active');
+                document.getElementById('chatbotFloatingBtn').innerHTML = 
+                    '<i data-lucide="x" style="width: 32px; height: 32px; color: white;"></i>';
+                lucide.createIcons();
+                setWelcomeTime();
+            }, 3000);
+        });
+    // Fungsi untuk toggle dropdown suggestions
+function toggleSuggestions() {
+    const grid = document.getElementById('suggestionsGrid');
+    const icon = document.getElementById('suggestionsToggleIcon');
+    
+    grid.classList.toggle('expanded');
+    icon.classList.toggle('rotate');
+    
+    // Update icon
+    if (grid.classList.contains('expanded')) {
+        icon.setAttribute('data-lucide', 'chevron-up');
+    } else {
+        icon.setAttribute('data-lucide', 'chevron-down');
+    }
+    lucide.createIcons();
+}
 
-<script src="https://files.bpcontent.cloud/2026/02/10/02/20260210024554-T0AFHAOK.js" defer></script>
+// Inisialisasi suggestions grid (awalnya collapsed)
+document.addEventListener('DOMContentLoaded', function() {
+    // Suggestions grid dimulai dalam keadaan tertutup
+    setTimeout(() => {
+        const grid = document.getElementById('suggestionsGrid');
+        const icon = document.getElementById('suggestionsToggleIcon');
+        if (grid) {
+            grid.classList.remove('expanded');
+            icon.classList.remove('rotate');
+            icon.setAttribute('data-lucide', 'chevron-down');
+            lucide.createIcons();
+        }
+    }, 100);
+});
+    </script>
+
 </body>
 </html>
-
-
